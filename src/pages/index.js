@@ -1,5 +1,5 @@
 // src/pages/index.js
-import React, { useEffect, useRef } from 'react';  // 移除 useState
+import React, { useEffect, useRef } from 'react';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
@@ -10,7 +10,6 @@ function HomepageHeader() {
   const subtitleRef = useRef(null);
 
   useEffect(() => {
-    // 鼠标视差效果
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 20;
       const y = (e.clientY / window.innerHeight - 0.5) * 20;
@@ -65,8 +64,6 @@ function HomepageHeader() {
             <span>了解更多</span>
           </a>
         </div>
-
-        {/* 滚动指示器已删除 */}
       </div>
     </header>
   );
@@ -89,7 +86,7 @@ export default function Home() {
                   alt="薪炎之律者"
                   className={styles.featureImage}
                 />
-                <h3>薪炎之律者</h3>
+                {/* 删除 h3 标题 */}
                 <p>燃烧自己，照亮前路</p>
               </div>
             </div>
@@ -100,7 +97,7 @@ export default function Home() {
                   alt="终焉之律者"
                   className={styles.featureImage}
                 />
-                <h3>终焉之律者</h3>
+                {/* 删除 h3 标题 */}
                 <p>跨越终焉，拥抱全新可能</p>
               </div>
             </div>
@@ -111,7 +108,7 @@ export default function Home() {
                   alt="无名之辈"
                   className={styles.featureImage}
                 />
-                <h3>无名之辈</h3>
+                {/* 删除 h3 标题 */}
                 <p>一切的起点，是寻找自己的名字</p>
               </div>
             </div>

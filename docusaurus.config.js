@@ -120,7 +120,7 @@ const config = {
 
       // 顶部导航栏
       navbar: {
-        title: '我的网站',
+        title: '月球',  // ✅ 只改了这一处
         logo: {
           alt: '我的网站 Logo',
           src: 'img/logo.svg',
@@ -137,7 +137,7 @@ const config = {
           // ✅ 保留博客链接
           {
             to: '/blog',
-            label: '博客',
+            label: '月海妙妙仓库',  // ✅ 只改了这一处
             position: 'left',
           },
           
