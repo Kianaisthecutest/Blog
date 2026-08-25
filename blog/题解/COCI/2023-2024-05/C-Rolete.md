@@ -2,6 +2,7 @@
 title: Rolete
 date: 2026-08-25
 slug: blog/题解/COCI/2023-2024-05/C-Rolete.md
+tag: [题解, COCI, 贪心]
 ---
 
 贪心，二分，三分

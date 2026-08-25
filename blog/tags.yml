@@ -1,19 +1,20 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+题解:
+  label: '题解'                 # 页面显示的名字
+  permalink: '/tag/solution'   # 自定义标签页面的链接
+  description: '算法竞赛题解'    # 标签的描述
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+算法:
+  label: '算法'
+  permalink: '/tag/algorithm'
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+COCI:
+  label: 'COCI'
+  permalink: '/tag/coci'
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+贪心:
+  label: '贪心'
+  permalink: '/tag/greedy'
+
+博弈论:
+  label: '博弈论'
+  permalink: '/tag/gametheory'
