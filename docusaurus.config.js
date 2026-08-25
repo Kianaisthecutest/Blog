@@ -120,7 +120,7 @@ const config = {
 
       // 顶部导航栏
       navbar: {
-        title: '月球',  // ✅ 只改了这一处
+        title: '月球',
         logo: {
           alt: '我的网站 Logo',
           src: 'img/Theresa.png',
@@ -137,7 +137,14 @@ const config = {
           // ✅ 保留博客链接
           {
             to: '/blog',
-            label: '月海妙妙仓库',  // ✅ 只改了这一处
+            label: '月海妙妙仓库',
+            position: 'left',
+          },
+          
+          // ✅ 新增冷笑话仓库链接
+          {
+            to: '/jokes',
+            label: '❄️ 冷笑话仓库',
             position: 'left',
           },
           
@@ -179,6 +186,11 @@ const config = {
               {
                 label: '博客文章',
                 to: '/blog',
+              },
+              // ✅ 新增冷笑话仓库页脚链接
+              {
+                label: '❄️ 冷笑话仓库',
+                to: '/jokes',
               },
               // ❌ 删除开始使用（指向文档）
               // {
