@@ -2,7 +2,10 @@
 title: Trokut
 date: 2026-08-25
 slug: blog/题解/COCI/2023-2024-05/D-Trokut.md
-tag: [题解, COCI, 博弈论]
+tag:
+ -题解
+ -COCI
+ -博弈论
 ---
 
 博弈论，Ad-hoc
