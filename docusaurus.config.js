@@ -123,7 +123,7 @@ const config = {
         title: '月球',  // ✅ 只改了这一处
         logo: {
           alt: '我的网站 Logo',
-          src: 'img/logo.svg',
+          src: 'img/Theresa.png',
         },
         items: [
           // ❌ 删除文档教程链接
