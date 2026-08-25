@@ -7,9 +7,9 @@ import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   // 网站基本信息
-  title: '我的网站',
+  title: '叱咤月海猫猫鱼',  // ✅ 修改为 '叱咤月海猫猫鱼'
   tagline: '一个简洁、实用的中文知识网站',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/theresa.ico',  // ✅ 修改为 'img/theresa.ico'
 
   // 网站语言设置
   i18n: {
@@ -120,9 +120,9 @@ const config = {
 
       // 顶部导航栏
       navbar: {
-        title: '月球',
+        title: '叱咤月海猫猫鱼',  // ✅ 修改为 '叱咤月海猫猫鱼'
         logo: {
-          alt: '我的网站 Logo',
+          alt: '叱咤月海猫猫鱼 Logo',  // ✅ 修改 alt 文字
           src: 'img/Theresa.png',
         },
         items: [
@@ -216,7 +216,7 @@ const config = {
             ],
           },
         ],
-        copyright: `版权所有 © ${new Date().getFullYear()} 我的网站。使用 Docusaurus 构建。`,
+        copyright: `版权所有 © ${new Date().getFullYear()} 叱咤月海猫猫鱼。使用 Docusaurus 构建。`,  // ✅ 修改版权信息
       },
 
       // 代码高亮主题
