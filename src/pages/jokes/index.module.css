@@ -177,6 +177,8 @@
   margin: 0;
   font-weight: 400;
   z-index: 1;
+  white-space: pre-line;  /* ✅ 添加这一行 */
+  text-align: center;
 }
 
 /* ===== 统计信息 ===== */
