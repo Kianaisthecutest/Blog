@@ -14,17 +14,9 @@
   justify-content: center;
 }
 
-/* 深色半透明遮罩，让文字更清晰，同时营造深邃感 */
+/* 完全去掉遮罩层 */
 .heroBanner::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(32, 26, 59, 0.6); /* 基于主色 #201A3B[citation:4] */
-  backdrop-filter: blur(4px);
-  z-index: 1;
+  display: none;
 }
 
 .heroBanner > .container {
@@ -35,14 +27,23 @@
 .heroTitle {
   font-size: 4rem;
   font-weight: 700;
-  color: #fff;
-  text-shadow: 0 0 30px rgba(96, 84, 196, 0.8); /* 紫色光晕 #6054C4[citation:4] */
+  color: #ffffff;
+  /* 添加多层光晕效果：白色光晕 + 紫色光晕 + 粉色光晕 + 黑色阴影 */
+  text-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.3),    /* 白色光晕 - 最外层 */
+    0 0 80px rgba(96, 84, 196, 0.8),       /* 紫色光晕 - 中间层 */
+    0 0 120px rgba(121, 13, 81, 0.4),      /* 粉色光晕 - 内层 */
+    0 4px 20px rgba(0, 0, 0, 0.3);          /* 黑色阴影 - 底部 */
   margin-bottom: 1rem;
 }
 
 .heroSubtitle {
   font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 
+    0 0 20px rgba(96, 84, 196, 0.5),       /* 紫色光晕 */
+    0 0 40px rgba(121, 13, 81, 0.3),        /* 粉色光晕 */
+    0 2px 20px rgba(0, 0, 0, 0.4);          /* 黑色阴影 */
   margin-bottom: 2rem;
 }
 
@@ -53,20 +54,25 @@
 }
 
 .buttons a {
-  background: #6054C4; /* 主紫色[citation:4] */
+  background: #6054C4;
   border: none;
-  color: #fff;
+  color: #ffffff;
   padding: 0.8rem 2.5rem;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 0 20px rgba(96, 84, 196, 0.5);
+  box-shadow: 
+    0 0 30px rgba(96, 84, 196, 0.5),
+    0 0 60px rgba(121, 13, 81, 0.2);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
 .buttons a:hover {
-  background: #790D51; /* 点缀红色[citation:4] */
+  background: #790D51;
   transform: translateY(-3px);
-  box-shadow: 0 0 30px rgba(121, 13, 81, 0.6);
-  color: #fff;
+  box-shadow: 
+    0 0 40px rgba(121, 13, 81, 0.6),
+    0 0 80px rgba(96, 84, 196, 0.3);
+  color: #ffffff;
   text-decoration: none;
 }
