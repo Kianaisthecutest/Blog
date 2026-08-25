@@ -9,8 +9,9 @@ tags: [题解, COCI, 二进制]
 
 {/*truncate*/}
 
-## 题干 [COCI 2023/2024 #5] Bitovi
+## [COCI 2023/2024 #5] Bitovi
 <details>
+<summary>题干</summary>
 
 <h2>题目背景</h2>
 
@@ -149,6 +150,7 @@ $31=11111_2$。按照从最低有效位到最高有效位修改，依次可以�
 
 ## AC代码
 <details>
+<summary>Code</summary>
 
 ```cpp
 #include<bits/stdc++.h>

@@ -9,7 +9,7 @@ tags: [题解, COCI, DP, 组合数学]
 
 {/*truncate*/}
 
-## 题干 [COCI 2023/2024 #5] Piratski kod
+## [COCI 2023/2024 #5] Piratski kod
 <details>
 
 <h2>题目背景</h2>
@@ -189,6 +189,8 @@ $ans_i​=\sum_{j=2}^{i}​g_j​\times (num_{i−j,0}​+num_{i−j,1}​)$
 
 ## AC代码
 <details>
+<summary>Code</summary>
+<summary>题干</summary>
 
 ```cpp
 #include<bits/stdc++.h>
