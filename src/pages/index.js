@@ -1,5 +1,5 @@
 // src/pages/index.js
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';  // 移除 useState
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
@@ -10,7 +10,7 @@ function HomepageHeader() {
   const subtitleRef = useRef(null);
 
   useEffect(() => {
-    // 鼠标移动视差效果
+    // 鼠标视差效果
     const handleMouseMove = (e) => {
       const x = (e.clientX / window.innerWidth - 0.5) * 20;
       const y = (e.clientY / window.innerHeight - 0.5) * 20;
@@ -29,14 +29,12 @@ function HomepageHeader() {
 
   return (
     <header className={styles.heroBanner}>
-      {/* 粒子背景 */}
       <div className={styles.particles}>
         {[...Array(50)].map((_, i) => (
           <div key={i} className={styles.particle} />
         ))}
       </div>
       
-      {/* 光晕装饰 */}
       <div className={styles.glowOrb1} />
       <div className={styles.glowOrb2} />
       <div className={styles.glowOrb3} />
@@ -68,13 +66,7 @@ function HomepageHeader() {
           </a>
         </div>
 
-        {/* 滚动指示器 */}
-        <div className={styles.scrollIndicator}>
-          <div className={styles.mouse}>
-            <div className={styles.wheel} />
-          </div>
-          <span>向下滚动</span>
-        </div>
+        {/* 滚动指示器已删除 */}
       </div>
     </header>
   );
@@ -86,29 +78,40 @@ export default function Home() {
     <Layout title={`${siteConfig.title}`} description="以琪亚娜·卡斯兰娜之名，为世界上所有的美好而战">
       <HomepageHeader />
       
-      {/* 功能卡片区域 */}
       <section id="features" className={styles.featuresSection}>
         <div className="container">
           <h2 className={styles.sectionTitle}>✦ 薪火传承 ✦</h2>
           <div className="row">
             <div className="col col--4">
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>⚡</div>
+                <img 
+                  src="/img/kiana-fire.png" 
+                  alt="薪炎之律者"
+                  className={styles.featureImage}
+                />
                 <h3>薪炎之律者</h3>
                 <p>燃烧自己，照亮前路</p>
               </div>
             </div>
             <div className="col col--4">
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>🌌</div>
+                <img 
+                  src="/img/kiana-void.png" 
+                  alt="终焉之律者"
+                  className={styles.featureImage}
+                />
                 <h3>终焉之律者</h3>
                 <p>跨越终焉，拥抱全新可能</p>
               </div>
             </div>
             <div className="col col--4">
               <div className={styles.featureCard}>
-                <div className={styles.featureIcon}>💫</div>
-                <h3>无名之茧</h3>
+                <img 
+                  src="/img/kiana-start.png" 
+                  alt="无名之辈"
+                  className={styles.featureImage}
+                />
+                <h3>无名之辈</h3>
                 <p>一切的起点，是寻找自己的名字</p>
               </div>
             </div>
