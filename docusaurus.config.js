@@ -137,7 +137,7 @@ const config = {
           // ✅ 保留博客链接
           {
             to: '/blog',
-            label: '月海妙妙仓库',
+            label: '📦 月海妙妙仓库',
             position: 'left',
           },
           

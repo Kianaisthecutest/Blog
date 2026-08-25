@@ -61,7 +61,8 @@ export default function JokesPage() {
             <span className={styles.icon}>❄️</span>
           </div>
           
-          <p className={styles.subtitle}>随机笑话 · 每日一笑</p>
+          {/* ✅ 修改这里 */}
+          <p className={styles.subtitle}>咕咕嘎嘎 · 嘎嘎咕咕</p>
           
           <div className={`${styles.jokeBox} ${isFlipping ? styles.flipping : ''}`}>
             <span className={styles.quote}>{'「'}</span>
