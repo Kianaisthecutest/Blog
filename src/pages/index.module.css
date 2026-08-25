@@ -1,23 +1,72 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
+/* src/pages/index.module.css */
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  /* 使用你下载的琪亚娜壁纸作为背景 */
+  background-image: url('/img/kiana-bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+/* 深色半透明遮罩，让文字更清晰，同时营造深邃感 */
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(32, 26, 59, 0.6); /* 基于主色 #201A3B[citation:4] */
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.heroBanner > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(96, 84, 196, 0.8); /* 紫色光晕 #6054C4[citation:4] */
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons a {
+  background: #6054C4; /* 主紫色[citation:4] */
+  border: none;
+  color: #fff;
+  padding: 0.8rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(96, 84, 196, 0.5);
+}
+
+.buttons a:hover {
+  background: #790D51; /* 点缀红色[citation:4] */
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(121, 13, 81, 0.6);
+  color: #fff;
+  text-decoration: none;
 }

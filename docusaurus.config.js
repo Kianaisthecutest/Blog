@@ -28,13 +28,10 @@ const config = {
   },
 
   // 网站正式部署地址
-  // 如果目前只在本地运行，可以暂时保留下面的地址
-  // 发布到 GitHub Pages 时，需要改成你的真实网址
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
 
   // GitHub Pages 配置
-  // 如果以后部署到 GitHub，请改成你自己的用户名和仓库名
   organizationName: 'your-github-name',
   projectName: 'your-repository-name',
 
@@ -51,22 +48,9 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          // 数学公式支持
-          remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
-
-          sidebarPath: './sidebars.js',
-
-          // 显示最后更新时间
-          showLastUpdateTime: true,
-          showLastUpdateAuthor: false,
-
-          // 暂时没有设置 GitHub 编辑地址，因此先隐藏“编辑此页”链接
-          // 以后有自己的 GitHub 仓库后，可以取消下面的注释并修改地址
-          // editUrl: 'https://github.com/你的用户名/你的仓库名/tree/main/',
-        },
-
+        // ❌ 完全禁用文档功能
+        docs: false,
+        
         blog: {
           // 博客页面中文标题和描述
           blogTitle: '博客',
@@ -84,7 +68,7 @@ const config = {
             xslt: true,
           },
 
-          // 暂时隐藏“编辑此页”链接
+          // 暂时隐藏"编辑此页"链接
           // 以后有自己的 GitHub 仓库后再启用
           // editUrl: 'https://github.com/你的用户名/你的仓库名/tree/main/',
 
@@ -126,12 +110,13 @@ const config = {
         disableSwitch: false,
       },
 
-      docs: {
-        sidebar: {
-          hideable: true,
-          autoCollapseCategories: true,
-        },
-      },
+      // ❌ 删除 docs 相关配置
+      // docs: {
+      //   sidebar: {
+      //     hideable: true,
+      //     autoCollapseCategories: true,
+      //   },
+      // },
 
       // 顶部导航栏
       navbar: {
@@ -141,22 +126,29 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: '文档教程',
-          },
+          // ❌ 删除文档教程链接
+          // {
+          //   type: 'docSidebar',
+          //   sidebarId: 'tutorialSidebar',
+          //   position: 'left',
+          //   label: '文档教程',
+          // },
+          
+          // ✅ 保留博客链接
           {
             to: '/blog',
             label: '博客',
             position: 'left',
           },
-          {
-            to: '/docs/intro',
-            label: '开始使用',
-            position: 'left',
-          },
+          
+          // ❌ 删除开始使用链接（指向文档）
+          // {
+          //   to: '/docs/intro',
+          //   label: '开始使用',
+          //   position: 'left',
+          // },
+          
+          // ✅ 保留 GitHub 链接
           {
             href: 'https://github.com/你的用户名/你的仓库名',
             label: '源代码',
@@ -169,15 +161,18 @@ const config = {
       footer: {
         style: 'dark',
         links: [
-          {
-            title: '文档',
-            items: [
-              {
-                label: '教程首页',
-                to: '/docs/intro',
-              },
-            ],
-          },
+          // ❌ 删除文档部分
+          // {
+          //   title: '文档',
+          //   items: [
+          //     {
+          //       label: '教程首页',
+          //       to: '/docs/intro',
+          //     },
+          //   ],
+          // },
+          
+          // ✅ 保留学习资源
           {
             title: '学习资源',
             items: [
@@ -185,12 +180,15 @@ const config = {
                 label: '博客文章',
                 to: '/blog',
               },
-              {
-                label: '开始使用',
-                to: '/docs/intro',
-              },
+              // ❌ 删除开始使用（指向文档）
+              // {
+              //   label: '开始使用',
+              //   to: '/docs/intro',
+              // },
             ],
           },
+          
+          // ✅ 保留相关链接
           {
             title: '相关链接',
             items: [
