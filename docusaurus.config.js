@@ -200,13 +200,18 @@ const config = {
             ],
           },
           
-          // ✅ 保留相关链接
+          // ✅ 保留相关链接 - 新增崩坏三官网
           {
             title: '相关链接',
             items: [
               {
                 label: 'GitHub 项目',
                 href: 'https://github.com/你的用户名/你的仓库名',
+              },
+              // ✅ 新增崩坏三官网
+              {
+                label: '崩坏三官网',
+                href: 'https://bh3.mihoyo.com/main',
               },
             ],
           },
