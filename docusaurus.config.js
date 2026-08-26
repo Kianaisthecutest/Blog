@@ -7,9 +7,9 @@ import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   // 网站基本信息
-  title: '叱咤月海猫猫鱼',  // ✅ 修改为 '叱咤月海猫猫鱼'
+  title: '叱咤月海猫猫鱼',
   tagline: '一个简洁、实用的中文知识网站',
-  favicon: 'img/theresa.ico',  // ✅ 修改为 'img/theresa.ico'
+  favicon: 'img/theresa.ico',
 
   // 网站语言设置
   i18n: {
@@ -48,15 +48,12 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        // ❌ 完全禁用文档功能
         docs: false,
         
         blog: {
-          // 博客页面中文标题和描述
           blogTitle: '博客',
           blogDescription: '记录学习、思考与实践。',
 
-          // 数学公式支持
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
 
@@ -68,14 +65,15 @@ const config = {
             xslt: true,
           },
 
-          // 暂时隐藏"编辑此页"链接
-          // 以后有自己的 GitHub 仓库后再启用
-          // editUrl: 'https://github.com/你的用户名/你的仓库名/tree/main/',
-
-          // 没有摘要分隔符时给出提醒
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
+
+          // ===== ✅ 新增：文章列表功能配置 =====
+          // 取消分页，显示所有文章
+          postsPerPage: 'ALL',
+          // 不显示侧边栏
+          blogSidebarCount: 0,
         },
 
         theme: {
@@ -88,10 +86,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // 网站分享卡片
       image: 'img/docusaurus-social-card.jpg',
 
-      // 浏览器标签页和搜索引擎描述
       metadata: [
         {
           name: 'keywords',
@@ -103,59 +99,29 @@ const config = {
         },
       ],
 
-      // 主题颜色设置
       colorMode: {
         defaultMode: 'light',
         respectPrefersColorScheme: true,
         disableSwitch: false,
       },
 
-      // ❌ 删除 docs 相关配置
-      // docs: {
-      //   sidebar: {
-      //     hideable: true,
-      //     autoCollapseCategories: true,
-      //   },
-      // },
-
-      // 顶部导航栏
       navbar: {
-        title: '叱咤月海猫猫鱼',  // ✅ 修改为 '叱咤月海猫猫鱼'
+        title: '叱咤月海猫猫鱼',
         logo: {
-          alt: '叱咤月海猫猫鱼 Logo',  // ✅ 修改 alt 文字
+          alt: '叱咤月海猫猫鱼 Logo',
           src: 'img/Theresa.png',
         },
         items: [
-          // ❌ 删除文档教程链接
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: '文档教程',
-          // },
-          
-          // ✅ 保留博客链接
           {
             to: '/blog',
             label: '📦 月海妙妙仓库',
             position: 'left',
           },
-          
-          // ✅ 新增冷笑话仓库链接
           {
             to: '/jokes',
             label: '❄️ 冷笑话仓库',
             position: 'left',
           },
-          
-          // ❌ 删除开始使用链接（指向文档）
-          // {
-          //   to: '/docs/intro',
-          //   label: '开始使用',
-          //   position: 'left',
-          // },
-          
-          // ✅ 保留 GitHub 链接
           {
             href: 'https://github.com/你的用户名/你的仓库名',
             label: '源代码',
@@ -164,22 +130,9 @@ const config = {
         ],
       },
 
-      // 底部页脚
       footer: {
         style: 'dark',
         links: [
-          // ❌ 删除文档部分
-          // {
-          //   title: '文档',
-          //   items: [
-          //     {
-          //       label: '教程首页',
-          //       to: '/docs/intro',
-          //     },
-          //   ],
-          // },
-          
-          // ✅ 保留学习资源
           {
             title: '学习资源',
             items: [
@@ -187,20 +140,12 @@ const config = {
                 label: '博客文章',
                 to: '/blog',
               },
-              // ✅ 新增冷笑话仓库页脚链接
               {
                 label: '❄️ 冷笑话仓库',
                 to: '/jokes',
               },
-              // ❌ 删除开始使用（指向文档）
-              // {
-              //   label: '开始使用',
-              //   to: '/docs/intro',
-              // },
             ],
           },
-          
-          // ✅ 保留相关链接 - 新增崩坏三官网
           {
             title: '相关链接',
             items: [
@@ -208,7 +153,6 @@ const config = {
                 label: 'GitHub 项目',
                 href: 'https://github.com/你的用户名/你的仓库名',
               },
-              // ✅ 新增崩坏三官网
               {
                 label: '崩坏三官网',
                 href: 'https://bh3.mihoyo.com/main',
@@ -216,10 +160,9 @@ const config = {
             ],
           },
         ],
-        copyright: `版权所有 © ${new Date().getFullYear()} 叱咤月海猫猫鱼。使用 Docusaurus 构建。`,  // ✅ 修改版权信息
+        copyright: `版权所有 © ${new Date().getFullYear()} 叱咤月海猫猫鱼。使用 Docusaurus 构建。`,
       },
 
-      // 代码高亮主题
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
@@ -227,7 +170,6 @@ const config = {
       },
     }),
 
-  // 数学公式所需的 KaTeX 样式
   stylesheets: [
     {
       href: 'https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css',
