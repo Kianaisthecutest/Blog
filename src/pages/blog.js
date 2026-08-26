@@ -7,6 +7,21 @@ import postsData from '../data/blog-posts.json';
 
 const POSTS = Array.isArray(postsData) ? postsData : [];
 
+const FolderIcon = ({ expanded = false }) => (
+  <svg viewBox="0 0 24 24" className={styles.folderGlyph} aria-hidden="true">
+    <path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h4.2l1.5 2H18a2.5 2.5 0 0 1 2.5 2.5v7A2.5 2.5 0 0 1 18 17H6a2.5 2.5 0 0 1-2.5-2.5v-7Z" />
+    <path d="M3.5 9.5h17" />
+  </svg>
+);
+
+const DocumentIcon = () => (
+  <svg viewBox="0 0 24 24" className={styles.folderGlyph} aria-hidden="true">
+    <path d="M7 3.5h6l4 4V18a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 5 18V6A2.5 2.5 0 0 1 7.5 3.5Z" />
+    <path d="M13 3.5V8h4" />
+    <path d="M8.25 12h7.5M8.25 15h7.5" />
+  </svg>
+);
+
 const getFolderPathFromPermalink = (permalink = '') => {
   const normalized = permalink.replace(/\/+$/, '');
   if (!normalized.startsWith('/blog-posts/')) return '';
@@ -20,7 +35,7 @@ const getFolderPathFromPermalink = (permalink = '') => {
 export default function BlogList() {
   const [selectedGroup, setSelectedGroup] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
-  const [expandedGroups, setExpandedGroups] = useState(() => new Set(['all', '题解', '题解/COCI']));
+  const [expandedGroups, setExpandedGroups] = useState(() => new Set());
 
   const autoGroupList = useMemo(() => {
     const list = [];
@@ -46,7 +61,7 @@ export default function BlogList() {
         list.push({
           key: currentPath,
           label: segment,
-          icon: '📂',
+          icon: 'folder',
           count,
           level: index,
         });
@@ -73,7 +88,7 @@ export default function BlogList() {
       }
     });
 
-    return [{ key: 'all', label: '全部文章', icon: '📖', count: POSTS.length, level: -1, children: rootNodes }];
+    return [{ key: 'all', label: '全部文章', icon: 'document', count: POSTS.length, level: -1, children: rootNodes }];
   }, [autoGroupList]);
 
   const toggleGroup = (groupKey) => {
@@ -97,11 +112,13 @@ export default function BlogList() {
       return (
         <li key={node.key} className={styles.treeNode}>
           <div
-            className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''}`}
+            className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''} ${canToggle && isExpanded ? styles.folderExpanded : ''}`}
             onClick={() => setSelectedGroup(node.key)}
             style={{ paddingLeft: `${0.8 + depth * 1.1}rem` }}
           >
-            <span className={styles.groupIcon}>{node.icon}</span>
+            <span className={`${styles.groupIcon} ${canToggle && isExpanded ? styles.groupIconExpanded : ''}`}>
+              {node.icon === 'document' ? <DocumentIcon /> : <FolderIcon expanded={isExpanded} />}
+            </span>
             <span className={styles.groupLabel}>{node.label}</span>
             <span className={styles.groupCount}>{node.count}</span>
             {canToggle && (
@@ -114,7 +131,7 @@ export default function BlogList() {
                 }}
                 aria-label={isExpanded ? `折叠${node.label}` : `展开${node.label}`}
               >
-                {isExpanded ? '−' : '+'}
+                {isExpanded ? '▾' : '▸'}
               </button>
             )}
           </div>

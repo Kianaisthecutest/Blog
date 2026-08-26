@@ -102,9 +102,9 @@ const config = {
       ],
 
       colorMode: {
-        defaultMode: 'light',
-        respectPrefersColorScheme: true,
-        disableSwitch: false,
+        defaultMode: 'dark',
+        respectPrefersColorScheme: false,
+        disableSwitch: true,
       },
 
       navbar: {

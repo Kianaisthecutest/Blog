@@ -1,3 +1,49 @@
+.cursorTrail {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+.cursorDot {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(255,255,255,0.98) 0%,
+    rgba(191,219,254,1) 10%,
+    rgba(147,197,253,0.92) 20%,
+    rgba(168,85,247,0.9) 38%,
+    rgba(96,84,196,0.72) 56%,
+    rgba(59,130,246,0.45) 72%,
+    rgba(17,24,39,0) 100%);
+  box-shadow:
+    0 0 10px rgba(191, 219, 254, 0.9),
+    0 0 20px rgba(168, 85, 247, 0.75),
+    0 0 28px rgba(96, 84, 196, 0.55),
+    0 0 42px rgba(59, 130, 246, 0.3);
+  opacity: 0;
+  animation: trailFade 0.95s ease-out forwards;
+  filter: blur(1.1px);
+}
+
+@keyframes trailFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+    filter: blur(0.3px) saturate(1.4);
+  }
+  30% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.18);
+    filter: blur(2.8px) saturate(1.2);
+  }
+}
+
 .container {
   display: flex;
   min-height: calc(100vh - 60px);
@@ -51,19 +97,30 @@
 
 .treeChildren {
   list-style: none;
-  padding: 0 0 0 0.8rem;
-  margin: 0 0 0 0.55rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0 0 0 0.95rem;
+  margin: 0 0 0 0.8rem;
+  border-left: 1px solid rgba(148, 163, 184, 0.18);
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.38s ease, opacity 0.25s ease, margin-top 0.25s ease, padding-top 0.25s ease;
+  position: relative;
 }
 
 .treeChildren.expanded {
   max-height: 2000px;
   opacity: 1;
   margin-top: 0.45rem;
+}
+
+.treeChildren::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.15), rgba(96, 84, 196, 0.4), rgba(148, 163, 184, 0.15));
 }
 
 .groupItem {
@@ -74,11 +131,21 @@
   padding: 0.72rem 0.8rem 0.72rem 0.72rem;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease, filter 0.2s ease;
   color: rgba(255, 255, 255, 0.72);
   margin-bottom: 4px;
   background: rgba(255, 255, 255, 0.015);
   border: 1px solid transparent;
+  animation: groupBreath 3s ease-in-out infinite;
+}
+
+.treeNode > .groupItem {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.treeNode .treeNode > .groupItem {
+  background: rgba(15, 23, 42, 0.12);
+  border-color: rgba(148, 163, 184, 0.08);
 }
 
 .groupItem::before {
@@ -94,7 +161,9 @@
 .groupItem:hover {
   color: rgba(255, 255, 255, 0.96);
   transform: translateX(2px);
-  border-color: rgba(148, 163, 184, 0.15);
+  border-color: rgba(148, 163, 184, 0.2);
+  box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.08), 0 0 18px rgba(59, 130, 246, 0.12);
+  filter: brightness(1.04);
 }
 
 .groupItem:hover::before,
@@ -103,10 +172,32 @@
 }
 
 .groupItem.active {
-  background: linear-gradient(135deg, rgba(96, 84, 196, 0.22), rgba(168, 85, 247, 0.14));
+  background: linear-gradient(135deg, rgba(96, 84, 196, 0.18), rgba(59, 130, 246, 0.09));
   color: #fff;
-  border-color: rgba(166, 120, 255, 0.4);
-  box-shadow: 0 12px 24px rgba(96, 84, 196, 0.18);
+  border-color: rgba(164, 140, 255, 0.95);
+  box-shadow:
+    0 0 0 1px rgba(164, 140, 255, 0.5),
+    0 12px 28px rgba(96, 84, 196, 0.28),
+    0 0 18px rgba(96, 84, 196, 0.22),
+    inset 0 0 0 1px rgba(255,255,255,0.08);
+  animation: groupBreathActive 2.4s ease-in-out infinite;
+  filter: brightness(1.08);
+}
+
+.treeNode .treeNode > .groupItem.active {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(96, 84, 196, 0.15));
+}
+
+.groupItem.active::after {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 7px;
+  bottom: 7px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7dd3fc, #a78bfa, #f472b6);
+  box-shadow: 0 0 14px rgba(125, 211, 252, 0.9), 0 0 18px rgba(168, 85, 247, 0.8), 0 0 22px rgba(96, 84, 196, 0.7);
 }
 
 .groupItem > * {
@@ -115,7 +206,6 @@
 }
 
 .groupIcon {
-  font-size: 1rem;
   width: 1.8rem;
   height: 1.8rem;
   display: inline-flex;
@@ -125,6 +215,24 @@
   background: rgba(148, 163, 184, 0.08);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
   flex-shrink: 0;
+  color: #bfdbfe;
+  transition: transform 0.25s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.folderGlyph {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.groupItem.folderExpanded .groupIcon,
+.groupIconExpanded {
+  transform: rotate(0deg);
 }
 
 .groupLabel {
@@ -149,18 +257,18 @@
   border: 1px solid rgba(255,255,255,0.08);
   background: rgba(255,255,255,0.04);
   color: rgba(255,255,255,0.8);
-  width: 1.7rem;
-  height: 1.7rem;
-  border-radius: 8px;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.08rem;
+  font-size: 0.78rem;
   line-height: 1;
   cursor: pointer;
   margin-left: auto;
   padding: 0;
-  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
 }
 
 .toggleButton:hover {
@@ -175,8 +283,37 @@
   transform: scale(0.96);
 }
 
+@keyframes groupBreath {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(96, 84, 196, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(147, 197, 253, 0.12), 0 8px 18px rgba(96, 84, 196, 0.1);
+  }
+}
+
+@keyframes groupBreathActive {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(164, 140, 255, 0.4),
+      0 12px 24px rgba(96, 84, 196, 0.18),
+      0 0 16px rgba(96, 84, 196, 0.18),
+      inset 0 0 0 1px rgba(255,255,255,0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1.8px rgba(125, 211, 252, 0.6),
+      0 12px 30px rgba(96, 84, 196, 0.3),
+      0 0 22px rgba(125, 211, 252, 0.25),
+      0 0 26px rgba(168, 85, 247, 0.2),
+      inset 0 0 0 1px rgba(255,255,255,0.1);
+  }
+}
+
 .groupItem.active .groupIcon {
-  background: rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(96, 84, 196, 0.42), rgba(168, 85, 247, 0.22));
+  color: #e9d5ff;
+  box-shadow: 0 0 16px rgba(167, 139, 250, 0.28);
 }
 
 .groupItem.active .groupCount {
