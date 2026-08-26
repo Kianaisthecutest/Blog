@@ -2,10 +2,10 @@
 title: Piratski kod
 date: 2026-08-25
 slug: blog/题解/COCI/2023-2024-05/B-Piratski kod.md
-tags: [题解, COCI, DP, 组合数学]
+tags: [题解, COCI, 动态规划, 组合数学]
 ---
 
-<h2>DP，组合数学</h2>
+<h2>动态规划，组合数学</h2>
 
 {/*truncate*/}
 

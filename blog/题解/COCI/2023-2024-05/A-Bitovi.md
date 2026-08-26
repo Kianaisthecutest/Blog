@@ -2,10 +2,10 @@
 title: Bitovi
 date: 2026-08-25
 slug: blog/题解/COCI/2023-2024-05/A-Bitovi.md
-tags: [题解, COCI, 二进制]
+tags: [题解, COCI, 进制]
 ---
 
-<h2>模拟，二进制</h2>
+<h2>模拟，进制</h2>
 
 {/*truncate*/}
 
