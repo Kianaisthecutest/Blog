@@ -20,6 +20,7 @@ const getFolderPathFromPermalink = (permalink = '') => {
 export default function BlogList() {
   const [selectedGroup, setSelectedGroup] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
+  const [expandedGroups, setExpandedGroups] = useState(() => new Set(['all', '题解', '题解/COCI']));
 
   const autoGroupList = useMemo(() => {
     const list = [];
@@ -55,10 +56,78 @@ export default function BlogList() {
     return list.sort((a, b) => a.level - b.level || a.label.localeCompare(b.label));
   }, []);
 
-  const groupList = useMemo(() => {
-    const list = [{ key: 'all', label: '全部文章', icon: '📖', count: POSTS.length, level: -1 }];
-    return list.concat(autoGroupList);
+  const groupTree = useMemo(() => {
+    const nodes = new Map();
+    const rootNodes = [];
+
+    autoGroupList.forEach((group) => {
+      nodes.set(group.key, { ...group, children: [] });
+    });
+
+    autoGroupList.forEach((group) => {
+      const parentPath = group.key.includes('/') ? group.key.split('/').slice(0, -1).join('/') : '';
+      if (parentPath && nodes.has(parentPath)) {
+        nodes.get(parentPath).children.push(nodes.get(group.key));
+      } else {
+        rootNodes.push(nodes.get(group.key));
+      }
+    });
+
+    return [{ key: 'all', label: '全部文章', icon: '📖', count: POSTS.length, level: -1, children: rootNodes }];
   }, [autoGroupList]);
+
+  const toggleGroup = (groupKey) => {
+    setExpandedGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(groupKey)) {
+        next.delete(groupKey);
+      } else {
+        next.add(groupKey);
+      }
+      return next;
+    });
+  };
+
+  const renderTree = (nodes, depth = 0) =>
+    nodes.map((node) => {
+      const hasChildren = Array.isArray(node.children) && node.children.length > 0;
+      const isExpanded = expandedGroups.has(node.key);
+      const canToggle = hasChildren;
+
+      return (
+        <li key={node.key} className={styles.treeNode}>
+          <div
+            className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''}`}
+            onClick={() => setSelectedGroup(node.key)}
+            style={{ paddingLeft: `${0.8 + depth * 1.1}rem` }}
+          >
+            <span className={styles.groupIcon}>{node.icon}</span>
+            <span className={styles.groupLabel}>{node.label}</span>
+            <span className={styles.groupCount}>{node.count}</span>
+            {canToggle && (
+              <button
+                type="button"
+                className={styles.toggleButton}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  toggleGroup(node.key);
+                }}
+                aria-label={isExpanded ? `折叠${node.label}` : `展开${node.label}`}
+              >
+                {isExpanded ? '−' : '+'}
+              </button>
+            )}
+          </div>
+          {canToggle && (
+            <ul className={`${styles.treeChildren} ${isExpanded ? styles.expanded : ''}`}>
+              {renderTree(node.children, depth + 1)}
+            </ul>
+          )}
+        </li>
+      );
+    });
+
+  const groupList = useMemo(() => groupTree, [groupTree]);
 
   const filteredPosts = useMemo(() => {
     let result = POSTS || [];
@@ -96,31 +165,30 @@ export default function BlogList() {
       }, {});
   }, [filteredPosts]);
 
+  const stats = useMemo(() => {
+    const activeGroup = selectedGroup === 'all' ? '全部目录' : selectedGroup;
+    return [
+      { label: '总文章', value: POSTS.length },
+      { label: '当前分类', value: activeGroup },
+      { label: '已筛选', value: filteredPosts.length },
+    ];
+  }, [selectedGroup, filteredPosts]);
+
   return (
     <Layout title="文章列表" description="所有博客文章列表">
       <div className={styles.container}>
         <aside className={styles.sidebar}>
           <div className={styles.sidebarHeader}><h3>📂 分类</h3></div>
-          <ul className={styles.groupList}>
-            {groupList.map((group) => (
-              <li
-                key={group.key}
-                className={`${styles.groupItem} ${selectedGroup === group.key ? styles.active : ''}`}
-                onClick={() => setSelectedGroup(group.key)}
-                style={{ paddingLeft: group.level >= 0 ? `${1.2 + group.level * 0.8}rem` : '0.8rem' }}
-              >
-                <span className={styles.groupIcon}>{group.icon}</span>
-                <span className={styles.groupLabel}>{group.label}</span>
-                <span className={styles.groupCount}>{group.count}</span>
-              </li>
-            ))}
-          </ul>
+          <ul className={styles.groupList}>{renderTree(groupList)}</ul>
           <div className={styles.sidebarFooter}><span>📚 共 {filteredPosts.length} 篇文章</span></div>
         </aside>
 
         <main className={styles.main}>
           <div className={styles.header}>
-            <h1 className={styles.title}>📖 文章列表</h1>
+            <div className={styles.headerText}>
+              <p className={styles.kicker}>知识库</p>
+              <h1 className={styles.title}>📖 文章列表</h1>
+            </div>
             <div className={styles.searchBox}>
               <input
                 type="text"
@@ -130,6 +198,15 @@ export default function BlogList() {
                 className={styles.searchInput}
               />
             </div>
+          </div>
+
+          <div className={styles.statsRow}>
+            {stats.map((stat) => (
+              <div key={stat.label} className={styles.statCard}>
+                <span className={styles.statLabel}>{stat.label}</span>
+                <strong className={styles.statValue}>{stat.value}</strong>
+              </div>
+            ))}
           </div>
 
           {filteredPosts.length === 0 ? (
