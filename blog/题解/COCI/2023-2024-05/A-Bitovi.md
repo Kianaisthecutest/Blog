@@ -1,7 +1,7 @@
 ---
 title: Bitovi
 date: 2026-08-25
-slug: 题解/COCI/2023-2024-05/A-Bitovi.md
+slug: 题解/COCI/2023-2024-05/A-Bitovi
 tags: [题解, COCI, 进制]
 ---
 

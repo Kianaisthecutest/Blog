@@ -1,7 +1,7 @@
 ---
 title: Kroničan
 date: 2026-08-26
-slug: 题解/COCI/2016-2017-A/C-Kroničan.md
+slug: 题解/COCI/2016-2017-A/C-Kroničan
 tags: [题解, COCI, 状态压缩, 动态规划]
 ---
 

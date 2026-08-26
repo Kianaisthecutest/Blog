@@ -1,7 +1,7 @@
 ---
 title: Piratski kod
 date: 2026-08-25
-slug: 题解/COCI/2023-2024-05/B-Piratski kod.md
+slug: 题解/COCI/2023-2024-05/B-Piratski kod
 tags: [题解, COCI, 动态规划, 组合数学]
 ---
 
