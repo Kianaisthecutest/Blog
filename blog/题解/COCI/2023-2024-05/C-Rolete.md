@@ -1,7 +1,7 @@
 ---
 title: Rolete
 date: 2026-08-25
-slug: blog/题解/COCI/2023-2024-05/C-Rolete.md
+slug: 题解/COCI/2023-2024-05/C-Rolete.md
 tags: [题解, COCI, 贪心]
 ---
 

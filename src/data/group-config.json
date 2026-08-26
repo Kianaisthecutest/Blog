@@ -1,27 +1,32 @@
 {
   "题解": {
+    "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "description": "题解 题解"
+    "count": 8
   },
   "题解/COCI": {
+    "key": "题解/COCI",
     "label": "COCI",
     "icon": "📁",
-    "description": "COCI 题解"
+    "count": 8
   },
   "题解/COCI/2016-2017-A": {
+    "key": "题解/COCI/2016-2017-A",
     "label": "2016-2017-A",
     "icon": "📁",
-    "description": "2016-2017-A 题解"
+    "count": 4
   },
   "题解/COCI/2023-2024-05": {
+    "key": "题解/COCI/2023-2024-05",
     "label": "2023-2024-05",
     "icon": "📁",
-    "description": "2023-2024-05 题解"
+    "count": 4
   },
   "all": {
+    "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "description": "所有文章"
+    "count": 8
   }
 }

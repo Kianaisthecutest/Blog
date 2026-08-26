@@ -1,7 +1,7 @@
 ---
 title: Tavan
 date: 2026-08-26
-slug: blog/题解/COCI/2016-2017-A/A-Tavan.md
+slug: 题解/COCI/2016-2017-A/A-Tavan.md
 tags: [题解, COCI, 进制]
 ---
 

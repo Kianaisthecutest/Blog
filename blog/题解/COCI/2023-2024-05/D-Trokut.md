@@ -1,7 +1,7 @@
 ---
 title: Trokut
 date: 2026-08-25
-slug: blog/题解/COCI/2023-2024-05/D-Trokut.md
+slug: 题解/COCI/2023-2024-05/D-Trokut.md
 tags: [题解, COCI, 博弈论]
 ---
 

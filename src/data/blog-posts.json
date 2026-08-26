@@ -1,0 +1,141 @@
+[
+  {
+    "title": "Tavan",
+    "date": "2026-08-26",
+    "permalink": "/blog-posts/题解/COCI/2016-2017-A/A-Tavan",
+    "tags": [
+      "题解",
+      "COCI",
+      "进制"
+    ],
+    "groupPath": "题解/COCI/2016-2017-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2016-2017-A"
+    ],
+    "filePath": "blog/题解/COCI/2016-2017-A/A-Tavan.md"
+  },
+  {
+    "title": "Nizin",
+    "date": "2026-08-26",
+    "permalink": "/blog-posts/题解/COCI/2016-2017-A/B-Nizin",
+    "tags": [
+      "题解",
+      "COCI",
+      "贪心"
+    ],
+    "groupPath": "题解/COCI/2016-2017-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2016-2017-A"
+    ],
+    "filePath": "blog/题解/COCI/2016-2017-A/B-Nizin.md"
+  },
+  {
+    "title": "Kroničan",
+    "date": "2026-08-26",
+    "permalink": "/blog-posts/题解/COCI/2016-2017-A/C-Kroničan",
+    "tags": [
+      "题解",
+      "COCI",
+      "状态压缩",
+      "动态规划"
+    ],
+    "groupPath": "题解/COCI/2016-2017-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2016-2017-A"
+    ],
+    "filePath": "blog/题解/COCI/2016-2017-A/C-Kroničan.md"
+  },
+  {
+    "title": "Rima",
+    "date": "2026-08-26",
+    "permalink": "/blog-posts/题解/COCI/2016-2017-A/D-Rima",
+    "tags": [
+      "题解",
+      "COCI",
+      "字典树",
+      "动态规划"
+    ],
+    "groupPath": "题解/COCI/2016-2017-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2016-2017-A"
+    ],
+    "filePath": "blog/题解/COCI/2016-2017-A/D-Rima.md"
+  },
+  {
+    "title": "Bitovi",
+    "date": "2026-08-25",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-05/A-Bitovi",
+    "tags": [
+      "题解",
+      "COCI",
+      "进制"
+    ],
+    "groupPath": "题解/COCI/2023-2024-05",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2023-2024-05"
+    ],
+    "filePath": "blog/题解/COCI/2023-2024-05/A-Bitovi.md"
+  },
+  {
+    "title": "Piratski kod",
+    "date": "2026-08-25",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-05/B-Piratski kod",
+    "tags": [
+      "题解",
+      "COCI",
+      "动态规划",
+      "组合数学"
+    ],
+    "groupPath": "题解/COCI/2023-2024-05",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2023-2024-05"
+    ],
+    "filePath": "blog/题解/COCI/2023-2024-05/B-Piratski kod.md"
+  },
+  {
+    "title": "Rolete",
+    "date": "2026-08-25",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-05/C-Rolete",
+    "tags": [
+      "题解",
+      "COCI",
+      "贪心"
+    ],
+    "groupPath": "题解/COCI/2023-2024-05",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2023-2024-05"
+    ],
+    "filePath": "blog/题解/COCI/2023-2024-05/C-Rolete.md"
+  },
+  {
+    "title": "Trokut",
+    "date": "2026-08-25",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-05/D-Trokut",
+    "tags": [
+      "题解",
+      "COCI",
+      "博弈论"
+    ],
+    "groupPath": "题解/COCI/2023-2024-05",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2023-2024-05"
+    ],
+    "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
+  }
+]

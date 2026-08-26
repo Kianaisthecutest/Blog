@@ -51,6 +51,9 @@ const config = {
         docs: false,
         
         blog: {
+          // ✅ 把博客路由改成 /blog-posts，让 /blog 空出来
+          routeBasePath: '/blog-posts',
+          
           blogTitle: '博客',
           blogDescription: '记录学习、思考与实践。',
 
@@ -69,7 +72,6 @@ const config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
 
-          // ===== ✅ 新增：文章列表功能配置 =====
           // 取消分页，显示所有文章
           postsPerPage: 'ALL',
           // 不显示侧边栏

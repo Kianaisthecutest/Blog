@@ -4,7 +4,10 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "generate:blog": "node scripts/generate-group-config.js",
+    "prestart": "npm run generate:blog",
     "start": "docusaurus start",
+    "prebuild": "npm run generate:blog",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

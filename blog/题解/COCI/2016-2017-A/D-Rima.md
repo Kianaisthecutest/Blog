@@ -1,7 +1,7 @@
 ---
 title: Rima
 date: 2026-08-26
-slug: blog/题解/COCI/2016-2017-A/D-Rima.md
+slug: 题解/COCI/2016-2017-A/D-Rima.md
 tags: [题解, COCI, 字典树, 动态规划]
 ---
 
