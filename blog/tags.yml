@@ -29,7 +29,7 @@ COCI:
 
 进制:
   label: '进制'
-  permalink: '/tag/Base'
+  permalink: '/tag/base'
 
 状态压缩:
   label: '状态压缩'
