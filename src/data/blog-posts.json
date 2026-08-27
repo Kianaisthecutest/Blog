@@ -140,6 +140,99 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "2x2 Erasing 2",
+    "date": "2025-09-21",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-424/D-2x2-Erasing-2",
+    "tags": [
+      "题解",
+      "动态规划",
+      "状态压缩"
+    ],
+    "groupPath": "题解/Atcoder/ABC-424",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-424"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-424/D-2x2-Erasing-2.md"
+  },
+  {
+    "title": "Adding Chords",
+    "date": "2025-09-21",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-424/F-Adding-Chords",
+    "tags": [
+      "题解",
+      "随机哈希"
+    ],
+    "groupPath": "题解/Atcoder/ABC-424",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-424"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-424/F-Adding-Chords.md"
+  },
+  {
+    "title": "夕阳打伐",
+    "date": "2025-09-11",
+    "permalink": "/blog-posts/技巧/夕阳打伐",
+    "tags": [
+      "技巧"
+    ],
+    "groupPath": "技巧",
+    "groupSegments": [
+      "技巧"
+    ],
+    "filePath": "blog/技巧/夕阳打伐.md"
+  },
+  {
+    "title": "「进阶 0x12」双端队列",
+    "date": "2025-09-01",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/2025-9-27测验",
+    "tags": [
+      "题解",
+      "基环树",
+      "数学",
+      "倍增"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/2025-9-27测验.md"
+  },
+  {
+    "title": "「进阶 0x12」双端队列",
+    "date": "2025-09-01",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[进阶 0x12]双端队列",
+    "tags": [
+      "题解",
+      "贪心"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[进阶 0x12]双端队列.md"
+  },
+  {
+    "title": "数列之异或",
+    "date": "2025-08-29",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/数列之异或",
+    "tags": [
+      "题解",
+      "数学"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/数列之异或.md"
+  },
+  {
     "title": "动态开点线段树指针写法",
     "date": "2025-08-27",
     "permalink": "/blog-posts/模板/动态开点线段树指针写法",
