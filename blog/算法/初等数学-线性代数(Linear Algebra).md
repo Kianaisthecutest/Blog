@@ -132,7 +132,7 @@ $\begin{bmatrix}f_i\\f_{i-1}\\ \end{bmatrix}=\begin{bmatrix}1&1\\1&0\\ \end{bmat
 
 </h4>
 
-```c++
+```cpp
 matrix base( 2,2 );//构造矩阵加速矩阵
 base.mat[1][1]=base.mat[1][2]=base.mat[2][1]=1;
 matrix right( 2,1 );//构造右边的矩阵
@@ -159,7 +159,7 @@ $A_{i,j}^{2}=\sum_{k=1}^{n}A_{i,k}\times A_{k,j}$
 
 </h4>
 
-```c++
+```cpp
 matrix mp(8, 8);//邻接矩阵
 for( int i=1;i<=8;i++ )
     if( i!=5 )

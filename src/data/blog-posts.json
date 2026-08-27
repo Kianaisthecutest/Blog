@@ -140,6 +140,52 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "图论进阶III(Tarjan主场)",
+    "date": "2025-08-20",
+    "permalink": "/blog-posts/算法/图论进阶III(Tarjan主场)",
+    "tags": [
+      "算法",
+      "Tarjan",
+      "图论",
+      "强联通分量",
+      "双联通分量"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/图论进阶III(Tarjan主场).md"
+  },
+  {
+    "title": "矩阵matrix",
+    "date": "2025-08-19",
+    "permalink": "/blog-posts/模板/矩阵matrix",
+    "tags": [
+      "模板",
+      "矩阵"
+    ],
+    "groupPath": "模板",
+    "groupSegments": [
+      "模板"
+    ],
+    "filePath": "blog/模板/矩阵matrix.md"
+  },
+  {
+    "title": "「模板」快速幂2",
+    "date": "2025-08-19",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[模板]快速幂2",
+    "tags": [
+      "题解",
+      "数学"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[模板]快速幂2.md"
+  },
+  {
     "title": "初等数学-线性代数(Linear Algebra)",
     "date": "2025-08-18",
     "permalink": "/blog-posts/算法/初等数学-线性代数(Linear Algebra)",
