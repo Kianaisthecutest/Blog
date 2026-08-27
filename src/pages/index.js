@@ -71,6 +71,27 @@ function HomepageHeader() {
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+  const poemRef = useRef(null);
+
+  useEffect(() => {
+    const el = poemRef.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.remove(styles.hidden);
+            el.classList.add(styles.visible);
+            io.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <Layout title={`${siteConfig.title}`} description="以琪亚娜·卡斯兰娜之名，为世界上所有的美好而战">
       <HomepageHeader />
@@ -115,6 +136,31 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className={styles.poemSection}>
+        <div className="container">
+          <div className={styles.poemWrap}>
+            <span className={`${styles.poemIcon} ${styles.leftIcon}`} aria-hidden>
+              <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 9 L10 7 L14 2 L16 7 L24 9 L16 11 L14 16 L10 11 L2 9 Z" fill="#fff" opacity="0.95" />
+              </svg>
+            </span>
+
+            <p ref={poemRef} className={`${styles.poemText} ${styles.hidden}`}>
+              当流星划过天际，人们纷纷许下愿望，只因它的光芒如此耀眼。可那颗星星也曾迷失方向，
+              在夜色中踽踽独行。可它依旧在飞，努力飞过这片冰冷孤寂的长夜。
+            </p>
+
+            <span className={`${styles.poemIcon} ${styles.rightIcon}`} aria-hidden>
+              <svg width="36" height="18" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M34 9 L26 7 L22 2 L20 7 L12 9 L20 11 L22 16 L26 11 L34 9 Z" fill="#fff" opacity="0.95" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      
     </Layout>
   );
 }
