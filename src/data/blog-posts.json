@@ -139,11 +139,44 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "XOR Shortest Walk",
+    "date": "2025-07-02",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-410/D-XOR-Shortest-Walk",
+    "tags": [
+      "题解",
+      "ABC",
+      "搜索"
+    ],
+    "groupPath": "题解/Atcoder/ABC-410",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-410"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-410/D-XOR-Shortest-Walk.md"
+  },
+  {
+    "title": "Battles in a Row",
+    "date": "2025-07-02",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-410/E-Battles-in-a-Row",
+    "tags": [
+      "题解",
+      "ABC",
+      "动态规划"
+    ],
+    "groupPath": "题解/Atcoder/ABC-410",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-410"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-410/E-Battles-in-a-Row.md"
+  },
+  {
     "title": "读入读写优化",
     "date": "2025-06-29",
     "permalink": "/blog-posts/技巧与模板/读入读写优化",
     "tags": [
-      "算法",
       "技巧"
     ],
     "groupPath": "技巧与模板",
