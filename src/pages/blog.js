@@ -114,7 +114,7 @@ export default function BlogList() {
           <div
             className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''} ${canToggle && isExpanded ? styles.folderExpanded : ''}`}
             onClick={() => setSelectedGroup(node.key)}
-            style={{ paddingLeft: `${0.8 + depth * 1.1}rem` }}
+            style={{ paddingLeft: `${0.18 + depth * 0.24}rem` }}
           >
             <span className={`${styles.groupIcon} ${canToggle && isExpanded ? styles.groupIconExpanded : ''}`}>
               {node.icon === 'document' ? <DocumentIcon /> : <FolderIcon expanded={isExpanded} />}
