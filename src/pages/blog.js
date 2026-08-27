@@ -37,34 +37,50 @@ export default function BlogList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedGroups, setExpandedGroups] = useState(() => new Set());
 
+  const getGroupPathForPost = (post) => post.groupPath || getFolderPathFromPermalink(post.permalink || '');
+
   const autoGroupList = useMemo(() => {
     const list = [];
     const added = new Set();
 
     POSTS.forEach((post) => {
-      const folderPath = post.groupPath || getFolderPathFromPermalink(post.permalink || '');
-      if (!folderPath) return;
+      const folderPath = getGroupPathForPost(post);
 
-      const segments = folderPath.split('/').filter(Boolean);
-      let currentPath = '';
+      if (folderPath) {
+        const segments = folderPath.split('/').filter(Boolean);
+        let currentPath = '';
 
-      segments.forEach((segment, index) => {
-        currentPath = currentPath ? `${currentPath}/${segment}` : segment;
-        if (added.has(currentPath)) return;
+        segments.forEach((segment, index) => {
+          currentPath = currentPath ? `${currentPath}/${segment}` : segment;
+          if (added.has(currentPath)) return;
 
-        added.add(currentPath);
-        const count = POSTS.filter((p) => {
-          const groupPath = p.groupPath || getFolderPathFromPermalink(p.permalink || '');
-          return groupPath === currentPath || groupPath.startsWith(`${currentPath}/`);
-        }).length;
+          added.add(currentPath);
+          const count = POSTS.filter((p) => {
+            const groupPath = getGroupPathForPost(p);
+            return groupPath === currentPath || groupPath.startsWith(`${currentPath}/`);
+          }).length;
 
-        list.push({
-          key: currentPath,
-          label: segment,
-          icon: 'folder',
-          count,
-          level: index,
+          list.push({
+            key: currentPath,
+            label: segment,
+            icon: 'folder',
+            count,
+            level: index,
+            children: [],
+          });
         });
+      }
+
+      const postKey = post.permalink || `${post.title}-${Math.random()}`;
+      const parentPath = folderPath || '';
+      list.push({
+        key: postKey,
+        label: post.title || '未命名',
+        icon: 'document',
+        count: 1,
+        level: folderPath ? folderPath.split('/').filter(Boolean).length : 0,
+        parentPath,
+        children: [],
       });
     });
 
@@ -76,10 +92,18 @@ export default function BlogList() {
     const rootNodes = [];
 
     autoGroupList.forEach((group) => {
-      nodes.set(group.key, { ...group, children: [] });
+      nodes.set(group.key, { ...group, children: Array.isArray(group.children) ? group.children : [] });
     });
 
     autoGroupList.forEach((group) => {
+      if (group.parentPath) {
+        const parentNode = nodes.get(group.parentPath);
+        if (parentNode) {
+          parentNode.children.push(nodes.get(group.key));
+          return;
+        }
+      }
+
       const parentPath = group.key.includes('/') ? group.key.split('/').slice(0, -1).join('/') : '';
       if (parentPath && nodes.has(parentPath)) {
         nodes.get(parentPath).children.push(nodes.get(group.key));
@@ -107,35 +131,43 @@ export default function BlogList() {
     nodes.map((node) => {
       const hasChildren = Array.isArray(node.children) && node.children.length > 0;
       const isExpanded = expandedGroups.has(node.key);
-      const canToggle = hasChildren;
+      const canToggle = true;
+      const toggleSymbol = hasChildren ? (isExpanded ? '▾' : '▸') : '•';
+
+      const handleSelect = () => {
+        setSelectedGroup(node.key);
+        if (node.icon !== 'document' || hasChildren) {
+          setExpandedGroups((prev) => new Set(prev).add(node.key));
+        }
+      };
 
       return (
         <li key={node.key} className={styles.treeNode}>
           <div
-            className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''} ${canToggle && isExpanded ? styles.folderExpanded : ''}`}
-            onClick={() => setSelectedGroup(node.key)}
+            className={`${styles.groupItem} ${selectedGroup === node.key ? styles.active : ''} ${hasChildren && isExpanded ? styles.folderExpanded : ''}`}
+            onClick={handleSelect}
             style={{ paddingLeft: `${0.18 + depth * 0.24}rem` }}
           >
-            <span className={`${styles.groupIcon} ${canToggle && isExpanded ? styles.groupIconExpanded : ''}`}>
+            <span className={`${styles.groupIcon} ${hasChildren && isExpanded ? styles.groupIconExpanded : ''}`}>
               {node.icon === 'document' ? <DocumentIcon /> : <FolderIcon expanded={isExpanded} />}
             </span>
             <span className={styles.groupLabel}>{node.label}</span>
             <span className={styles.groupCount}>{node.count}</span>
-            {canToggle && (
-              <button
-                type="button"
-                className={styles.toggleButton}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  toggleGroup(node.key);
-                }}
-                aria-label={isExpanded ? `折叠${node.label}` : `展开${node.label}`}
-              >
-                {isExpanded ? '▾' : '▸'}
-              </button>
-            )}
+            <button
+              type="button"
+              className={styles.toggleButton}
+              onClick={(event) => {
+                if (!hasChildren) return;
+                event.stopPropagation();
+                toggleGroup(node.key);
+              }}
+              aria-label={hasChildren ? (isExpanded ? `折叠${node.label}` : `展开${node.label}`) : `${node.label}`}
+              disabled={!hasChildren}
+            >
+              {toggleSymbol}
+            </button>
           </div>
-          {canToggle && (
+          {hasChildren && (
             <ul className={`${styles.treeChildren} ${isExpanded ? styles.expanded : ''}`}>
               {renderTree(node.children, depth + 1)}
             </ul>
@@ -158,8 +190,9 @@ export default function BlogList() {
 
     if (selectedGroup !== 'all') {
       result = result.filter((post) => {
-        const folderPath = post.groupPath || getFolderPathFromPermalink(post.permalink || '');
-        return folderPath === selectedGroup || folderPath.startsWith(`${selectedGroup}/`);
+        const permalink = post.permalink || '';
+        const folderPath = getGroupPathForPost(post);
+        return permalink === selectedGroup || folderPath === selectedGroup || folderPath.startsWith(`${selectedGroup}/`);
       });
     }
 

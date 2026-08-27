@@ -3,7 +3,7 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 18
+    "count": 22
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -23,15 +23,15 @@
     "icon": "📁",
     "count": 4
   },
-  "算法": {
-    "key": "算法",
-    "label": "算法",
+  "题解/洛谷-or-Nsoj": {
+    "key": "题解/洛谷-or-Nsoj",
+    "label": "洛谷-or-Nsoj",
     "icon": "📁",
-    "count": 7
+    "count": 6
   },
-  "模板": {
-    "key": "模板",
-    "label": "模板",
+  "题解/洛谷-or-Nsoj/瞿葩的数字游戏": {
+    "key": "题解/洛谷-or-Nsoj/瞿葩的数字游戏",
+    "label": "瞿葩的数字游戏",
     "icon": "📁",
     "count": 1
   },
@@ -39,13 +39,25 @@
     "key": "技巧",
     "label": "技巧",
     "icon": "📁",
-    "count": 2
+    "count": 3
   },
-  "题解/洛谷&Nsoj": {
-    "key": "题解/洛谷&Nsoj",
-    "label": "洛谷&Nsoj",
+  "算法": {
+    "key": "算法",
+    "label": "算法",
     "icon": "📁",
-    "count": 2
+    "count": 10
+  },
+  "算法/DP": {
+    "key": "算法/DP",
+    "label": "DP",
+    "icon": "📁",
+    "count": 4
+  },
+  "模板": {
+    "key": "模板",
+    "label": "模板",
+    "icon": "📁",
+    "count": 1
   },
   "题解/Atcoder": {
     "key": "题解/Atcoder",
@@ -99,6 +111,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 28
+    "count": 36
   }
 }

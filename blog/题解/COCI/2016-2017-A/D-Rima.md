@@ -2,7 +2,7 @@
 title: Rima
 date: 2026-08-26
 slug: 题解/COCI/2016-2017-A/D-Rima
-tags: [题解, COCI, 字典树, 动态规划]
+tags: [题解, COCI, 字典树, 动态规划, 树形DP]
 ---
 
 {/*truncate*/}

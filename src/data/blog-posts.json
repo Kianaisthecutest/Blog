@@ -59,7 +59,8 @@
       "题解",
       "COCI",
       "字典树",
-      "动态规划"
+      "动态规划",
+      "树形DP"
     ],
     "groupPath": "题解/COCI/2016-2017-A",
     "groupSegments": [
@@ -139,21 +140,147 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
-    "title": "背包DP",
-    "date": "2025-08-09",
-    "permalink": "/blog-posts/算法/背包DP",
+    "title": "「Ceoi 2011」ballons",
+    "date": "2025-08-16",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[Ceoi-2011]ballons",
+    "tags": [
+      "算法",
+      "单调栈"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[Ceoi-2011]ballons.md"
+  },
+  {
+    "title": "「USACO2.2」Party Lamps 派对灯",
+    "date": "2025-08-16",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[USACO2.2]Party -Lamps-派对灯",
+    "tags": [
+      "算法",
+      "进制",
+      "状态压缩"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[USACO2.2]Party -Lamps-派对灯.md"
+  },
+  {
+    "title": "数字王国的门神",
+    "date": "2025-08-16",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/瞿葩的数字游戏/数字王国的门神",
+    "tags": [
+      "题解",
+      "数学"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/瞿葩的数字游戏",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "瞿葩的数字游戏"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/瞿葩的数字游戏/数字王国的门神.md"
+  },
+  {
+    "title": "cout与保留小数",
+    "date": "2025-08-14",
+    "permalink": "/blog-posts/技巧/cout与保留小数",
+    "tags": [
+      "技巧"
+    ],
+    "groupPath": "技巧",
+    "groupSegments": [
+      "技巧"
+    ],
+    "filePath": "blog/技巧/cout与保留小数.md"
+  },
+  {
+    "title": "Hash Killer I",
+    "date": "2025-08-14",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/Hash-Killer-I",
+    "tags": [
+      "题解",
+      "构造"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/Hash-Killer-I.md"
+  },
+  {
+    "title": "换根DP",
+    "date": "2025-08-12",
+    "permalink": "/blog-posts/算法/DP/换根DP",
     "tags": [
       "算法",
       "动态规划",
+      "树形DP"
+    ],
+    "groupPath": "算法/DP",
+    "groupSegments": [
+      "算法",
+      "DP"
+    ],
+    "filePath": "blog/算法/DP/换根DP.md"
+  },
+  {
+    "title": "状压DP",
+    "date": "2025-08-12",
+    "permalink": "/blog-posts/算法/DP/状压DP",
+    "tags": [
+      "算法",
+      "动态规划",
+      "状态压缩",
+      "轮廓线DP"
+    ],
+    "groupPath": "算法/DP",
+    "groupSegments": [
+      "算法",
+      "DP"
+    ],
+    "filePath": "blog/算法/DP/状压DP.md"
+  },
+  {
+    "title": "区间DP",
+    "date": "2025-08-09",
+    "permalink": "/blog-posts/算法/DP/区间DP",
+    "tags": [
+      "算法",
+      "动态规划",
+      "区间DP"
+    ],
+    "groupPath": "算法/DP",
+    "groupSegments": [
+      "算法",
+      "DP"
+    ],
+    "filePath": "blog/算法/DP/区间DP.md"
+  },
+  {
+    "title": "背包DP",
+    "date": "2025-08-09",
+    "permalink": "/blog-posts/算法/DP/背包DP",
+    "tags": [
+      "算法",
+      "动态规划",
+      "背包DP",
       "进制",
       "单调队列",
       "启发式合并"
     ],
-    "groupPath": "算法",
+    "groupPath": "算法/DP",
     "groupSegments": [
-      "算法"
+      "算法",
+      "DP"
     ],
-    "filePath": "blog/算法/背包DP.md"
+    "filePath": "blog/算法/DP/背包DP.md"
   },
   {
     "title": "组合数学",
@@ -229,34 +356,34 @@
   {
     "title": "巡逻",
     "date": "2025-07-24",
-    "permalink": "/blog-posts/题解/洛谷&Nsoj/巡逻",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/巡逻",
     "tags": [
       "题解",
       "树的直径",
       "动态规划"
     ],
-    "groupPath": "题解/洛谷&Nsoj",
+    "groupPath": "题解/洛谷-or-Nsoj",
     "groupSegments": [
       "题解",
-      "洛谷&Nsoj"
+      "洛谷-or-Nsoj"
     ],
-    "filePath": "blog/题解/洛谷&Nsoj/巡逻.md"
+    "filePath": "blog/题解/洛谷-or-Nsoj/巡逻.md"
   },
   {
     "title": "方差",
     "date": "2025-07-16",
-    "permalink": "/blog-posts/题解/洛谷&Nsoj/方差",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/方差",
     "tags": [
       "题解",
       "线段树",
       "数学"
     ],
-    "groupPath": "题解/洛谷&Nsoj",
+    "groupPath": "题解/洛谷-or-Nsoj",
     "groupSegments": [
       "题解",
-      "洛谷&Nsoj"
+      "洛谷-or-Nsoj"
     ],
-    "filePath": "blog/题解/洛谷&Nsoj/方差.md"
+    "filePath": "blog/题解/洛谷-or-Nsoj/方差.md"
   },
   {
     "title": "Count A%B=C",
