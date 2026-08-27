@@ -7,8 +7,8 @@ const DEFAULT_PLAYLIST = [
     id: '1859652717',
     type: 'netease',
     title: 'Moon Halo',
-    artist: 'Unknown',
-    cover: '/img/kiana-start.png',
+    artist: '茶理理 / TetraCalyx / Hanser / HOYO-MiX',
+    cover: '/img/moon-halo.jpg',
   },
 ];
 
@@ -73,21 +73,57 @@ export default function GlobalMusicPlayer({ playlist = DEFAULT_PLAYLIST }) {
 
   // fetch NetEase metadata (via public API). Called on track change.
   const fetchNeteaseMeta = async (id) => {
+    const CACHE_TTL = 1000 * 60 * 60 * 24; // 24 hours
+    const storageKey = `netease_meta_${id}`;
     try {
-      const resp = await fetch(`https://api.imjad.cn/cloudmusic/?type=detail&id=${id}`);
+      // try local cache first (client-side only)
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const raw = window.localStorage.getItem(storageKey);
+        if (raw) {
+          try {
+            const parsed = JSON.parse(raw);
+            if (parsed && parsed.ts && Date.now() - parsed.ts < CACHE_TTL && parsed.data) {
+              setMeta(parsed.data);
+              return;
+            }
+          } catch (e) {
+            // ignore parse errors and continue to fetch
+          }
+        }
+      }
+
+      // choose upstream: optional in-page proxy (window.NETEASE_PROXY_URL) or public API
+      let url;
+      if (typeof window !== 'undefined' && window.NETEASE_PROXY_URL) {
+        const base = window.NETEASE_PROXY_URL.replace(/\/$/, '');
+        url = `${base}/api/netease?id=${encodeURIComponent(id)}`;
+      } else {
+        url = `https://api.imjad.cn/cloudmusic/?type=detail&id=${encodeURIComponent(id)}`;
+      }
+
+      const resp = await fetch(url);
       if (!resp.ok) throw new Error(`status ${resp.status}`);
       const data = await resp.json();
       const song = data && data.songs && data.songs[0];
-      if (song) {
-        const cover = (song.al && song.al.picUrl) || (track && track.cover);
-        const artist = (song.ar && song.ar.map((a) => a.name).join(', ')) || (track && track.artist);
-        const title = song.name || (track && track.title);
-        setMeta({ title, artist, cover });
+      // support proxy shape (proxy returns upstream JSON) or direct upstream
+      const resultSong = song || (data && data.songs && data.songs[0]);
+      if (resultSong) {
+        const cover = (resultSong.al && resultSong.al.picUrl) || (track && track.cover);
+        const artist = (resultSong.ar && resultSong.ar.map((a) => a.name).join(', ')) || (track && track.artist);
+        const title = resultSong.name || (track && track.title);
+        const newMeta = { title, artist, cover };
+        setMeta(newMeta);
+        // store to local cache
+        try {
+          if (typeof window !== 'undefined' && window.localStorage) {
+            window.localStorage.setItem(storageKey, JSON.stringify({ ts: Date.now(), data: newMeta }));
+          }
+        } catch (e) {
+          // ignore storage errors
+        }
       }
     } catch (e) {
-      // network/CORS may fail in some environments — fail silently but log
-      // developer can inspect console for details
-      // Keep existing meta as fallback
+      // network/CORS may fail in some environments — fail silently but keep fallback
       // console.warn('Failed to fetch NetEase metadata', e);
     }
   };

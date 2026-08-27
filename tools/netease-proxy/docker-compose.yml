@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  netease-proxy:
+    build: .
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
