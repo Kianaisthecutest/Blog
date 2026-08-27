@@ -137,5 +137,35 @@
       "2023-2024-05"
     ],
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
+  },
+  {
+    "title": "KMP",
+    "date": "2024-12-10",
+    "permalink": "/blog-posts/算法/KMP",
+    "tags": [
+      "算法",
+      "字符串",
+      "KMP"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/KMP.md"
+  },
+  {
+    "title": "字符串Hash",
+    "date": "2024-12-10",
+    "permalink": "/blog-posts/算法/字符串Hash",
+    "tags": [
+      "算法",
+      "字符串",
+      "哈希"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/字符串Hash.md"
   }
 ]
