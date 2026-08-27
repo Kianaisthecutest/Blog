@@ -2,7 +2,7 @@
 title: 「Ceoi 2011」ballons
 date: 2025-08-16
 slug: 题解/洛谷-or-Nsoj/[Ceoi-2011]ballons
-tags: [算法, 单调栈]
+tags: [题解, 单调栈]
 ---
 
 {/*truncate*/}

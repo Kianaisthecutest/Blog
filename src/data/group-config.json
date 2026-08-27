@@ -3,7 +3,7 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 22
+    "count": 26
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -23,29 +23,29 @@
     "icon": "📁",
     "count": 4
   },
+  "算法": {
+    "key": "算法",
+    "label": "算法",
+    "icon": "📁",
+    "count": 11
+  },
   "题解/洛谷-or-Nsoj": {
     "key": "题解/洛谷-or-Nsoj",
     "label": "洛谷-or-Nsoj",
     "icon": "📁",
-    "count": 6
+    "count": 10
   },
   "题解/洛谷-or-Nsoj/瞿葩的数字游戏": {
     "key": "题解/洛谷-or-Nsoj/瞿葩的数字游戏",
     "label": "瞿葩的数字游戏",
     "icon": "📁",
-    "count": 1
+    "count": 2
   },
   "技巧": {
     "key": "技巧",
     "label": "技巧",
     "icon": "📁",
     "count": 3
-  },
-  "算法": {
-    "key": "算法",
-    "label": "算法",
-    "icon": "📁",
-    "count": 10
   },
   "算法/DP": {
     "key": "算法/DP",
@@ -111,6 +111,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 36
+    "count": 41
   }
 }

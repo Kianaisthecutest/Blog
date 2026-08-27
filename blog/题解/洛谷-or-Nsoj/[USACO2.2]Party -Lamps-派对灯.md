@@ -2,7 +2,7 @@
 title: 「USACO2.2」Party Lamps 派对灯
 date: 2025-08-16
 slug: 题解/洛谷-or-Nsoj/[USACO2.2]Party -Lamps-派对灯
-tags: [算法, 进制, 状态压缩]
+tags: [题解, 进制, 状态压缩]
 ---
 
 {/*truncate*/}
