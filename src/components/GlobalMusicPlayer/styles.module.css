@@ -1,0 +1,37 @@
+.playerWrap { position: fixed; right: 20px; bottom: 28px; z-index: 2147483000; pointer-events: auto; }
+
+.fab { 
+  width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer; 
+  background: linear-gradient(135deg, #ffb86b, #f472b6);
+  box-shadow: 0 8px 28px rgba(244,114,182,0.18), 0 2px 6px rgba(0,0,0,0.35);
+  display: inline-flex; align-items: center; justify-content: center; 
+  transition: transform 0.24s cubic-bezier(.2,.9,.2,1), box-shadow 0.18s ease; 
+}
+.fab:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 12px 36px rgba(244,114,182,0.22); }
+.fabIcon { width: 18px; height: 18px; background: radial-gradient(circle, #fff 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%); border-radius: 50%; box-shadow: 0 0 10px rgba(255,215,64,0.28); }
+.fabOpen { transform: rotate(30deg); }
+
+.panel { position: absolute; right: 0; bottom: 70px; width: 320px; max-width: 85vw; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius: 14px; padding: 12px; box-shadow: 0 18px 48px rgba(11, 16, 28, 0.6); opacity: 0; transform: translateY(10px) scale(0.98); transition: opacity 0.28s ease, transform 0.28s ease; pointer-events: none; }
+.panelOpen { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+.iframeWrap { width: 100%; overflow: hidden; border-radius: 10px; margin-bottom: 8px; }
+.iframeWrap iframe { border: none; display: block; }
+
+/* hidden iframe variant: keep it loaded but offscreen/invisible */
+.iframeHidden { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+.header { display:flex; align-items:center; justify-content:space-between; gap: 8px; }
+.trackInfo { display:flex; align-items:center; gap: 10px; }
+.cover { width:54px; height:54px; border-radius:8px; object-fit:cover; box-shadow: 0 6px 20px rgba(125,211,252,0.06); }
+.meta { display:flex; flex-direction:column; gap:2px; }
+.title { font-weight:700; color:#fff; font-size:0.98rem; }
+.artist { color: rgba(255,255,255,0.68); font-size:0.82rem; }
+
+.controls { display:flex; gap:8px; align-items:center; }
+.ctrl { background: rgba(255,255,255,0.03); border: none; padding:6px 10px; border-radius:8px; color:#fff; cursor:pointer; }
+
+.progressRow { display:flex; align-items:center; gap:12px; margin-top:10px; }
+.volume { width: 140px; }
+.closeBtn { background: transparent; border: 1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:8px; color:#fff; cursor:pointer; }
+
+@media (max-width: 640px) { .panel { right: 10px; bottom: 72px; left: 10px; width: auto; } .playerWrap { right: 12px; bottom: 18px; } }
