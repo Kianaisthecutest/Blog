@@ -140,6 +140,87 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "动态开点线段树指针写法",
+    "date": "2025-08-27",
+    "permalink": "/blog-posts/模板/动态开点线段树指针写法",
+    "tags": [
+      "模板",
+      "线段树"
+    ],
+    "groupPath": "模板",
+    "groupSegments": [
+      "模板"
+    ],
+    "filePath": "blog/模板/动态开点线段树指针写法.md"
+  },
+  {
+    "title": "线性筛怎么写来着",
+    "date": "2025-08-25",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T1-线性筛怎么写来着",
+    "tags": [
+      "题解",
+      "数学",
+      "线性筛法"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "进阶算法计划2025-8-25测验"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T1-线性筛怎么写来着.md"
+  },
+  {
+    "title": "矩阵乘法没有结合律",
+    "date": "2025-08-25",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T2-矩阵乘法没有结合律",
+    "tags": [
+      "题解",
+      "线段树",
+      "矩阵"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "进阶算法计划2025-8-25测验"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T2-矩阵乘法没有结合律.md"
+  },
+  {
+    "title": "可持久化动态广义仙人掌",
+    "date": "2025-08-25",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T3-可持久化动态广义仙人掌",
+    "tags": [
+      "题解",
+      "Tarjan",
+      "双联通分量",
+      "树的直径"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "进阶算法计划2025-8-25测验"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T3-可持久化动态广义仙人掌.md"
+  },
+  {
+    "title": "选购",
+    "date": "2025-08-25",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T4-选购",
+    "tags": [
+      "题解"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "进阶算法计划2025-8-25测验"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/进阶算法计划2025-8-25测验/T4-选购.md"
+  },
+  {
     "title": "图论进阶III(Tarjan主场)",
     "date": "2025-08-20",
     "permalink": "/blog-posts/算法/图论进阶III(Tarjan主场)",

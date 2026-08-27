@@ -73,7 +73,7 @@ tags: [算法, Tarjan, 图论, 强联通分量, 双联通分量]
 
 </h4>
 
-```c++
+```cpp
 void dfs( int p )//求强连通分量的代码，DFS遍历树边
 {
 	dfn[p]=low[p]=++idx;//打上时间戳(一个点能到达的最小时间戳最大就是本身)
@@ -142,7 +142,7 @@ $则它也是一个割点
 
 </h4>
 
-```c++
+```cpp
 void dfs( int p,int fa )//求割点的代码，DFS遍历树边
 {
 	vis[p]=true;//已经访问过该点，标记
@@ -163,7 +163,7 @@ void dfs( int p,int fa )//求割点的代码，DFS遍历树边
 }
 ```
 
-```c++
+```cpp
 void dfs( int p,int fa )//求桥的代码，DFS遍历所有树边
 {
 	bool flag=false;//标记重边
@@ -227,7 +227,7 @@ void dfs( int p,int fa )//求桥的代码，DFS遍历所有树边
 
 </h4>
 
-```c++
+```cpp
 void dfs( int p,int ine )//求边双的代码，DFS遍历所有树边
 {
 	dfn[p]=low[p]=++idx;//打上时间戳(一个点能到达的最小时间戳最大就是本身)
@@ -264,7 +264,7 @@ for( int i=1, u, v;i<=m;i++ )//存储边时额外注意
 }
 ```
 
-```c++
+```cpp
 void dfs( int p,int fa )//求点双的代码，DFS遍历所有树边
 {
 	dfn[p]=low[p]=++idx;//打上时间戳(一个点能到达的最小时间戳最大就是本身)
