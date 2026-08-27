@@ -142,18 +142,30 @@ export default function GlobalMusicPlayer({ playlist = DEFAULT_PLAYLIST }) {
     <div className={styles.playerWrap} aria-hidden={!visible}>
       {/* If track specifies a NetEase ID, render the NetEase embed iframe */}
       {track && track.type === 'netease' ? (
-        // keep the netease iframe loaded but hidden so our own UI remains primary
-        <div className={`${styles.iframeWrap} ${styles.iframeHidden}`}>
-          <iframe
-            title={`netease-${track.id}`}
-            src={`https://music.163.com/outchain/player?type=2&id=${track.id}&auto=${playing ? 1 : 0}&height=66`}
-            width="1"
-            height="1"
-            frameBorder="0"
-            allow="encrypted-media"
-            allowTransparency="true"
+        // If a proxy is configured (window.NETEASE_PROXY_URL), use a proxied audio stream
+        // so we can control volume via the <audio> element. Otherwise fall back to hidden iframe.
+        (typeof window !== 'undefined' && window.NETEASE_PROXY_URL) ? (
+          <audio
+            ref={audioRef}
+            src={`${window.NETEASE_PROXY_URL.replace(/\/$/, '')}/stream?id=${encodeURIComponent(track.id)}`}
+            onEnded={handleEnded}
+            preload="metadata"
+            controls={false}
           />
-        </div>
+        ) : (
+          // keep the netease iframe loaded but hidden so our own UI remains primary
+          <div className={`${styles.iframeWrap} ${styles.iframeHidden}`}>
+            <iframe
+              title={`netease-${track.id}`}
+              src={`https://music.163.com/outchain/player?type=2&id=${track.id}&auto=${playing ? 1 : 0}&height=66`}
+              width="1"
+              height="1"
+              frameBorder="0"
+              allow="encrypted-media"
+              allowTransparency="true"
+            />
+          </div>
+        )
       ) : (
         <audio
           ref={audioRef}
@@ -188,17 +200,12 @@ export default function GlobalMusicPlayer({ playlist = DEFAULT_PLAYLIST }) {
         </div>
 
         <div className={styles.progressRow}>
-          <input
-            type="range"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={(e) => setVolume(Number(e.target.value))}
-            className={styles.volume}
-            aria-label="Volume"
-          />
           <div className={styles.extraActions}>
+            {track && track.type === 'netease' ? (
+              <div className={styles.note}>
+                网易云歌曲通过内嵌播放器播放，浏览器无法通过外部脚本稳定控制其音量。可使用系统或浏览器音量，或部署代理以支持可控音频流。
+              </div>
+            ) : null}
             <button onClick={() => { setPlaying(false); setOpen(false); }} className={styles.closeBtn}>Close</button>
           </div>
         </div>

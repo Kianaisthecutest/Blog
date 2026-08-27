@@ -31,7 +31,7 @@
 .ctrl { background: rgba(255,255,255,0.03); border: none; padding:6px 10px; border-radius:8px; color:#fff; cursor:pointer; }
 
 .progressRow { display:flex; align-items:center; gap:12px; margin-top:10px; }
-.volume { width: 140px; }
+.note { color: rgba(255,255,255,0.64); font-size: 0.72rem; line-height:1.1; max-width: 220px; }
 .closeBtn { background: transparent; border: 1px solid rgba(255,255,255,0.06); padding:6px 8px; border-radius:8px; color:#fff; cursor:pointer; }
 
 @media (max-width: 640px) { .panel { right: 10px; bottom: 72px; left: 10px; width: auto; } .playerWrap { right: 12px; bottom: 18px; } }

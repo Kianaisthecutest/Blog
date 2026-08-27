@@ -30,6 +30,46 @@ Notes
 - This proxy simply forwards the upstream response and caches it in memory. For production, consider persistent caching (Redis), rate limiting, and proper error handling.
 - Make sure the host running this proxy can access the public internet.
 
+Redis caching & rate limiting
+-----------------------------
+
+This proxy supports optional Redis-based caching and includes a basic rate limiter.
+
+- To enable Redis caching, set `REDIS_URL` before starting the proxy, for example:
+
+```bash
+export REDIS_URL=redis://:password@127.0.0.1:6379/0
+node index.js
+```
+
+The proxy will then cache `/api/netease?id=...` responses in Redis for 1 hour.
+
+- The proxy applies a simple rate limit to `/api/netease` and `/stream` endpoints (default: 120 requests/min per IP). Adjust or replace the limiter in `index.js` as needed for production.
+
+CI / Container Registry (GitHub Actions)
+-------------------------------------
+
+This repository includes a GitHub Actions workflow that automatically builds and publishes the `netease-proxy` Docker image when you push to the `main` branch.
+
+- The workflow file: `.github/workflows/netease-proxy-image.yml`.
+- By default it pushes to GitHub Container Registry (GHCR) under `ghcr.io/<your-github-org-or-user>/netease-proxy:latest`.
+- Optionally it can also push to Docker Hub if you add the following repository secrets in GitHub: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`.
+
+How to use:
+
+1. Merge your branch into `main` (or push directly to `main`) to trigger the workflow.
+2. The action will produce images in GHCR; you can pull with:
+
+```bash
+docker pull ghcr.io/<your-github-username>/netease-proxy:latest
+```
+
+3. Optional: to push to Docker Hub, create repo secrets `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` and the workflow will push `DOCKERHUB_USERNAME/netease-proxy:latest`.
+
+Notes:
+- Ensure GitHub Packages/CR settings in your account allow package publishing; the default `GITHUB_TOKEN` is used for authentication.
+- If you prefer only Docker Hub, you can edit the workflow to skip GHCR steps and push directly to Docker Hub instead.
+
 Deployment: nginx + Certbot (自动 HTTPS)
 --------------------------------------
 

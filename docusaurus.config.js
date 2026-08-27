@@ -178,6 +178,12 @@ const config = {
       type: 'text/css',
     },
   ],
+  scripts: [
+    {
+      src: '/proxy-config.js',
+      defer: true,
+    },
+  ],
 };
 
 export default config;
