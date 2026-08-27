@@ -3,7 +3,7 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 15
+    "count": 18
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -23,11 +23,35 @@
     "icon": "📁",
     "count": 4
   },
+  "模板": {
+    "key": "模板",
+    "label": "模板",
+    "icon": "📁",
+    "count": 1
+  },
+  "技巧": {
+    "key": "技巧",
+    "label": "技巧",
+    "icon": "📁",
+    "count": 2
+  },
+  "题解/洛谷&Nsoj": {
+    "key": "题解/洛谷&Nsoj",
+    "label": "洛谷&Nsoj",
+    "icon": "📁",
+    "count": 2
+  },
   "题解/Atcoder": {
     "key": "题解/Atcoder",
     "label": "Atcoder",
     "icon": "📁",
-    "count": 7
+    "count": 8
+  },
+  "题解/Atcoder/ABC-414": {
+    "key": "题解/Atcoder/ABC-414",
+    "label": "ABC-414",
+    "icon": "📁",
+    "count": 1
   },
   "题解/Atcoder/ABC-407": {
     "key": "题解/Atcoder/ABC-407",
@@ -65,12 +89,6 @@
     "icon": "📁",
     "count": 2
   },
-  "技巧与模板": {
-    "key": "技巧与模板",
-    "label": "技巧与模板",
-    "icon": "📁",
-    "count": 1
-  },
   "算法": {
     "key": "算法",
     "label": "算法",
@@ -81,6 +99,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 19
+    "count": 24
   }
 }

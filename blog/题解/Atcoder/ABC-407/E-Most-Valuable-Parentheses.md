@@ -75,4 +75,4 @@ int main() {
 
 </details>
 
-**时间复杂度**: $O(n)$
+**时间复杂度**: $O(nlogn)$

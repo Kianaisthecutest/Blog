@@ -139,6 +139,82 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "高精度运算",
+    "date": "2025-08-07",
+    "permalink": "/blog-posts/模板/高精度运算",
+    "tags": [
+      "模板",
+      "高精度"
+    ],
+    "groupPath": "模板",
+    "groupSegments": [
+      "模板"
+    ],
+    "filePath": "blog/模板/高精度运算.md"
+  },
+  {
+    "title": "SPFA优化",
+    "date": "2025-07-27",
+    "permalink": "/blog-posts/技巧/SPFA优化",
+    "tags": [
+      "技巧"
+    ],
+    "groupPath": "技巧",
+    "groupSegments": [
+      "技巧"
+    ],
+    "filePath": "blog/技巧/SPFA优化.md"
+  },
+  {
+    "title": "巡逻",
+    "date": "2025-07-24",
+    "permalink": "/blog-posts/题解/洛谷&Nsoj/巡逻",
+    "tags": [
+      "题解",
+      "树的直径",
+      "动态规划"
+    ],
+    "groupPath": "题解/洛谷&Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷&Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷&Nsoj/巡逻.md"
+  },
+  {
+    "title": "方差",
+    "date": "2025-07-16",
+    "permalink": "/blog-posts/题解/洛谷&Nsoj/方差",
+    "tags": [
+      "题解",
+      "线段树"
+    ],
+    "groupPath": "题解/洛谷&Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷&Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷&Nsoj/方差.md"
+  },
+  {
+    "title": "Count A%B=C",
+    "date": "2025-07-15",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-414/E-Count-A-B-C",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "数论分块"
+    ],
+    "groupPath": "题解/Atcoder/ABC-414",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-414"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-414/E-Count-A-B-C.md"
+  },
+  {
     "title": "Make Geometric Sequence",
     "date": "2025-07-11",
     "permalink": "/blog-posts/题解/Atcoder/ABC-407/E-Most-Valuable-Parentheses",
@@ -260,15 +336,15 @@
   {
     "title": "读入读写优化",
     "date": "2025-06-29",
-    "permalink": "/blog-posts/技巧与模板/读入读写优化",
+    "permalink": "/blog-posts/技巧/读入读写优化",
     "tags": [
       "技巧"
     ],
-    "groupPath": "技巧与模板",
+    "groupPath": "技巧",
     "groupSegments": [
-      "技巧与模板"
+      "技巧"
     ],
-    "filePath": "blog/技巧与模板/读入读写优化.md"
+    "filePath": "blog/技巧/读入读写优化.md"
   },
   {
     "title": "01分数规划",
