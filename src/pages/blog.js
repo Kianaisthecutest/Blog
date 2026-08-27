@@ -131,8 +131,8 @@ export default function BlogList() {
     nodes.map((node) => {
       const hasChildren = Array.isArray(node.children) && node.children.length > 0;
       const isExpanded = expandedGroups.has(node.key);
-      const canToggle = true;
-      const toggleSymbol = hasChildren ? (isExpanded ? '▾' : '▸') : '•';
+      const isDocumentNode = node.icon === 'document';
+      const toggleSymbol = hasChildren ? (isExpanded ? '▾' : '▸') : '';
 
       const handleSelect = () => {
         setSelectedGroup(node.key);
@@ -153,19 +153,21 @@ export default function BlogList() {
             </span>
             <span className={styles.groupLabel}>{node.label}</span>
             <span className={styles.groupCount}>{node.count}</span>
-            <button
-              type="button"
-              className={styles.toggleButton}
-              onClick={(event) => {
-                if (!hasChildren) return;
-                event.stopPropagation();
-                toggleGroup(node.key);
-              }}
-              aria-label={hasChildren ? (isExpanded ? `折叠${node.label}` : `展开${node.label}`) : `${node.label}`}
-              disabled={!hasChildren}
-            >
-              {toggleSymbol}
-            </button>
+            {!isDocumentNode && (
+              <button
+                type="button"
+                className={styles.toggleButton}
+                onClick={(event) => {
+                  if (!hasChildren) return;
+                  event.stopPropagation();
+                  toggleGroup(node.key);
+                }}
+                aria-label={hasChildren ? (isExpanded ? `折叠${node.label}` : `展开${node.label}`) : `${node.label}`}
+                disabled={!hasChildren}
+              >
+                {toggleSymbol}
+              </button>
+            )}
           </div>
           {hasChildren && (
             <ul className={`${styles.treeChildren} ${isExpanded ? styles.expanded : ''}`}>
