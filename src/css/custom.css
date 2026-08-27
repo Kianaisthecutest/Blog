@@ -8,3 +8,8 @@
   --ifm-color-primary-lighter: #9a90e0;
   --ifm-color-primary-lightest: #b9b2ec;
 }
+
+/* Prevent horizontal layout shift caused by animated background elements */
+html, body, #__docusaurus {
+  overflow-x: hidden;
+}
