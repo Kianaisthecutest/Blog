@@ -5,8 +5,6 @@ slug: 题解/COCI/2023-2024-05/A-Bitovi
 tags: [题解, COCI, 进制]
 ---
 
-<h2>模拟，进制</h2>
-
 {/*truncate*/}
 
 ## [COCI 2023/2024 #5] Bitovi

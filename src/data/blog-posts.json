@@ -139,6 +139,91 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "Make Geometric Sequence",
+    "date": "2025-07-11",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-407/E-Most-Valuable-Parentheses",
+    "tags": [
+      "题解",
+      "ABC",
+      "优先队列"
+    ],
+    "groupPath": "题解/Atcoder/ABC-407",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-407"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-407/E-Most-Valuable-Parentheses.md"
+  },
+  {
+    "title": "Make Geometric Sequence",
+    "date": "2025-07-07",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-413/D-Make-Geometric-Sequence",
+    "tags": [
+      "题解",
+      "ABC",
+      "排序"
+    ],
+    "groupPath": "题解/Atcoder/ABC-413",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-413"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-413/D-Make-Geometric-Sequence.md"
+  },
+  {
+    "title": "Flip to Gather",
+    "date": "2025-07-04",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-408/D-Flip-to-Gather",
+    "tags": [
+      "题解",
+      "ABC",
+      "动态规划"
+    ],
+    "groupPath": "题解/Atcoder/ABC-408",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-408"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-408/D-Flip-to-Gather.md"
+  },
+  {
+    "title": "Pair Annihilation",
+    "date": "2025-07-03",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-409/E-Pair-Annihilation",
+    "tags": [
+      "题解",
+      "ABC",
+      "贪心"
+    ],
+    "groupPath": "题解/Atcoder/ABC-409",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-409"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-409/E-Pair-Annihilation.md"
+  },
+  {
+    "title": "Make 2-Regular Graph",
+    "date": "2025-07-03",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-412/D-Make-2-Regular-Graph",
+    "tags": [
+      "题解",
+      "ABC",
+      "搜索"
+    ],
+    "groupPath": "题解/Atcoder/ABC-412",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-412"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-412/D-Make-2-Regular-Graph.md"
+  },
+  {
     "title": "XOR Shortest Walk",
     "date": "2025-07-02",
     "permalink": "/blog-posts/题解/Atcoder/ABC-410/D-XOR-Shortest-Walk",

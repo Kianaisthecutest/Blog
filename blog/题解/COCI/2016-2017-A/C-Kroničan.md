@@ -5,8 +5,6 @@ slug: 题解/COCI/2016-2017-A/C-Kroničan
 tags: [题解, COCI, 状态压缩, 动态规划]
 ---
 
-<h2>状态压缩，动态规划</h2>
-
 {/*truncate*/}
 
 ## [COCI 2016/2017 #3] Kroničan

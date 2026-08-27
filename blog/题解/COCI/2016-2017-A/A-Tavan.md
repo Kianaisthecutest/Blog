@@ -5,8 +5,6 @@ slug: 题解/COCI/2016-2017-A/A-Tavan
 tags: [题解, COCI, 进制]
 ---
 
-<h2>进制</h2>
-
 {/*truncate*/}
 
 ## [COCI 2016/2017 #2] Tavan

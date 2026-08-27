@@ -5,8 +5,6 @@ slug: 题解/COCI/2023-2024-05/B-Piratski kod
 tags: [题解, COCI, 动态规划, 组合数学]
 ---
 
-<h2>动态规划，组合数学</h2>
-
 {/*truncate*/}
 
 ## [COCI 2023/2024 #5] Piratski kod

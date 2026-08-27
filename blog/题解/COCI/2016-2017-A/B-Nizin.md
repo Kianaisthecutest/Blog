@@ -5,8 +5,6 @@ slug: 题解/COCI/2016-2017-A/B-Nizin
 tags: [题解, COCI, 贪心]
 ---
 
-<h2>贪心</h2>
-
 {/*truncate*/}
 
 ## [COCI 2016/2017 #2] Nizin

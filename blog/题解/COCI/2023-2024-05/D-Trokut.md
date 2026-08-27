@@ -5,8 +5,6 @@ slug: 题解/COCI/2023-2024-05/D-Trokut
 tags: [题解, COCI, 博弈论]
 ---
 
-<h2>博弈论，Ad-hoc</h2>
-
 {/*truncate*/}
 
 ## [COCI 2023/2024 #5] Trokut

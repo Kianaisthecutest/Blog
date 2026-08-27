@@ -5,8 +5,6 @@ slug: 题解/COCI/2023-2024-05/C-Rolete
 tags: [题解, COCI, 贪心]
 ---
 
-<h2>贪心，二分，三分</h2>
-
 {/*truncate*/}
 
 ## [COCI 2023/2024 #5] Rolete
