@@ -43,7 +43,7 @@ return h[b] - h[a] * power[b-a+1]；
 }
 ```
 
-```c++
+```cpp
 //构建Hash数组
 power[0]=1;//存储幂次方的数组
 int len=strlen( A+1 );
