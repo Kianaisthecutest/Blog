@@ -2,7 +2,7 @@
 title: Count A%B=C
 date: 2025-07-15
 slug: 题解/Atcoder/ABC-414/E-Count-A-B-C
-tags: [题解, ABC, 数学, 数论分块]
+tags: [题解, ABC, 数论分块]
 ---
 
 {/*truncate*/}
@@ -36,7 +36,7 @@ tags: [题解, ABC, 数学, 数论分块]
 <summary><h3>AC代码</h3></summary>
 <details>
 
-```c++
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long

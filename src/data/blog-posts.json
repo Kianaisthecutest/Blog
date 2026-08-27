@@ -139,6 +139,37 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "背包DP",
+    "date": "2025-08-09",
+    "permalink": "/blog-posts/算法/背包DP",
+    "tags": [
+      "算法",
+      "动态规划",
+      "进制",
+      "单调队列",
+      "启发式合并"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/背包DP.md"
+  },
+  {
+    "title": "组合数学",
+    "date": "2025-08-08",
+    "permalink": "/blog-posts/算法/组合数学",
+    "tags": [
+      "算法",
+      "组合数学"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/组合数学.md"
+  },
+  {
     "title": "高精度运算",
     "date": "2025-08-07",
     "permalink": "/blog-posts/模板/高精度运算",
@@ -151,6 +182,36 @@
       "模板"
     ],
     "filePath": "blog/模板/高精度运算.md"
+  },
+  {
+    "title": "FHQ-Treap",
+    "date": "2025-08-07",
+    "permalink": "/blog-posts/算法/FHQ-Treap",
+    "tags": [
+      "算法",
+      "平衡树"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/FHQ-Treap.md"
+  },
+  {
+    "title": "图论扩展",
+    "date": "2025-08-07",
+    "permalink": "/blog-posts/算法/图论扩展",
+    "tags": [
+      "算法",
+      "差分约束",
+      "传递闭包",
+      "分层图"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/图论扩展.md"
   },
   {
     "title": "SPFA优化",
@@ -187,7 +248,8 @@
     "permalink": "/blog-posts/题解/洛谷&Nsoj/方差",
     "tags": [
       "题解",
-      "线段树"
+      "线段树",
+      "数学"
     ],
     "groupPath": "题解/洛谷&Nsoj",
     "groupSegments": [
@@ -203,7 +265,6 @@
     "tags": [
       "题解",
       "ABC",
-      "数学",
       "数论分块"
     ],
     "groupPath": "题解/Atcoder/ABC-414",
