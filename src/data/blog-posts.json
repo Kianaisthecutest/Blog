@@ -209,6 +209,150 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "「KDOI-06-S」消除序列",
+    "date": "2025-11-21",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[KDOI-06-S]消除序列",
+    "tags": [
+      "题解",
+      "ST表",
+      "线段树",
+      "动态规划"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[KDOI-06-S]消除序列.md"
+  },
+  {
+    "title": "typewriter",
+    "date": "2025-11-20",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/typewriter",
+    "tags": [
+      "题解",
+      "容斥定理",
+      "数学",
+      "二进制"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/typewriter.md"
+  },
+  {
+    "title": "「NOIP 2023」三值逻辑",
+    "date": "2025-11-18",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[NOIP2023]三值逻辑",
+    "tags": [
+      "题解",
+      "2-SAT",
+      "二分图",
+      "并查集"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[NOIP2023]三值逻辑.md"
+  },
+  {
+    "title": "「NOIP 2024」编辑字符串",
+    "date": "2025-11-14",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[NOIP2024]编辑字符串",
+    "tags": [
+      "题解",
+      "贪心"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[NOIP2024]编辑字符串.md"
+  },
+  {
+    "title": "「KDOI-06-S」树上异或",
+    "date": "2025-11-12",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[KDOI-06-S]树上异或",
+    "tags": [
+      "题解",
+      "树形DP",
+      "二进制"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[KDOI-06-S]树上异或.md"
+  },
+  {
+    "title": "「NOIP 2022」建造军营",
+    "date": "2025-11-12",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[NOIP2022]建造军营",
+    "tags": [
+      "题解",
+      "双联通分量",
+      "树形DP"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[NOIP2022]建造军营.md"
+  },
+  {
+    "title": "「NOIP 2021」方差",
+    "date": "2025-11-11",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[NOIP2021]方差",
+    "tags": [
+      "题解",
+      "模拟退火"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[NOIP2021]方差.md"
+  },
+  {
+    "title": "三分法",
+    "date": "2025-11-06",
+    "permalink": "/blog-posts/算法/三分法",
+    "tags": [
+      "算法",
+      "三分"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/三分法.md"
+  },
+  {
+    "title": "树上最近祖先LCA",
+    "date": "2025-11-06",
+    "permalink": "/blog-posts/算法/树上最近祖先LCA",
+    "tags": [
+      "算法",
+      "LCA",
+      "倍增",
+      "树链剖分",
+      "Tarjan"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/树上最近祖先LCA.md"
+  },
+  {
     "title": "2-SAT",
     "date": "2025-11-04",
     "permalink": "/blog-posts/算法/2-SAT",

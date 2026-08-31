@@ -38,3 +38,7 @@ COCI:
 字典树:
   label: '字典树'
   permalink: '/tag/trie'
+
+三分:
+  label: '三分'
+  permalink: '/tag/Tripartitemethod'
