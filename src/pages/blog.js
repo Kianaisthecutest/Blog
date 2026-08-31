@@ -151,8 +151,8 @@ export default function BlogList() {
             <span className={`${styles.groupIcon} ${hasChildren && isExpanded ? styles.groupIconExpanded : ''}`}>
               {node.icon === 'document' ? <DocumentIcon /> : <FolderIcon expanded={isExpanded} />}
             </span>
-            <span className={styles.groupLabel}>{node.label}</span>
-            <span className={styles.groupCount}>{node.count}</span>
+            <span className={`${styles.groupLabel} ${isDocumentNode ? styles.docLabel : ''}`}>{node.label}</span>
+            <span className={`${styles.groupCount} ${isDocumentNode ? styles.docCount : ''}`}>{node.count}</span>
             {!isDocumentNode && (
               <button
                 type="button"

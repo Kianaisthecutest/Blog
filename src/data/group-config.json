@@ -3,7 +3,7 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 40
+    "count": 46
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -29,11 +29,23 @@
     "icon": "📁",
     "count": 4
   },
+  "算法": {
+    "key": "算法",
+    "label": "算法",
+    "icon": "📁",
+    "count": 14
+  },
+  "题解/洛谷-or-Nsoj": {
+    "key": "题解/洛谷-or-Nsoj",
+    "label": "洛谷-or-Nsoj",
+    "icon": "📁",
+    "count": 23
+  },
   "题解/Atcoder": {
     "key": "题解/Atcoder",
     "label": "Atcoder",
     "icon": "📁",
-    "count": 10
+    "count": 11
   },
   "题解/Atcoder/ABC-424": {
     "key": "题解/Atcoder/ABC-424",
@@ -41,17 +53,17 @@
     "icon": "📁",
     "count": 2
   },
+  "题解/Atcoder/ABC-207": {
+    "key": "题解/Atcoder/ABC-207",
+    "label": "ABC-207",
+    "icon": "📁",
+    "count": 1
+  },
   "技巧": {
     "key": "技巧",
     "label": "技巧",
     "icon": "📁",
     "count": 4
-  },
-  "题解/洛谷-or-Nsoj": {
-    "key": "题解/洛谷-or-Nsoj",
-    "label": "洛谷-or-Nsoj",
-    "icon": "📁",
-    "count": 18
   },
   "模板": {
     "key": "模板",
@@ -64,12 +76,6 @@
     "label": "进阶算法计划2025-8-25测验",
     "icon": "📁",
     "count": 4
-  },
-  "算法": {
-    "key": "算法",
-    "label": "算法",
-    "icon": "📁",
-    "count": 12
   },
   "题解/洛谷-or-Nsoj/瞿葩的数字游戏": {
     "key": "题解/洛谷-or-Nsoj/瞿葩的数字游戏",
@@ -129,6 +135,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 59
+    "count": 67
   }
 }

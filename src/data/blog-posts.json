@@ -209,6 +209,120 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "2-SAT",
+    "date": "2025-11-04",
+    "permalink": "/blog-posts/算法/2-SAT",
+    "tags": [
+      "题解",
+      "2-SAT",
+      "强连通分量"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/2-SAT.md"
+  },
+  {
+    "title": "失配树",
+    "date": "2025-11-04",
+    "permalink": "/blog-posts/算法/失配树",
+    "tags": [
+      "题解",
+      "LCA",
+      "KMP"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/失配树.md"
+  },
+  {
+    "title": "「CSP-S 2024」 染色",
+    "date": "2025-11-04",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[CSP-S-2024]染色",
+    "tags": [
+      "题解",
+      "贪心",
+      "动态规划"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[CSP-S-2024]染色.md"
+  },
+  {
+    "title": "「CSP-S 2025」复盘",
+    "date": "2025-11-04",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/[CSP-S-2025]复盘",
+    "tags": [
+      "题解",
+      "贪心",
+      "最小生成树",
+      "AC自动机"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/[CSP-S-2025]复盘.md"
+  },
+  {
+    "title": "「USACO 2006 Open Gold」赶集",
+    "date": "2025-10-16",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/赶集",
+    "tags": [
+      "题解",
+      "最短路",
+      "图论建模",
+      "动态规划"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/赶集.md"
+  },
+  {
+    "title": "Sprinklers 2 Return of the Alfalfa P",
+    "date": "2025-10-13",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/Sprinklers-2-Return-of-the-Alfalfa-P",
+    "tags": [
+      "题解",
+      "状态压缩",
+      "动态规划",
+      "轮廓线DP"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/Sprinklers-2-Return-of-the-Alfalfa-P.md"
+  },
+  {
+    "title": "选择人员",
+    "date": "2025-09-29",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/选择人员",
+    "tags": [
+      "题解",
+      "贪心",
+      "排序",
+      "双指针"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/选择人员.md"
+  },
+  {
     "title": "2x2 Erasing 2",
     "date": "2025-09-21",
     "permalink": "/blog-posts/题解/Atcoder/ABC-424/D-2x2-Erasing-2",
@@ -240,6 +354,24 @@
       "ABC-424"
     ],
     "filePath": "blog/题解/Atcoder/ABC-424/F-Adding-Chords.md"
+  },
+  {
+    "title": "Mod i",
+    "date": "2025-09-18",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-207/E-Mod-i",
+    "tags": [
+      "题解",
+      "ABC",
+      "动态规划",
+      "余数分组"
+    ],
+    "groupPath": "题解/Atcoder/ABC-207",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-207"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-207/E-Mod-i.md"
   },
   {
     "title": "夕阳打伐",
