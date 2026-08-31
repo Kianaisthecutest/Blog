@@ -1,5 +1,74 @@
 [
   {
+    "title": "Lozinke",
+    "date": "2026-08-31",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-A/A-Lozinke",
+    "tags": [
+      "题解",
+      "COCI",
+      "字典树"
+    ],
+    "groupPath": "题解/COCI/2017-2018-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-A"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-A/A-Lozinke.md"
+  },
+  {
+    "title": "Mate",
+    "date": "2026-08-31",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-A/B-Mate",
+    "tags": [
+      "题解",
+      "COCI",
+      "组合数学"
+    ],
+    "groupPath": "题解/COCI/2017-2018-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-A"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-A/B-Mate.md"
+  },
+  {
+    "title": "Deda",
+    "date": "2026-08-31",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-A/C-Deda",
+    "tags": [
+      "题解",
+      "COCI",
+      "线段树",
+      "二分"
+    ],
+    "groupPath": "题解/COCI/2017-2018-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-A"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-A/C-Deda.md"
+  },
+  {
+    "title": "Portal",
+    "date": "2026-08-31",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-A/D-Portal",
+    "tags": [
+      "题解",
+      "COCI",
+      "最短路"
+    ],
+    "groupPath": "题解/COCI/2017-2018-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-A"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-A/D-Portal.md"
+  },
+  {
     "title": "Tavan",
     "date": "2026-08-26",
     "permalink": "/blog-posts/题解/COCI/2016-2017-A/A-Tavan",
