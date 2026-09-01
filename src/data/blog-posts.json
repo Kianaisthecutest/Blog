@@ -277,6 +277,155 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "Good Cyclic Shifts",
+    "date": "2026-03-04",
+    "permalink": "/blog-posts/题解/USACO/2026-Third-Gold/Good-Cyclic-Shifts",
+    "tags": [
+      "题解",
+      "树状数组"
+    ],
+    "groupPath": "题解/USACO/2026-Third-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2026-Third-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2026-Third-Gold/Good-Cyclic-Shifts.md"
+  },
+  {
+    "title": "Picking Flowers",
+    "date": "2026-03-04",
+    "permalink": "/blog-posts/题解/USACO/2026-Third-Gold/Picking-Flowers",
+    "tags": [
+      "题解",
+      "动态规划",
+      "分层图"
+    ],
+    "groupPath": "题解/USACO/2026-Third-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2026-Third-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2026-Third-Gold/Picking-Flowers.md"
+  },
+  {
+    "title": "Random Tree Generation",
+    "date": "2026-03-04",
+    "permalink": "/blog-posts/题解/USACO/2026-Third-Gold/Random-Tree-Generation",
+    "tags": [
+      "题解",
+      "数学",
+      "树形DP",
+      "换根DP"
+    ],
+    "groupPath": "题解/USACO/2026-Third-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2026-Third-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2026-Third-Gold/Random-Tree-Generation.md"
+  },
+  {
+    "title": "二分图最大匹配",
+    "date": "2026-02-24",
+    "permalink": "/blog-posts/算法/二分图最大匹配",
+    "tags": [
+      "算法",
+      "二分图"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/二分图最大匹配.md"
+  },
+  {
+    "title": "基于DFS的SPFA判断负环",
+    "date": "2026-02-05",
+    "permalink": "/blog-posts/技巧/基于DFS的SPFA判断负环",
+    "tags": [
+      "技巧"
+    ],
+    "groupPath": "技巧",
+    "groupSegments": [
+      "技巧"
+    ],
+    "filePath": "blog/技巧/基于DFS的SPFA判断负环.md"
+  },
+  {
+    "title": "重载读入读写运算",
+    "date": "2026-02-05",
+    "permalink": "/blog-posts/技巧/重载读入读写运算",
+    "tags": [
+      "技巧"
+    ],
+    "groupPath": "技巧",
+    "groupSegments": [
+      "技巧"
+    ],
+    "filePath": "blog/技巧/重载读入读写运算.md"
+  },
+  {
+    "title": "CDQ分治",
+    "date": "2026-01-16",
+    "permalink": "/blog-posts/算法/CDQ分治",
+    "tags": [
+      "算法",
+      "CDQ分治"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/CDQ分治.md"
+  },
+  {
+    "title": "取石子游戏",
+    "date": "2026-01-14",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/取石子游戏",
+    "tags": [
+      "算法",
+      "博弈论"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/取石子游戏.md"
+  },
+  {
+    "title": "博弈论初步-SG函数",
+    "date": "2026-01-11",
+    "permalink": "/blog-posts/算法/博弈论/初步-SG函数",
+    "tags": [
+      "算法",
+      "博弈论"
+    ],
+    "groupPath": "算法/博弈论",
+    "groupSegments": [
+      "算法",
+      "博弈论"
+    ],
+    "filePath": "blog/算法/博弈论/初步-SG函数.md"
+  },
+  {
+    "title": "可持久化字典树",
+    "date": "2026-01-11",
+    "permalink": "/blog-posts/算法/可持久化字典树",
+    "tags": [
+      "算法",
+      "可持久化字典树"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/可持久化字典树.md"
+  },
+  {
     "title": "可持久化线段树模板",
     "date": "2025-12-29",
     "permalink": "/blog-posts/模板/可持久化线段树模板",
