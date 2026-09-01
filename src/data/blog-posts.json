@@ -1058,7 +1058,7 @@
   {
     "title": "初等数学-线性代数(Linear Algebra)",
     "date": "2025-08-18",
-    "permalink": "/blog-posts/算法/初等数学-线性代数(Linear-Algebra)",
+    "permalink": "/blog-posts/算法/初等数学-线性代数Linear-Algebra",
     "tags": [
       "算法",
       "矩阵"
@@ -1067,7 +1067,7 @@
     "groupSegments": [
       "算法"
     ],
-    "filePath": "blog/算法/初等数学-线性代数(Linear-Algebra).md"
+    "filePath": "blog/算法/初等数学-线性代数Linear-Algebra.md"
   },
   {
     "title": "「Ceoi 2011」ballons",

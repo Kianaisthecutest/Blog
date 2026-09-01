@@ -207,13 +207,15 @@ $\begin{bmatrix}1&0&0\cdots 0&q_1\\0&1&0\cdots 0&q_2\\0&0&1\cdots 0&q_3\\\cdots 
 这样$A_{i,n+1}$就是第$i$个未知数的解，它的具体操作步骤如下
 
 $$
-\begin{cases}
-<span>&lt;1&gt;</span>枚举主元x，依次消去第1∼N个未知量\\
-<span>&lt;2&gt;</span>找到满足A_{p,x}\neq 0$的第1行，p\geqslant x\\
-<span>&lt;3&gt;</span>交换第x行与第p行\\
-<span>&lt;4&gt;</span>将交换后的第x行乘以\frac{1}{A_{p,x}}，使A_{p,x}==1(归一化处理)\\
-<span>&lt;5&gt;</span>用第x行消去其他所有行的变元x
-\end{cases}
+\left\{
+\begin{array}{l}
+\text{枚举主元 }x\text{，依次消去第 }1\sim N\text{ 个未知量}\\
+\text{找到满足 }A_{p,x}\neq 0\text{ 的第 }p\text{ 行，}p\geqslant x\\
+\text{交换第 }x\text{ 行与第 }p\text{ 行}\\
+\text{将交换后的第 }x\text{ 行乘以 }\frac{1}{A_{p,x}}\text{，使 }A_{p,x}=1\text{（归一化处理）}\\
+\text{用第 }x\text{ 行消去其他所有行的变元 }x
+\end{array}
+\right.
 $$
 
 注意一下可能出现这些情况：
