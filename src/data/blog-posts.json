@@ -277,6 +277,130 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "Tail of Snake",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-438/D-Tail-of-Snake",
+    "tags": [
+      "题解",
+      "ABC",
+      "模拟",
+      "前缀和"
+    ],
+    "groupPath": "题解/Atcoder/ABC-438",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-438"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-438/D-Tail-of-Snake.md"
+  },
+  {
+    "title": "Heavy Buckets",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-438/E-Heavy-Buckets",
+    "tags": [
+      "题解",
+      "ABC",
+      "倍增"
+    ],
+    "groupPath": "题解/Atcoder/ABC-438",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-438"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-438/E-Heavy-Buckets.md"
+  },
+  {
+    "title": "Sum of Mex",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-438/F-Sum-of-Mex",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "树形DP"
+    ],
+    "groupPath": "题解/Atcoder/ABC-438",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-438"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-438/F-Sum-of-Mex.md"
+  },
+  {
+    "title": "2026",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-439/C-2026",
+    "tags": [
+      "题解",
+      "ABC",
+      "模拟"
+    ],
+    "groupPath": "题解/Atcoder/ABC-439",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-439"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-439/C-2026.md"
+  },
+  {
+    "title": "Kadomatsu Subsequence",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-439/D-Kadomatsu-Subsequence",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "平衡树"
+    ],
+    "groupPath": "题解/Atcoder/ABC-439",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-439"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-439/D-Kadomatsu-Subsequence.md"
+  },
+  {
+    "title": "Kite",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-439/E-Kite",
+    "tags": [
+      "题解",
+      "ABC",
+      "动态规划",
+      "二分"
+    ],
+    "groupPath": "题解/Atcoder/ABC-439",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-439"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-439/E-Kite.md"
+  },
+  {
+    "title": "Beautiful Kadomatsu",
+    "date": "2026-05-31",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-439/F-Beautiful-Kadomatsu",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "前缀和"
+    ],
+    "groupPath": "题解/Atcoder/ABC-439",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-439"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-439/F-Beautiful-Kadomatsu.md"
+  },
+  {
     "title": "Concat Power of 2",
     "date": "2026-05-25",
     "permalink": "/blog-posts/题解/Atcoder/ABC-451/D-Concat-Power-of-2",
