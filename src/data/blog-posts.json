@@ -1,5 +1,22 @@
 [
   {
+    "title": "Alkemija",
+    "date": "2026-9-01",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-B/A-Alkemija",
+    "tags": [
+      "题解",
+      "拓扑排序",
+      "图论建模"
+    ],
+    "groupPath": "题解/COCI/2017-2018-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-B"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-B/A-Alkemija.md"
+  },
+  {
     "title": "Lozinke",
     "date": "2026-08-31",
     "permalink": "/blog-posts/题解/COCI/2017-2018-A/A-Lozinke",
@@ -207,6 +224,34 @@
       "2023-2024-05"
     ],
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
+  },
+  {
+    "title": "可持久化线段树模板",
+    "date": "2025-12-29",
+    "permalink": "/blog-posts/模板/可持久化线段树模板",
+    "tags": [
+      "模板",
+      "可持久化线段树"
+    ],
+    "groupPath": "模板",
+    "groupSegments": [
+      "模板"
+    ],
+    "filePath": "blog/模板/可持久化线段树模板.md"
+  },
+  {
+    "title": "可持久化线段树",
+    "date": "2025-12-29",
+    "permalink": "/blog-posts/算法/可持久化线段树",
+    "tags": [
+      "算法",
+      "可持久化线段树"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/可持久化线段树.md"
   },
   {
     "title": "「KDOI-06-S」消除序列",

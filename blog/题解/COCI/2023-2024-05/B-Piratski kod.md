@@ -188,7 +188,6 @@ $ans_i​=\sum_{j=2}^{i}​g_j​\times (num_{i−j,0}​+num_{i−j,1}​)$
 ## AC代码
 <details>
 <summary>Code</summary>
-<summary>题干</summary>
 
 ```cpp
 #include<bits/stdc++.h>
