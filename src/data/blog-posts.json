@@ -17,6 +17,57 @@
     "filePath": "blog/题解/COCI/2017-2018-B/A-Alkemija.md"
   },
   {
+    "title": "Karte",
+    "date": "2026-9-01",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-B/B-Karte",
+    "tags": [
+      "题解",
+      "贪心",
+      "构造"
+    ],
+    "groupPath": "题解/COCI/2017-2018-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-B"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-B/B-Karte.md"
+  },
+  {
+    "title": "Vođe",
+    "date": "2026-9-01",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-B/C-Vođe",
+    "tags": [
+      "题解",
+      "动态规划"
+    ],
+    "groupPath": "题解/COCI/2017-2018-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-B"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-B/C-Vođe.md"
+  },
+  {
+    "title": "Pictionary",
+    "date": "2026-9-01",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-B/D-Pictionary",
+    "tags": [
+      "题解",
+      "并查集",
+      "Kruskal重构树",
+      "LCA"
+    ],
+    "groupPath": "题解/COCI/2017-2018-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-B"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-B/D-Pictionary.md"
+  },
+  {
     "title": "Lozinke",
     "date": "2026-08-31",
     "permalink": "/blog-posts/题解/COCI/2017-2018-A/A-Lozinke",
