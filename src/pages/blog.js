@@ -71,17 +71,7 @@ export default function BlogList() {
         });
       }
 
-      const postKey = post.permalink || `${post.title}-${Math.random()}`;
-      const parentPath = folderPath || '';
-      list.push({
-        key: postKey,
-        label: post.title || '未命名',
-        icon: 'document',
-        count: 1,
-        level: folderPath ? folderPath.split('/').filter(Boolean).length : 0,
-        parentPath,
-        children: [],
-      });
+      // Keep the sidebar focused on folder structure only; individual .md article nodes are excluded.
     });
 
     return list.sort((a, b) => a.level - b.level || a.label.localeCompare(b.label));
