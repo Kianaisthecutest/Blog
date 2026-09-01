@@ -1,7 +1,7 @@
 ---
 title: 初等数学-线性代数(Linear Algebra)
 date: 2025-08-18
-slug: 算法/初等数学-线性代数(Linear Algebra)
+slug: 算法/初等数学-线性代数(Linear-Algebra)
 tags: [算法, 矩阵]
 ---
 

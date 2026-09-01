@@ -277,6 +277,112 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "Not Adjacent 2",
+    "date": "2026-05-05",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-456/D-Not-Adjacent-2",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学"
+    ],
+    "groupPath": "题解/Atcoder/ABC-456",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-456"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-456/D-Not-Adjacent-2.md"
+  },
+  {
+    "title": "Endless Holidays",
+    "date": "2026-05-05",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-456/E-Endless-Holidays",
+    "tags": [
+      "题解",
+      "ABC",
+      "模拟"
+    ],
+    "groupPath": "题解/Atcoder/ABC-456",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-456"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-456/E-Endless-Holidays.md"
+  },
+  {
+    "title": "Plan Holidays",
+    "date": "2026-05-05",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-456/F-Plan-Holidays",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "矩阵",
+      "线段树"
+    ],
+    "groupPath": "题解/Atcoder/ABC-456",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-456"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-456/F-Plan-Holidays.md"
+  },
+  {
+    "title": "Card Pile Query",
+    "date": "2026-05-04",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-455/D-Card-Pile-Query",
+    "tags": [
+      "题解",
+      "ABC",
+      "链表"
+    ],
+    "groupPath": "题解/Atcoder/ABC-455",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-455"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-455/D-Card-Pile-Query.md"
+  },
+  {
+    "title": "Unbalanced ABC Substrings",
+    "date": "2026-05-04",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-455/E-Unbalanced-ABC-Substrings",
+    "tags": [
+      "题解",
+      "ABC",
+      "容斥定理",
+      "平衡树"
+    ],
+    "groupPath": "题解/Atcoder/ABC-455",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-455"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-455/E-Unbalanced-ABC-Substrings.md"
+  },
+  {
+    "title": "Merge Slimes 2",
+    "date": "2026-05-04",
+    "permalink": "/blog-posts/题解/Atcoder/ABC-455/F-Merge-Slimes-2",
+    "tags": [
+      "题解",
+      "ABC",
+      "数学",
+      "线段树"
+    ],
+    "groupPath": "题解/Atcoder/ABC-455",
+    "groupSegments": [
+      "题解",
+      "Atcoder",
+      "ABC-455"
+    ],
+    "filePath": "blog/题解/Atcoder/ABC-455/F-Merge-Slimes-2.md"
+  },
+  {
     "title": "Good Cyclic Shifts",
     "date": "2026-03-04",
     "permalink": "/blog-posts/题解/USACO/2026-Third-Gold/Good-Cyclic-Shifts",
@@ -952,7 +1058,7 @@
   {
     "title": "初等数学-线性代数(Linear Algebra)",
     "date": "2025-08-18",
-    "permalink": "/blog-posts/算法/初等数学-线性代数(Linear Algebra)",
+    "permalink": "/blog-posts/算法/初等数学-线性代数(Linear-Algebra)",
     "tags": [
       "算法",
       "矩阵"
@@ -961,7 +1067,7 @@
     "groupSegments": [
       "算法"
     ],
-    "filePath": "blog/算法/初等数学-线性代数(Linear Algebra).md"
+    "filePath": "blog/算法/初等数学-线性代数(Linear-Algebra).md"
   },
   {
     "title": "「Ceoi 2011」ballons",
