@@ -3,13 +3,19 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 93
+    "count": 97
   },
   "题解/COCI": {
     "key": "题解/COCI",
     "label": "COCI",
     "icon": "📁",
-    "count": 16
+    "count": 20
+  },
+  "题解/COCI/2017-2018-C": {
+    "key": "题解/COCI/2017-2018-C",
+    "label": "2017-2018-C",
+    "icon": "📁",
+    "count": 4
   },
   "题解/COCI/2017-2018-B": {
     "key": "题解/COCI/2017-2018-B",
@@ -219,6 +225,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 124
+    "count": 128
   }
 }

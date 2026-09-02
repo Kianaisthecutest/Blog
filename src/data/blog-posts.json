@@ -1,5 +1,78 @@
 [
   {
+    "title": "Automobil",
+    "date": "2026-09-02",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-C/A-Automobil",
+    "tags": [
+      "题解",
+      "COCI",
+      "数学",
+      "离线处理"
+    ],
+    "groupPath": "题解/COCI/2017-2018-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-C"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-C/A-Automobil.md"
+  },
+  {
+    "title": "Cover",
+    "date": "2026-09-02",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-C/B-Cover",
+    "tags": [
+      "题解",
+      "COCI",
+      "动态规划",
+      "斜率优化"
+    ],
+    "groupPath": "题解/COCI/2017-2018-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-C"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-C/B-Cover.md"
+  },
+  {
+    "title": "Go",
+    "date": "2026-09-02",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-C/C-Go",
+    "tags": [
+      "题解",
+      "COCI",
+      "动态规划",
+      "区间DP"
+    ],
+    "groupPath": "题解/COCI/2017-2018-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-C"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-C/C-Go.md"
+  },
+  {
+    "title": "Dostavljač",
+    "date": "2026-09-02",
+    "permalink": "/blog-posts/题解/COCI/2017-2018-C/D-Dostavljač",
+    "tags": [
+      "题解",
+      "COCI",
+      "动态规划",
+      "树形DP",
+      "背包DP"
+    ],
+    "groupPath": "题解/COCI/2017-2018-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2017-2018-C"
+    ],
+    "filePath": "blog/题解/COCI/2017-2018-C/D-Dostavljač.md"
+  },
+  {
     "title": "Alkemija",
     "date": "2026-9-01",
     "permalink": "/blog-posts/题解/COCI/2017-2018-B/A-Alkemija",
