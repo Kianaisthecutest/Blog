@@ -366,6 +366,52 @@
     "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
   },
   {
+    "title": "网络流和二分图",
+    "date": "2026-07-20",
+    "permalink": "/blog-posts/算法/网络流/网络流和二分图",
+    "tags": [
+      "算法",
+      "网络流",
+      "二分图"
+    ],
+    "groupPath": "算法/网络流",
+    "groupSegments": [
+      "算法",
+      "网络流"
+    ],
+    "filePath": "blog/算法/网络流/网络流和二分图.md"
+  },
+  {
+    "title": "基础网络流模板",
+    "date": "2026-06-17",
+    "permalink": "/blog-posts/算法/网络流/基础网络流模板",
+    "tags": [
+      "算法",
+      "网络流"
+    ],
+    "groupPath": "算法/网络流",
+    "groupSegments": [
+      "算法",
+      "网络流"
+    ],
+    "filePath": "blog/算法/网络流/基础网络流模板.md"
+  },
+  {
+    "title": "拓展上下界网络流",
+    "date": "2026-06-17",
+    "permalink": "/blog-posts/算法/网络流/拓展上下界网络流",
+    "tags": [
+      "算法",
+      "网络流"
+    ],
+    "groupPath": "算法/网络流",
+    "groupSegments": [
+      "算法",
+      "网络流"
+    ],
+    "filePath": "blog/算法/网络流/拓展上下界网络流.md"
+  },
+  {
     "title": "Reconstruct Chocolate",
     "date": "2026-06-14",
     "permalink": "/blog-posts/题解/Atcoder/ABC-445/D-Reconstruct-Chocolate",
