@@ -1,5 +1,21 @@
 [
   {
+    "title": "斜率优化",
+    "date": "2026-09-03",
+    "permalink": "/blog-posts/算法/DP/斜率优化",
+    "tags": [
+      "算法",
+      "动态规划",
+      "斜率优化"
+    ],
+    "groupPath": "算法/DP",
+    "groupSegments": [
+      "算法",
+      "DP"
+    ],
+    "filePath": "blog/算法/DP/斜率优化.md"
+  },
+  {
     "title": "Automobil",
     "date": "2026-09-02",
     "permalink": "/blog-posts/题解/COCI/2017-2018-C/A-Automobil",

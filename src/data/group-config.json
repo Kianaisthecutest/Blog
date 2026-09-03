@@ -1,4 +1,16 @@
 {
+  "算法": {
+    "key": "算法",
+    "label": "算法",
+    "icon": "📁",
+    "count": 22
+  },
+  "算法/DP": {
+    "key": "算法/DP",
+    "label": "DP",
+    "icon": "📁",
+    "count": 5
+  },
   "题解": {
     "key": "题解",
     "label": "题解",
@@ -119,12 +131,6 @@
     "icon": "📁",
     "count": 3
   },
-  "算法": {
-    "key": "算法",
-    "label": "算法",
-    "icon": "📁",
-    "count": 21
-  },
   "技巧": {
     "key": "技巧",
     "label": "技巧",
@@ -173,12 +179,6 @@
     "icon": "📁",
     "count": 2
   },
-  "算法/DP": {
-    "key": "算法/DP",
-    "label": "DP",
-    "icon": "📁",
-    "count": 4
-  },
   "题解/Atcoder/ABC-414": {
     "key": "题解/Atcoder/ABC-414",
     "label": "ABC-414",
@@ -225,6 +225,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 128
+    "count": 129
   }
 }
