@@ -42,3 +42,299 @@ COCI:
 三分:
   label: '三分'
   permalink: '/tag/Tripartitemethod'
+
+技巧:
+  label: '技巧'
+  permalink: '/tag/Skill'
+
+模板:
+  label: '模板'
+  permalink: '/tag/Template'
+
+矩阵:
+  label: '矩阵'
+  permalink: '/tag/matrix'
+
+线段树:
+  label: '线段树'
+  permalink: '/tag/SegmentTree'
+
+分数规划:
+  label: '分数规划'
+  permalink: '/tag/ScorePlanning'
+
+二分:
+  label: '二分'
+  permalink: '/tag/TwoPoints'
+
+可持久化线段树:
+  label: '可持久化线段树'
+  permalink: '/tag/PersistentSegmentTree'
+
+高精度:
+  label: '高精度'
+  permalink: '/tag/Highprecision'
+
+CDQ分治:
+  label: 'CDQ分治'
+  permalink: '/tag/CDQDivideandConquer'
+
+2-SAT:
+  label: '2-SAT'
+  permalink: '/tag/2SAT'
+
+强连通分量:
+  label: '强连通分量'
+  permalink: '/tag/StronglyConnectedComponent'
+
+平衡树:
+  label: '平衡树'
+  permalink: '/tag/BalancedTree'
+
+字符串:
+  label: '字符串'
+  permalink: '/tag/String'
+
+KMP:
+  label: 'KMP'
+  permalink: '/tag/KMP'
+
+可持久化字典树:
+  label: '可持久化字典树'
+  permalink: '/tag/PersistentTrie'
+
+Tarjan:
+  label: 'Tarjan'
+  permalink: '/tag/Tarjan'
+
+图论:
+  label: '图论'
+  permalink: '/tag/GraphTheory'
+
+双连通分量:
+  label: '双连通分量'
+  permalink: '/tag/BiconnectedComponent'
+
+差分约束:
+  label: '差分约束'
+  permalink: '/tag/DifferenceConstraint'
+
+传递闭包:
+  label: '传递闭包'
+  permalink: '/tag/Passingaclosure'
+
+分层图:
+  label: '分层图'
+  permalink: '/tag/HierarchicalDiagram'
+
+LCA:
+  label: 'LCA'
+  permalink: '/tag/LCA'
+
+哈希:
+  label: '哈希'
+  permalink: '/tag/hash'
+
+倍增:
+  label: '倍增'
+  permalink: '/tag/Multiply'
+
+树链剖分:
+  label: '树链剖分'
+  permalink: '/tag/HeavyLightDecomposition'
+
+区间DP:
+  label: '区间DP'
+  permalink: '/tag/IntervalDP'
+
+斜率优化:
+  label: '斜率优化'
+  permalink: '/tag/SlopeOptimization'
+
+树形DP:
+  label: '树形DP'
+  permalink: '/tag/TreeDynamicProgramming'
+
+ABC:
+  label: 'ABC'
+  permalink: '/tag/ABC'
+
+二分图:
+  label: '二分图'
+  permalink: '/tag/Bipartitegraph'
+
+轮廓线DP:
+  label: '轮廓线DP'
+  permalink: '/tag/ContourLineDP'
+
+背包DP:
+  label: '背包DP'
+  permalink: '/tag/KnapsackDP'
+
+单调队列:
+  label: '单调队列'
+  permalink: '/tag/MonotonicQueue'
+
+启发式合并:
+  label: '启发式合并'
+  permalink: '/tag/HeuristicMerging'
+
+网络流:
+  label: '网络流'
+  permalink: '/tag/NetworkFlow'
+
+基环树:
+  label: '基环树'
+  permalink: '/tag/Basalringtree'
+
+数学:
+  label: '数学'
+  permalink: '/tag/math'
+
+构造:
+  label: '构造'
+  permalink: '/tag/construction'
+
+单调栈:
+  label: '单调栈'
+  permalink: '/tag/Monotonestack'
+
+最小生成树:
+  label: '最小生成树'
+  permalink: '/tag/MinimumSpanningTree'
+
+AC自动机:
+  label: 'AC自动机'
+  permalink: '/tag/ACautomaton'
+
+二进制:
+  label: '二进制'
+  permalink: '/tag/Binary'
+
+模拟退火:
+  label: '模拟退火'
+  permalink: '/tag/SimulatedAnnealing'
+
+ST表:
+  label: 'ST表'
+  permalink: '/tag/STtable'
+
+并查集:
+  label: '并查集'
+  permalink: '/tag/UnionFind'
+
+前缀和:
+  label: '前缀和'
+  permalink: '/tag/Prefixsum'
+
+容斥定理:
+  label: '容斥定理'
+  permalink: '/tag/InclusionExclusionPrinciple'  
+
+树的直径:
+  label: '树的直径'
+  permalink: '/tag/Treediameter'
+
+最短路:
+  label: '最短路'
+  permalink: '/tag/Shortestpath'
+
+图论建模:
+  label: '图论建模'
+  permalink: '/tag/GraphTheoryModeling'
+
+排序:
+  label: '排序'
+  permalink: '/tag/Sort'
+
+双指针:
+  label: '双指针'
+  permalink: '/tag/Twopointers'
+
+余数分组:
+  label: '余数分组'
+  permalink: '/tag/RemainderGrouping'
+
+优先队列:
+  label: '优先队列'
+  permalink: '/tag/priorityqueue'
+
+搜索:
+  label: '搜索'
+  permalink: '/tag/Search'
+
+数论分块:
+  label: '数论分块'
+  permalink: '/tag/NumberTheoryBlocking'
+
+随机哈希:
+  label: '随机哈希'
+  permalink: '/tag/Randomhash'
+
+模拟:
+  label: '模拟'
+  permalink: '/tag/Simulation'
+
+差分:
+  label: '差分'
+  permalink: '/tag/difference'
+
+分类讨论:
+  label: '分类讨论'
+  permalink: '/tag/Discussbycategory'
+
+离散化:
+  label: '离散化'
+  permalink: '/tag/Discretization'
+
+质数筛法:
+  label: '质数筛法'
+  permalink: '/tag/SieveofPrimes'
+
+点集覆盖:
+  label: '点集覆盖'
+  permalink: '/tag/Pointsetcoverage'
+
+Dinic定理:
+  label: 'Dinic定理'
+  permalink: '/tag/DinicsTheorem'
+
+树状数组:
+  label: '树状数组'
+  permalink: '/tag/BinaryIndexedTree'
+
+二维偏序:
+  label: '二维偏序'
+  permalink: '/tag/2Dpartialorder'
+
+Dilworth定理: 
+  label: 'Dilworth定理'
+  permalink: '/tag/DilworthsTheorem'
+
+重链剖分:
+  label: '重链剖分'
+  permalink: '/tag/Heavychaindissection'
+
+链表:
+  label: '链表'
+  permalink: '/tag/Linkedlist'
+
+拓扑排序:
+  label: '拓扑排序'
+  permalink: '/tag/TopologicalSorting'
+
+Kruskal重构树:
+  label: 'Kruskal重构树'
+  permalink: '/tag/Kruskalsreconstructedtree'
+
+离线处理:
+  label: '离线处理'
+  permalink: '/tag/Offlineprocessing'
+
+换根DP:
+  label: '换根DP'
+  permalink: '/tag/ChangeDP'
+
+线性筛法:
+  label: '线性筛法'
+  permalink: '/tag/Linearsievemethod'

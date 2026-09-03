@@ -2,7 +2,7 @@
 title: 图论进阶III(Tarjan主场)
 date: 2025-08-20
 slug: 算法/图论进阶III-Tarjan主场
-tags: [算法, Tarjan, 图论, 强联通分量, 双联通分量]
+tags: [算法, Tarjan, 图论, 强连通分量, 双连通分量]
 ---
 
 {/*truncate*/}
