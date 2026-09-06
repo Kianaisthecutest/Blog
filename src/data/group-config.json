@@ -3,7 +3,13 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 123
+    "count": 124
+  },
+  "题解/洛谷-or-Nsoj": {
+    "key": "题解/洛谷-or-Nsoj",
+    "label": "洛谷-or-Nsoj",
+    "icon": "📁",
+    "count": 32
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -185,12 +191,6 @@
     "icon": "📁",
     "count": 6
   },
-  "题解/洛谷-or-Nsoj": {
-    "key": "题解/洛谷-or-Nsoj",
-    "label": "洛谷-or-Nsoj",
-    "icon": "📁",
-    "count": 31
-  },
   "算法/博弈论": {
     "key": "算法/博弈论",
     "label": "博弈论",
@@ -273,6 +273,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 158
+    "count": 159
   }
 }
