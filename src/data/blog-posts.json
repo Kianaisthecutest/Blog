@@ -1,5 +1,75 @@
 [
   {
+    "title": "CHEWBACCA",
+    "date": "2026-09-04",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-A/A-CHEWBACCA",
+    "tags": [
+      "题解",
+      "COCI",
+      "数学",
+      "模拟"
+    ],
+    "groupPath": "题解/COCI/2015-2016-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-A"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-A/A-CHEWBACCA.md"
+  },
+  {
+    "title": "PERICA",
+    "date": "2026-09-04",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-A/B-PERICA",
+    "tags": [
+      "题解",
+      "COCI",
+      "组合数学"
+    ],
+    "groupPath": "题解/COCI/2015-2016-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-A"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-A/B-PERICA.md"
+  },
+  {
+    "title": "SAVEZ",
+    "date": "2026-09-04",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-A/C-SAVEZ",
+    "tags": [
+      "题解",
+      "COCI",
+      "哈希"
+    ],
+    "groupPath": "题解/COCI/2015-2016-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-A"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-A/C-SAVEZ.md"
+  },
+  {
+    "title": "Prosti",
+    "date": "2026-09-04",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-A/D-Prosti",
+    "tags": [
+      "题解",
+      "COCI",
+      "线性筛法",
+      "二分"
+    ],
+    "groupPath": "题解/COCI/2015-2016-A",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-A"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-A/D-Prosti.md"
+  },
+  {
     "title": "斜率优化",
     "date": "2026-09-03",
     "permalink": "/blog-posts/算法/DP/斜率优化",
@@ -2057,7 +2127,7 @@
     "filePath": "blog/题解/洛谷-or-Nsoj/瞿葩的数字游戏/多边形数.md"
   },
   {
-    "title": "数字王国的门神",
+    "title": "「瞿葩的数字游戏」数字王国的门神",
     "date": "2025-08-16",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/瞿葩的数字游戏/数字王国的门神",
     "tags": [
