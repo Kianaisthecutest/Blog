@@ -338,3 +338,7 @@ Kruskal重构树:
 线性筛法:
   label: '线性筛法'
   permalink: '/tag/Linearsievemethod'
+
+栈:
+  label: '栈'
+  permalink: '/tag/stack'

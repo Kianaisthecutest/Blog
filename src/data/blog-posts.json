@@ -1,5 +1,75 @@
 [
   {
+    "title": "MOLEKULE",
+    "date": "2026-09-05",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-B/A-MOLEKULE",
+    "tags": [
+      "题解",
+      "COCI",
+      "贪心"
+    ],
+    "groupPath": "题解/COCI/2015-2016-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-B"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-B/A-MOLEKULE.md"
+  },
+  {
+    "title": "SLON",
+    "date": "2026-09-05",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-B/B-SLON",
+    "tags": [
+      "题解",
+      "COCI",
+      "栈",
+      "模拟"
+    ],
+    "groupPath": "题解/COCI/2015-2016-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-B"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-B/B-SLON.md"
+  },
+  {
+    "title": "POPLAVA",
+    "date": "2026-09-05",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-B/C-POPLAVA",
+    "tags": [
+      "题解",
+      "COCI",
+      "构造"
+    ],
+    "groupPath": "题解/COCI/2015-2016-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-B"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-B/C-POPLAVA.md"
+  },
+  {
+    "title": "ENDOR",
+    "date": "2026-09-05",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-B/D-ENDOR",
+    "tags": [
+      "题解",
+      "COCI",
+      "余数分组",
+      "模拟"
+    ],
+    "groupPath": "题解/COCI/2015-2016-B",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-B"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-B/D-ENDOR.md"
+  },
+  {
     "title": "CHEWBACCA",
     "date": "2026-09-04",
     "permalink": "/blog-posts/题解/COCI/2015-2016-A/A-CHEWBACCA",
