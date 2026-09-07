@@ -128,11 +128,7 @@ $k_i \in [0, 18], \quad \forall i \in [1, len]$
 
 那么$k$的可能数就只有$O(19^{\lfloor \frac{len}{2} \rfloor})$级别，总数大概在$O(19^5)$级别，实际上略多一点，为$2541196$个
 
-最后的复杂度就大概在：
-
-$\lg R$
-
-$O\left(\sum_{i=1}^{\lg R} w_i^{i+1} + n \log_2 n + n \lg R + Q \log_2 n\right)$
+最后的复杂度就大概在：$O\left(\sum_{i=1}^{\lg R} w_i^{i+1} + n \log_2 n + n \lg R + Q \log_2 n\right)$
 
 其中$n = 2541196, w = 19.$
 
