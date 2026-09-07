@@ -130,9 +130,9 @@ $k_i \in [0, 18], \quad \forall i \in [1, len]$
 
 最后的复杂度就大概在：
 
-$\[\lg R\]$
+$\lg R$
 
-$\[O\left(\sum_{i=1}^{\lg R} w_i^{i+1} + n \log_2 n + n \lg R + Q \log_2 n\right)\]$
+$O\left(\sum_{i=1}^{\lg R} w_i^{i+1} + n \log_2 n + n \lg R + Q \log_2 n\right)$
 
 其中$n = 2541196, w = 19.$
 
