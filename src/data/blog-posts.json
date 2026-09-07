@@ -1,5 +1,74 @@
 [
   {
+    "title": "PIANINO",
+    "date": "2026-09-07",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-C/A-PIANINO",
+    "tags": [
+      "题解",
+      "COCI",
+      "模拟"
+    ],
+    "groupPath": "题解/COCI/2015-2016-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-C"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-C/A-PIANINO.md"
+  },
+  {
+    "title": "PAROVI",
+    "date": "2026-09-07",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-C/B-PAROVI",
+    "tags": [
+      "题解",
+      "COCI",
+      "容斥定理"
+    ],
+    "groupPath": "题解/COCI/2015-2016-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-C"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-C/B-PAROVI.md"
+  },
+  {
+    "title": "Prozor",
+    "date": "2026-09-07",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-C/C-Prozor",
+    "tags": [
+      "题解",
+      "COCI",
+      "前缀和"
+    ],
+    "groupPath": "题解/COCI/2015-2016-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-C"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-C/C-Prozor.md"
+  },
+  {
+    "title": "SAN",
+    "date": "2026-09-07",
+    "permalink": "/blog-posts/题解/COCI/2015-2016-C/D-SAN",
+    "tags": [
+      "题解",
+      "COCI",
+      "数学",
+      "数位DP"
+    ],
+    "groupPath": "题解/COCI/2015-2016-C",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2015-2016-C"
+    ],
+    "filePath": "blog/题解/COCI/2015-2016-C/D-SAN.md"
+  },
+  {
     "title": "祭坛",
     "date": "2026-09-06",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/祭坛",

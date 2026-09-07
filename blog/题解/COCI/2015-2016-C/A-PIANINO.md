@@ -1,0 +1,161 @@
+---
+title: PIANINO
+date: 2026-09-07
+slug: 题解/COCI/2015-2016-C/A-PIANINO
+tags: [题解, COCI, 模拟]
+---
+
+{/*truncate*/}
+
+## [COCI 2015/2016 #6] PIANINO
+<details>
+<summary>题干</summary>
+
+<h2>题目描述</h2>
+
+$\text{Mirka}$ 是个业余钢琴家，她正在学习一首乐曲。但她不太能找准音，因此她会采用一种特殊的技巧。
+
+这首乐曲中有 $N$ 个音符，每个音符都有一个标准音 $a_i$。$\text{Mirka}$ 能准确地弹出第一个音，接下来她会确定一个值 $K$。
+
+- 如果下一个音符的标准音大于当前音符的标准音，她就会将自己当前弹的音升高 $K$。
+- 如果下一个音符的标准音小于当前音符的标准音，她就会将自己当前弹的音降低 $K$。
+- 如果下一个音符的标准音等于当前音符的标准音，她不会改变当前弹的音。
+
+如果当前弹的音等于当前字符的标准音，就算 $\text{Mirka}$ 弹准了一个音。请帮她确定一个非负整数 $K$，使得她弹准的音最多。
+
+<h2>输入格式</h2>
+
+第一行包含一个整数 $N$。
+
+第二行包含 $N$ 个整数 $a_i$，其中 $a_i$ 为第 $i$ 个音符的标准音。
+
+<h2>输出格式</h2>
+
+第一行输出一个整数，为 $\text{Mirka}$ 最多能弹准的音。
+
+第二行输出一个非负整数，为 $K$ 的值。您只需输出**任意一种满足条件**的 $K$ 即可。
+
+<h2>输入输出样例 #1</h2>
+
+<h3>输入 #1</h3>
+
+```
+5
+1 2 0 3 1
+```
+
+<h3>输出 #1</h3>
+
+```
+3
+2
+```
+
+<h2>输入输出样例 #2</h2>
+
+<h3>输入 #2</h3>
+
+```
+7
+2 1 -6 -2 1 6 10
+```
+
+<h3>输出 #2</h3>
+
+```
+5
+4
+```
+
+<h2>说明/提示</h2>
+
+**【样例 1 解释】**
+
+当 $K=2$ 时，她弹出的音为 **1**，3，1，**3**，**1**，共弹准了 $3$ 个音。
+
+注意 $K=1$ 也是一种可行的方案。
+
+**【样例 2 解释】**
+
+当 $K=4$ 时，她弹出的音为 **2**，-2，**-6**，**-2**，2，**6**，**10**，共弹准了 $5$ 个音。
+
+**【数据范围】**
+
+对于 $100\%$ 的数据，$2\le N\le 10^6$，$-10^9\le a_i\le 10^9$。
+
+**【评分方式】**
+
+本题启用非官方的自行编写的 [Special Judge](https://www.luogu.com.cn/paste/i91dcbr2)，也可在附件中获取。欢迎大家 Hack（可私信或直接发帖）。Hack 数据作为测试点单独放在最后，对应测试点分数均为 0 分。
+
+**【题目来源】**
+
+**题目译自 [COCI 2015-2016](https://hsin.hr/coci/archive/2015_2016/) [CONTEST #6](https://hsin.hr/coci/archive/2015_2016/contest6_tasks.pdf) T3 PIANINO**。
+
+**本题分值按 COCI 原题设置，满分 $100$**。
+
+</details>
+
+***
+
+## 分析
+
+<h5>
+
+因为对于每个数它们加$k$还是减$k$只和原始值有关，所以到一个数上它一共加上或减去的$k$的数量是一定的
+
+所以我们先计算出对应的$k$，桶记录即可
+
+时间复杂度：$O(n)$
+
+</h5>
+
+***
+
+## AC代码
+<details>
+<summary>Code</summary>
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define pii pair< int,int >
+#define QWQ return 0;
+#define QAQ return 
+
+const int N=1e6+10;
+
+int a[N];
+
+unordered_map< int,int > vis;
+
+int main()
+{
+    // freopen( "1.in","r",stdin );
+    // freopen( "1.out","w",stdout );
+    ios::sync_with_stdio( false );
+    cin.tie( nullptr ); cout.tie( nullptr );
+    int n;
+    cin>>n;
+    for( int i=1;i<=n;i++ ) cin>>a[i];
+    int a1=a[1], sum=0, ans=0, add=1, k=0;
+    for( int i=2;i<=n;i++ )
+    {
+        if( a[i-1] > a[i] ) sum--;
+        if( a[i-1] < a[i] ) sum++;
+        //a1+sum*k=a[i]
+        if( !sum )
+        {
+            if( a1 == a[i] ) add++; 
+        }
+        else if( ( a[i]-a1 )%sum == 0 )
+        {
+            if( ans < ++vis[( a[i]-a1 )/sum] ) ans=vis[( a[i]-a1 )/sum], k=( a[i]-a1 )/sum;
+        }
+    }
+    cout<<ans+add<<"\n"<<k;
+	QWQ
+}
+```
+
+</details>

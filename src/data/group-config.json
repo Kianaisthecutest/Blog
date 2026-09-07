@@ -3,19 +3,25 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 124
+    "count": 128
+  },
+  "题解/COCI": {
+    "key": "题解/COCI",
+    "label": "COCI",
+    "icon": "📁",
+    "count": 32
+  },
+  "题解/COCI/2015-2016-C": {
+    "key": "题解/COCI/2015-2016-C",
+    "label": "2015-2016-C",
+    "icon": "📁",
+    "count": 4
   },
   "题解/洛谷-or-Nsoj": {
     "key": "题解/洛谷-or-Nsoj",
     "label": "洛谷-or-Nsoj",
     "icon": "📁",
     "count": 32
-  },
-  "题解/COCI": {
-    "key": "题解/COCI",
-    "label": "COCI",
-    "icon": "📁",
-    "count": 28
   },
   "题解/COCI/2015-2016-B": {
     "key": "题解/COCI/2015-2016-B",
@@ -273,6 +279,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 159
+    "count": 163
   }
 }
