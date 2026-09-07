@@ -115,16 +115,16 @@ $\text{Anica}$ 有一张神秘的无限表，表里有无限行和无限列。�
 我们很容易就能发现：能够被表示成$i+\text{rev}(i),i\in N_+$的数并不在多数，也就是说，按照上面那一条转移式，$f_i$大于$1$的并不多，我们可以把这些大于$1$的$f_i$通过数位$DP$求出来，也是前缀和处理一下，然后二分查询即可
 
 我们来考虑一下它的复杂度。假设我们现在枚举的$i$在十进制下有$len \in [1, 10]$位的，也就是 
-$\[ \lfloor \lg i + 1 \rfloor = len. \]$  
+$\lfloor \lg i + 1 \rfloor = len$  
 我们设一个数$x$其从低到高的第$i \in [1, len]$位为$x_i$，则有  
-$\[ x = \sum_{i=1}^{len} x_i \cdot 10^{i-1}. \]$
+$x = \sum_{i=1}^{len} x_i \cdot 10^{i-1}$
 
 设$k = i + \text{rev}(i)$，在不进位的情况下$k$满足下面这个条件：
 
-$\[k_j = k_{len-j}, \quad \forall j \in [1, len]\]$
+$k_j = k_{len-j}, \quad \forall j \in [1, len]$
 
 而对于$k$的任意一位$k_i$，它都是由$i$的某两位加和得到，故有结论：  
-$\[ k_i \in [0, 18], \quad \forall i \in [1, len]. \]$
+$k_i \in [0, 18], \quad \forall i \in [1, len]$
 
 那么$k$的可能数就只有$O(19^{\lfloor \frac{len}{2} \rfloor})$级别，总数大概在$O(19^5)$级别，实际上略多一点，为$2541196$个
 
