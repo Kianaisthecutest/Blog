@@ -217,7 +217,7 @@ $tarjan$可能确实不好理解(但是我一遍看懂了，很神奇)，这里�
 ```cpp
 inline void dfs( int p,int fa )//先dfs求欧拉序
 {
-	dfn[u]=++id; Euler[id]=u;
+	dfn[p]=++id; Euler[id]=p;
 	for( auto &x:rode[p] ) if( x != fa )
 	{
 		dep[x]=dep[p]+1;
@@ -231,7 +231,7 @@ inline void init()//预处理ST表
 	lg2[0]=-1;
 	for( int i=1;i<=idx;i++ ) lg2[i]=lg2[i>>1]+1;
 	for( int i=1;i<=idx;i++ ) ST[0][i]=Euler[i];
-	for( int bit=1;bit<=20;bit++ ) for( int i=1;( i+( 1<<bit ) )<=idx;i++ )
+	for( int bit=1;bit<=lg2[idx];bit++ ) for( int i=1;( i+( 1<<bit ) )<=idx;i++ )
 		if( dep[ST[bit-1][i]] < dep[ST[bit-1][i+( 1<<bit-1 )]] ) ST[bit][i]=ST[bit-1][i];
 		else                                                     ST[bit][i]=ST[bit-1][i+( 1<<bit-1 )];
 }
@@ -249,3 +249,39 @@ inline int lca( int x,int y )//用ST表查询
 ***
 
 ## <font color="#FFCCAA">6.dfn序</font>
+
+<h4>
+
+和欧拉序相比，$dfn$序的区别就是$dfn$序中他们的$lca$一定出现在它们之前
+
+那我们记录为父亲然后比较$dfn$序再$RMQ$就可以了
+
+</h4>
+
+```cpp
+inline void dfs( int p,int fa )//先dfs求dfn序
+{
+	dfn[p]=++id; ST[0][dfn[p]]=fa;
+	for( auto &x:rode[p] ) if( x != fa )
+		dfs( x,p );
+}
+
+inline void init()//预处理ST表
+{
+	lg2[0]=-1;
+	for( int i=1;i<=idx;i++ ) lg2[i]=lg2[i>>1]+1;
+	for( int bit=1;bit<=lg2[n];bit++ ) for( int i=1;( i+( 1<<bit ) )<=idx;i++ )
+		if( dfn[ST[bit-1][i]] < dfn[ST[bit-1][i+( 1<<bit-1 )]] ) ST[bit][i]=ST[bit-1][i];
+		else                                                     ST[bit][i]=ST[bit-1][i+( 1<<bit-1 )];
+}
+
+inline int lca( int x,int y )//用ST表查询
+{
+	if( x == y ) QAQ x;
+	x=dfn[x]; y=dfn[y];
+	if( dfn[x] > dfn[y] ) swap( x,y );
+	int lg=lg2[y-x+1];
+	if( dep[ST[lg][x]] < dep[ST[lg][y-( 1<<lg )+1]] ) QAQ ST[lg][x];
+	else                                              QAQ ST[lg][y-( 1<<lg )+1];
+}
+```
