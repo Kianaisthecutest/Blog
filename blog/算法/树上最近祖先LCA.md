@@ -2,7 +2,7 @@
 title: 树上最近祖先LCA
 date: 2025-11-06
 slug: 算法/树上最近祖先LCA
-tags: [算法, LCA, 倍增, 树链剖分, Tarjan]
+tags: [算法, LCA, 倍增, 树链剖分, Tarjan, ST表]
 ---
 
 {/*truncate*/}
@@ -195,3 +195,57 @@ $tarjan$可能确实不好理解(但是我一遍看懂了，很神奇)，这里�
 ![](/img/Tarjanlca.jpg)
 
 </h4>
+
+***
+
+<h2>UPDATA: 2026.09.08 增加欧拉序和dfn序求LCA的思路解法</h2>
+
+## <font color="#FFCCAA">5.欧拉序</font>
+
+<h4>
+
+我们首先看一下上面的那个图，这张图其实就把我们的这个欧拉序构造出来了
+
+然后我们根据欧拉序的得到可以知道：两点的$LCA$一定在两数第一次欧拉序位置的中间且为最小值
+
+因为如果$x$是$y$和$z$的$LCA$，遍历顺序一定是$x$->$y$->$x$->$z$，我们写个ST表就可以做了
+
+时间复杂度：预处理$O(nlogn)$，查询$O(1)$
+
+</h4>
+
+```cpp
+inline void dfs( int p,int fa )//先dfs求欧拉序
+{
+	dfn[u]=++id; Euler[id]=u;
+	for( auto &x:rode[p] ) if( x != fa )
+	{
+		dep[x]=dep[p]+1;
+		dfs( x,p );
+		Euler[++id]=p;
+	}
+}
+
+inline void init()//预处理ST表
+{
+	lg2[0]=-1;
+	for( int i=1;i<=idx;i++ ) lg2[i]=lg2[i>>1]+1;
+	for( int i=1;i<=idx;i++ ) ST[0][i]=Euler[i];
+	for( int bit=1;bit<=20;bit++ ) for( int i=1;( i+( 1<<bit ) )<=idx;i++ )
+		if( dep[ST[bit-1][i]] < dep[ST[bit-1][i+( 1<<bit-1 )]] ) ST[bit][i]=ST[bit-1][i];
+		else                                                     ST[bit][i]=ST[bit-1][i+( 1<<bit-1 )];
+}
+
+inline int lca( int x,int y )//用ST表查询
+{
+	x=dfn[x]; y=dfn[y];
+	if( dfn[x] > dfn[y] ) swap( x,y );
+	int lg=lg2[y-x+1];
+	if( dep[ST[lg][x]] < dep[ST[lg][y-( 1<<lg )+1]] ) QAQ ST[lg][x];
+	else                                              QAQ ST[lg][y-( 1<<lg )+1];
+}
+```
+
+***
+
+## <font color="#FFCCAA">6.dfn序</font>

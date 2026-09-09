@@ -350,3 +350,7 @@ Kruskal重构树:
 数位DP:
   label: '数位DP'
   permalink: '/tag/DigitDP'
+
+ST表:
+  label: 'ST表'
+  permalink: '/tag/STexcel'
