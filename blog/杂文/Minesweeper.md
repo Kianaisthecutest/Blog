@@ -1,7 +1,7 @@
 ---
 title: 扫雷
 date: 2026-09-10
-slug: 杂文/扫雷
+slug: 杂文/Minesweeper
 tags: [游戏]
 ---
 

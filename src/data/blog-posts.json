@@ -2,7 +2,7 @@
   {
     "title": "扫雷",
     "date": "2026-09-10",
-    "permalink": "/blog-posts/杂文/扫雷",
+    "permalink": "/blog-posts/杂文/Minesweeper",
     "tags": [
       "游戏"
     ],
@@ -10,7 +10,20 @@
     "groupSegments": [
       "杂文"
     ],
-    "filePath": "blog/杂文/扫雷.md"
+    "filePath": "blog/杂文/Minesweeper.md"
+  },
+  {
+    "title": "贪吃蛇",
+    "date": "2026-09-10",
+    "permalink": "/blog-posts/杂文/Snake",
+    "tags": [
+      "游戏"
+    ],
+    "groupPath": "杂文",
+    "groupSegments": [
+      "杂文"
+    ],
+    "filePath": "blog/杂文/Snake.md"
   },
   {
     "title": "PIANINO",
