@@ -1,5 +1,18 @@
 [
   {
+    "title": "扫雷",
+    "date": "2026-09-10",
+    "permalink": "/blog-posts/杂文/扫雷",
+    "tags": [
+      "游戏"
+    ],
+    "groupPath": "杂文",
+    "groupSegments": [
+      "杂文"
+    ],
+    "filePath": "blog/杂文/扫雷.md"
+  },
+  {
     "title": "PIANINO",
     "date": "2026-09-07",
     "permalink": "/blog-posts/题解/COCI/2015-2016-C/A-PIANINO",
