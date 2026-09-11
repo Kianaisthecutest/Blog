@@ -1,15 +1,27 @@
 {
+  "题解": {
+    "key": "题解",
+    "label": "题解",
+    "icon": "📁",
+    "count": 131
+  },
+  "题解/洛谷-or-Nsoj": {
+    "key": "题解/洛谷-or-Nsoj",
+    "label": "洛谷-or-Nsoj",
+    "icon": "📁",
+    "count": 35
+  },
+  "题解/洛谷-or-Nsoj/琪亚娜与OI比赛": {
+    "key": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "label": "琪亚娜与OI比赛",
+    "icon": "📁",
+    "count": 3
+  },
   "杂文": {
     "key": "杂文",
     "label": "杂文",
     "icon": "📁",
     "count": 2
-  },
-  "题解": {
-    "key": "题解",
-    "label": "题解",
-    "icon": "📁",
-    "count": 128
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -22,12 +34,6 @@
     "label": "2015-2016-C",
     "icon": "📁",
     "count": 4
-  },
-  "题解/洛谷-or-Nsoj": {
-    "key": "题解/洛谷-or-Nsoj",
-    "label": "洛谷-or-Nsoj",
-    "icon": "📁",
-    "count": 32
   },
   "题解/COCI/2015-2016-B": {
     "key": "题解/COCI/2015-2016-B",
@@ -285,6 +291,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 165
+    "count": 168
   }
 }

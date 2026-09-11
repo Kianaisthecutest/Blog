@@ -1,5 +1,54 @@
 [
   {
+    "title": "琪亚娜与虚数之海",
+    "date": "2026-09-11",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与虚数之海",
+    "tags": [
+      "题解",
+      "Tarjan",
+      "强连通分量",
+      "拓扑排序"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与虚数之海.md"
+  },
+  {
+    "title": "琪亚娜与赤鸢",
+    "date": "2026-09-11",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与赤鸢",
+    "tags": [
+      "题解",
+      "贪心"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与赤鸢.md"
+  },
+  {
+    "title": "题干汇总",
+    "date": "2026-09-11",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/题干汇总",
+    "tags": [
+      "题解"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/题干汇总.md"
+  },
+  {
     "title": "扫雷",
     "date": "2026-09-10",
     "permalink": "/blog-posts/杂文/Minesweeper",

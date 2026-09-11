@@ -350,3 +350,7 @@ Kruskal重构树:
 数位DP:
   label: '数位DP'
   permalink: '/tag/DigitDP'
+
+游戏:
+  label: '游戏'
+  permalink: '/tag/GAME'

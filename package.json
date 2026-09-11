@@ -8,7 +8,7 @@
     "prestart": "npm run generate:blog",
     "start": "docusaurus start",
     "prebuild": "npm run generate:blog",
-    "build": "docusaurus build",
+    "build": "cross-env DOCUSAURUS_IGNORE_SSG_WARNINGS=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
     "@docusaurus/types": "3.10.2",
+    "cross-env": "^7.0.3",
     "npm": "^12.0.2"
   },
   "browserslist": {
