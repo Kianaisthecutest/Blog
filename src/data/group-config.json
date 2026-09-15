@@ -3,13 +3,19 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 133
+    "count": 137
   },
   "题解/洛谷-or-Nsoj": {
     "key": "题解/洛谷-or-Nsoj",
     "label": "洛谷-or-Nsoj",
     "icon": "📁",
-    "count": 37
+    "count": 41
+  },
+  "题解/洛谷-or-Nsoj/2026-09-15测试": {
+    "key": "题解/洛谷-or-Nsoj/2026-09-15测试",
+    "label": "2026-09-15测试",
+    "icon": "📁",
+    "count": 4
   },
   "题解/洛谷-or-Nsoj/琪亚娜与OI比赛": {
     "key": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
@@ -291,6 +297,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 170
+    "count": 174
   }
 }

@@ -1,6 +1,74 @@
 [
   {
-    "title": "琪亚娜与赤鸢",
+    "title": "MooTube",
+    "date": "2026-09-15",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/2026-09-15测试/A-MooTube",
+    "tags": [
+      "题解",
+      "并查集",
+      "离线处理"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/2026-09-15测试",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "2026-09-15测试"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/2026-09-15测试/A-MooTube.md"
+  },
+  {
+    "title": "Dishwashing",
+    "date": "2026-09-15",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/2026-09-15测试/B.Dishwashing",
+    "tags": [
+      "题解",
+      "贪心"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/2026-09-15测试",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "2026-09-15测试"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/2026-09-15测试/B.Dishwashing.md"
+  },
+  {
+    "title": "Grass Cownoisseur",
+    "date": "2026-09-15",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/2026-09-15测试/C-Grass-Cownoisseur",
+    "tags": [
+      "题解",
+      "Tarjan",
+      "强连通分量",
+      "拓扑排序"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/2026-09-15测试",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "2026-09-15测试"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/2026-09-15测试/C-Grass-Cownoisseur.md"
+  },
+  {
+    "title": "快餐店",
+    "date": "2026-09-15",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/2026-09-15测试/D-fast-food-restaurant",
+    "tags": [
+      "题解",
+      "基环树",
+      "动态规划"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/2026-09-15测试",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "2026-09-15测试"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/2026-09-15测试/D-fast-food-restaurant.md"
+  },
+  {
+    "title": "琪亚娜与送货",
     "date": "2026-09-15",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/D-琪亚娜与送货",
     "tags": [
@@ -22,7 +90,7 @@
     "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/D-琪亚娜与送货.md"
   },
   {
-    "title": "琪亚娜与赤鸢",
+    "title": "琪亚娜与小蛋糕",
     "date": "2026-09-13",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕",
     "tags": [
