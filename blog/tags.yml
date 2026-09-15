@@ -354,3 +354,7 @@ Kruskal重构树:
 游戏:
   label: '游戏'
   permalink: '/tag/GAME'
+
+分块:
+  label: '分块'
+  permalink: '/tag/Chunking'

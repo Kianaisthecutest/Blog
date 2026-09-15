@@ -1,8 +1,63 @@
 [
   {
+    "title": "琪亚娜与赤鸢",
+    "date": "2026-09-15",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/D-琪亚娜与送货",
+    "tags": [
+      "题解",
+      "线段树",
+      "树状数组",
+      "树套树",
+      "树链剖分",
+      "LCA",
+      "离线处理",
+      "分块"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/D-琪亚娜与送货.md"
+  },
+  {
+    "title": "琪亚娜与赤鸢",
+    "date": "2026-09-13",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕",
+    "tags": [
+      "题解",
+      "动态规划",
+      "斜率优化"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕.md"
+  },
+  {
+    "title": "琪亚娜与赤鸢",
+    "date": "2026-09-11",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/A-琪亚娜与赤鸢",
+    "tags": [
+      "题解",
+      "贪心"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/A-琪亚娜与赤鸢.md"
+  },
+  {
     "title": "琪亚娜与虚数之海",
     "date": "2026-09-11",
-    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与虚数之海",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/B-琪亚娜与虚数之海",
     "tags": [
       "题解",
       "Tarjan",
@@ -15,23 +70,7 @@
       "洛谷-or-Nsoj",
       "琪亚娜与OI比赛"
     ],
-    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与虚数之海.md"
-  },
-  {
-    "title": "琪亚娜与赤鸢",
-    "date": "2026-09-11",
-    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与赤鸢",
-    "tags": [
-      "题解",
-      "贪心"
-    ],
-    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
-    "groupSegments": [
-      "题解",
-      "洛谷-or-Nsoj",
-      "琪亚娜与OI比赛"
-    ],
-    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/琪亚娜与赤鸢.md"
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/B-琪亚娜与虚数之海.md"
   },
   {
     "title": "题干汇总",
