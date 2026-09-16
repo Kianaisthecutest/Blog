@@ -3,7 +3,19 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 137
+    "count": 140
+  },
+  "题解/USACO": {
+    "key": "题解/USACO",
+    "label": "USACO",
+    "icon": "📁",
+    "count": 6
+  },
+  "题解/USACO/2018-Dec-Gold": {
+    "key": "题解/USACO/2018-Dec-Gold",
+    "label": "2018-Dec-Gold",
+    "icon": "📁",
+    "count": 3
   },
   "题解/洛谷-or-Nsoj": {
     "key": "题解/洛谷-or-Nsoj",
@@ -197,12 +209,6 @@
     "icon": "📁",
     "count": 3
   },
-  "题解/USACO": {
-    "key": "题解/USACO",
-    "label": "USACO",
-    "icon": "📁",
-    "count": 3
-  },
   "题解/USACO/2026-Third-Gold": {
     "key": "题解/USACO/2026-Third-Gold",
     "label": "2026-Third-Gold",
@@ -297,6 +303,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 174
+    "count": 177
   }
 }

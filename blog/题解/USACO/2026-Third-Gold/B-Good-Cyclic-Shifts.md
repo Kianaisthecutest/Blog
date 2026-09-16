@@ -1,8 +1,8 @@
 ---
 title: Good Cyclic Shifts
 date: 2026-03-04
-slug: 题解/USACO/2026-Third-Gold/Good-Cyclic-Shifts
-tags: [题解, 树状数组]
+slug: 题解/USACO/2026-Third-Gold/B-Good-Cyclic-Shifts
+tags: [题解, USACO, 树状数组]
 ---
 
 {/*truncate*/}

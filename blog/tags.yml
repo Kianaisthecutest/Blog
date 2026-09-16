@@ -358,3 +358,7 @@ Kruskal重构树:
 分块:
   label: '分块'
   permalink: '/tag/Chunking'
+
+USACO:
+  label: 'USACO'
+  permalink: '/tag/USACO'

@@ -1,8 +1,8 @@
 ---
 title: Picking Flowers
 date: 2026-03-04
-slug: 题解/USACO/2026-Third-Gold/Picking-Flowers
-tags: [题解, 动态规划, 分层图]
+slug: 题解/USACO/2026-Third-Gold/A-Picking-Flowers
+tags: [题解, USACO, 动态规划, 分层图]
 ---
 
 {/*truncate*/}

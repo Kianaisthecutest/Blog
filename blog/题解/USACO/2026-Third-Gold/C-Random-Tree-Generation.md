@@ -1,8 +1,8 @@
 ---
 title: Random Tree Generation
 date: 2026-03-04
-slug: 题解/USACO/2026-Third-Gold/Random-Tree-Generation
-tags: [题解, 数学, 树形DP, 换根DP]
+slug: 题解/USACO/2026-Third-Gold/C-Random-Tree-Generation
+tags: [题解, USACO, 数学, 树形DP, 换根DP]
 ---
 
 {/*truncate*/}
