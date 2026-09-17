@@ -1,5 +1,59 @@
 [
   {
+    "title": "Cow Poetry",
+    "date": "2026-09-17",
+    "permalink": "/blog-posts/题解/USACO/2019-Jan-Gold/A-Cow-Poetry",
+    "tags": [
+      "题解",
+      "USACO",
+      "数学",
+      "背包DP"
+    ],
+    "groupPath": "题解/USACO/2019-Jan-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2019-Jan-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2019-Jan-Gold/A-Cow-Poetry.md"
+  },
+  {
+    "title": "Sleepy Cow Sorting",
+    "date": "2026-09-17",
+    "permalink": "/blog-posts/题解/USACO/2019-Jan-Gold/B-Sleepy-Cow-Sorting",
+    "tags": [
+      "题解",
+      "USACO",
+      "贪心",
+      "平衡树",
+      "树状数组"
+    ],
+    "groupPath": "题解/USACO/2019-Jan-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2019-Jan-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2019-Jan-Gold/B-Sleepy-Cow-Sorting.md"
+  },
+  {
+    "title": "Shortcut",
+    "date": "2026-09-17",
+    "permalink": "/blog-posts/题解/USACO/2019-Jan-Gold/C-Shortcut",
+    "tags": [
+      "题解",
+      "USACO",
+      "最短路"
+    ],
+    "groupPath": "题解/USACO/2019-Jan-Gold",
+    "groupSegments": [
+      "题解",
+      "USACO",
+      "2019-Jan-Gold"
+    ],
+    "filePath": "blog/题解/USACO/2019-Jan-Gold/C-Shortcut.md"
+  },
+  {
     "title": "Fine Dining",
     "date": "2026-09-16",
     "permalink": "/blog-posts/题解/USACO/2018-Dec-Gold/A-Fine-Dining",
@@ -24,7 +78,7 @@
     "tags": [
       "题解",
       "USACO",
-      "容斥",
+      "容斥定理",
       "哈希"
     ],
     "groupPath": "题解/USACO/2018-Dec-Gold",

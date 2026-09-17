@@ -3,13 +3,19 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 140
+    "count": 143
   },
   "题解/USACO": {
     "key": "题解/USACO",
     "label": "USACO",
     "icon": "📁",
-    "count": 6
+    "count": 9
+  },
+  "题解/USACO/2019-Jan-Gold": {
+    "key": "题解/USACO/2019-Jan-Gold",
+    "label": "2019-Jan-Gold",
+    "icon": "📁",
+    "count": 3
   },
   "题解/USACO/2018-Dec-Gold": {
     "key": "题解/USACO/2018-Dec-Gold",
@@ -303,6 +309,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 177
+    "count": 180
   }
 }
