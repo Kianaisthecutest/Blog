@@ -1,5 +1,22 @@
 [
   {
+    "title": "树形背包",
+    "date": "2026-09-22",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/树形背包",
+    "tags": [
+      "题解",
+      "动态规划",
+      "背包DP",
+      "树形DP"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/树形背包.md"
+  },
+  {
     "title": "Cow Poetry",
     "date": "2026-09-17",
     "permalink": "/blog-posts/题解/USACO/2019-Jan-Gold/A-Cow-Poetry",
@@ -43,7 +60,8 @@
     "tags": [
       "题解",
       "USACO",
-      "最短路"
+      "最短路",
+      "拓扑排序"
     ],
     "groupPath": "题解/USACO/2019-Jan-Gold",
     "groupSegments": [
