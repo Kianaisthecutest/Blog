@@ -1,5 +1,43 @@
 [
   {
+    "title": "Holding",
+    "date": "2026-09-28",
+    "permalink": "/blog-posts/题解/COCI/2019-2020-4/B-Holding",
+    "tags": [
+      "题解",
+      "COCI",
+      "动态规划",
+      "贪心"
+    ],
+    "groupPath": "题解/COCI/2019-2020-4",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2019-2020-4"
+    ],
+    "filePath": "blog/题解/COCI/2019-2020-4/B-Holding.md"
+  },
+  {
+    "title": "Klasika",
+    "date": "2026-09-28",
+    "permalink": "/blog-posts/题解/COCI/2019-2020-4/C-Klasika",
+    "tags": [
+      "题解",
+      "COCI",
+      "字典树",
+      "树状数组",
+      "树链剖分",
+      "树套树"
+    ],
+    "groupPath": "题解/COCI/2019-2020-4",
+    "groupSegments": [
+      "题解",
+      "COCI",
+      "2019-2020-4"
+    ],
+    "filePath": "blog/题解/COCI/2019-2020-4/C-Klasika.md"
+  },
+  {
     "title": "树形背包",
     "date": "2026-09-22",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/树形背包",
@@ -832,71 +870,71 @@
   {
     "title": "Bitovi",
     "date": "2026-08-25",
-    "permalink": "/blog-posts/题解/COCI/2023-2024-05/A-Bitovi",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-5/A-Bitovi",
     "tags": [
       "题解",
       "COCI",
       "进制"
     ],
-    "groupPath": "题解/COCI/2023-2024-05",
+    "groupPath": "题解/COCI/2023-2024-5",
     "groupSegments": [
       "题解",
       "COCI",
-      "2023-2024-05"
+      "2023-2024-5"
     ],
-    "filePath": "blog/题解/COCI/2023-2024-05/A-Bitovi.md"
+    "filePath": "blog/题解/COCI/2023-2024-5/A-Bitovi.md"
   },
   {
     "title": "Piratski kod",
     "date": "2026-08-25",
-    "permalink": "/blog-posts/题解/COCI/2023-2024-05/B-Piratski kod",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-5/B-Piratski kod",
     "tags": [
       "题解",
       "COCI",
       "动态规划",
       "组合数学"
     ],
-    "groupPath": "题解/COCI/2023-2024-05",
+    "groupPath": "题解/COCI/2023-2024-5",
     "groupSegments": [
       "题解",
       "COCI",
-      "2023-2024-05"
+      "2023-2024-5"
     ],
-    "filePath": "blog/题解/COCI/2023-2024-05/B-Piratski kod.md"
+    "filePath": "blog/题解/COCI/2023-2024-5/B-Piratski kod.md"
   },
   {
     "title": "Rolete",
     "date": "2026-08-25",
-    "permalink": "/blog-posts/题解/COCI/2023-2024-05/C-Rolete",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-5/C-Rolete",
     "tags": [
       "题解",
       "COCI",
       "贪心"
     ],
-    "groupPath": "题解/COCI/2023-2024-05",
+    "groupPath": "题解/COCI/2023-2024-5",
     "groupSegments": [
       "题解",
       "COCI",
-      "2023-2024-05"
+      "2023-2024-5"
     ],
-    "filePath": "blog/题解/COCI/2023-2024-05/C-Rolete.md"
+    "filePath": "blog/题解/COCI/2023-2024-5/C-Rolete.md"
   },
   {
     "title": "Trokut",
     "date": "2026-08-25",
-    "permalink": "/blog-posts/题解/COCI/2023-2024-05/D-Trokut",
+    "permalink": "/blog-posts/题解/COCI/2023-2024-5/D-Trokut",
     "tags": [
       "题解",
       "COCI",
       "博弈论"
     ],
-    "groupPath": "题解/COCI/2023-2024-05",
+    "groupPath": "题解/COCI/2023-2024-5",
     "groupSegments": [
       "题解",
       "COCI",
-      "2023-2024-05"
+      "2023-2024-5"
     ],
-    "filePath": "blog/题解/COCI/2023-2024-05/D-Trokut.md"
+    "filePath": "blog/题解/COCI/2023-2024-5/D-Trokut.md"
   },
   {
     "title": "网络流和二分图",
