@@ -11,52 +11,59 @@ const starfield = Array.from({ length: 24 }, (_, index) => ({
   duration: `${6 + (index % 7)}s`,
 }));
 
+const placeholderItem = {
+  id: 'placeholder',
+  name: '',
+  title: '',
+  rarity: 3,
+  type: '',
+  element: '—',
+  tagline: '',
+  color: '#dbeafe',
+};
+
 const pool = {
-  5: [
-    { id: 'kiana', name: '琪亚娜', title: '焰之女王', rarity: 5, type: '角色', element: '炎', tagline: '以焰火点亮战场', color: '#ffe3a6' },
-    { id: 'mei', name: '梅比乌斯', title: '月下之梦', rarity: 5, type: '角色', element: '月', tagline: '静如湖面，锐如刀锋', color: '#c7d2fe' },
-    { id: 'sakura', name: '樱', title: '星海之锚', rarity: 5, type: '角色', element: '光', tagline: '海潮回响，世界清醒', color: '#e9d5ff' },
-    { id: 'kallen', name: '卡莲', title: '炽燃之心', rarity: 5, type: '角色', element: '火', tagline: '火焰在心中熊熊燃烧', color: '#fdba74' },
-    { id: 'lily', name: '莉莉娅', title: '深海幽蓝', rarity: 5, type: '角色', element: '水', tagline: '雾海中的微光不灭', color: '#93c5fd' },
-    { id: 'lance', name: '天命之剑', title: '星穹之刃', rarity: 5, type: '武器', element: '光', tagline: '穿透命运的利刃', color: '#f5d0fe' },
-    { id: 'eileen', name: '艾琳', title: '梦醒之歌', rarity: 5, type: '角色', element: '风', tagline: '从梦中醒来，向着星辰奔跑', color: '#bfdbfe' },
-  ],
+  5: [],
   4: [
-    { id: 'ai', name: '爱莉希雅', title: '晨曦长路', rarity: 4, type: '角色', element: '雷', tagline: '劈开迷雾，照见未来', color: '#bfdbfe' },
-    { id: 'bronya', name: '布洛妮娅', title: '时空旅人', rarity: 4, type: '角色', element: '风', tagline: '迈向新的终点', color: '#d1fae5' },
-    { id: 'theresa', name: '德丽莎', title: '净化之翼', rarity: 4, type: '角色', element: '光', tagline: '高处俯瞰一切', color: '#fef3c7' },
-    { id: 'seele', name: '赛尔', title: '静谧之影', rarity: 4, type: '角色', element: '影', tagline: '影中藏着无穷可能', color: '#c4b5fd' },
-    { id: 'fischl', name: '菲谢尔', title: '星空召唤', rarity: 4, type: '角色', element: '雷', tagline: '夜色中听见星辰低语', color: '#f9a8d4' },
-    { id: 'bow', name: '星隐长弓', title: '天穹之眼', rarity: 4, type: '武器', element: '风', tagline: '箭无虚发', color: '#a5f3fc' },
-    { id: 'lance-2', name: '流星双刃', title: '迅斩之锋', rarity: 4, type: '武器', element: '火', tagline: '一击定乾坤', color: '#fdba74' },
+    {
+      id: 'korari-heavy-machine',
+      name: '科拉莉·重机',
+      title: '狗头军师',
+      rarity: 4,
+      type: '角色',
+      element: '火',
+      tagline: '狗头军师',
+      color: '#c4b5fd',
+      image: '/img/KorariHeavyMachine.png',
+    },
   ],
   3: [
-    { id: 'potion', name: '回响药剂', title: '战斗气息', rarity: 3, type: '消耗', element: '无', tagline: '小小助力，千里可行', color: '#dbeafe' },
-    { id: 'memory', name: '记忆碎片', title: '星尘回响', rarity: 3, type: '材料', element: '无', tagline: '沉睡的碎片，悄然苏醒', color: '#e2e8f0' },
-    { id: 'shield', name: '守护护盾', title: '应急装置', rarity: 3, type: '工具', element: '无', tagline: '身前尽是光', color: '#bfdbfe' },
-    { id: 'talisman', name: '祈愿符', title: '命运印记', rarity: 3, type: '道具', element: '无', tagline: '愿望被悄悄听见', color: '#f5d0fe' },
-    { id: 'orb', name: '星核碎片', title: '奇点余烬', rarity: 3, type: '材料', element: '无', tagline: '暗处的光也能被拾起', color: '#d1fae5' },
-    { id: 'rune', name: '符文纸片', title: '星图纹痕', rarity: 3, type: '道具', element: '无', tagline: '凡人的执念，也有力量', color: '#f9a8d4' },
+    {
+      id: 'theresa-3',
+      name: '德丽傻',
+      title: '其实很可爱对吧',
+      rarity: 3,
+      type: '角色',
+      element: '光',
+      tagline: '其实很可爱对吧',
+      color: '#dbeafe',
+      image: '/img/Theresaca.png',
+    },
   ],
 };
 
-const starterHistory = [
-  { name: '琪亚娜', title: '焰之女王', rarity: 5 },
-  { name: '布洛妮娅', title: '时空旅人', rarity: 4 },
-  { name: '守护护盾', title: '应急装置', rarity: 3 },
-  { name: '爱莉希雅', title: '晨曦长路', rarity: 4 },
-];
+const starterHistory = [];
 
 const featuredCharacter = {
-  name: '琪亚娜',
-  title: '焰之女王',
+  name: '',
+  title: '',
   rarity: 5,
-  tag: '特限定池',
-  text: '以火焰宣誓，愿所有人都能看见明天。',
+  tag: '',
+  text: '',
 };
 
 function pickByRarity(rarity) {
-  const options = pool[rarity];
+  const options = pool[rarity] && pool[rarity].length > 0 ? pool[rarity] : [placeholderItem];
   return options[Math.floor(Math.random() * options.length)];
 }
 
@@ -133,7 +140,7 @@ function GachaPage() {
     window.setTimeout(() => {
       const reward = generated[generated.length - 1];
       setResults(generated);
-      setHistory((prev) => [...generated, ...prev].slice(0, 12));
+      setHistory((prev) => [...generated, ...prev].slice(0, 10));
       setLastPull(reward);
       setPity(newPity);
       setLastBurst(reward.rarity >= 5);
@@ -161,12 +168,18 @@ function GachaPage() {
               <span className={styles.rarityLabel}>R{item.rarity}</span>
               <span className={styles.typeLabel}>{item.type}</span>
             </div>
-            <div className={styles.avatar}>
-              <span>{item.name.slice(0, 1)}</span>
-            </div>
+            {item.image ? (
+              <div className={styles.cardImageWrap}>
+                <img src={item.image} alt={item.name} className={styles.cardImage} />
+              </div>
+            ) : (
+              <div className={styles.avatar}>
+                <span>{item.name.slice(0, 1)}</span>
+              </div>
+            )}
             <div className={styles.cardInfo}>
               <strong>{item.name}</strong>
-              <span>{item.title}</span>
+              <span className={styles.cardSubText}>{item.tagline || item.title}</span>
             </div>
           </>
         ) : (
@@ -193,7 +206,7 @@ function GachaPage() {
                 key={i}
                 className={styles.burstRay}
                 style={{
-                  transform: `rotate(${i * 20}deg) translateY(-12px)`,
+                  '--angle': `${i * 20}deg`,
                   animationDelay: `${i * 0.05}s`,
                 }}
               />
@@ -278,31 +291,9 @@ function GachaPage() {
                   </div>
                 </div>
                 <div className={styles.characterMeta}>
-                  <span className={styles.characterBadge}>{featuredCharacter.tag}</span>
-                  <h3>{featuredCharacter.name}</h3>
-                  <p>{featuredCharacter.title}</p>
-                </div>
-              </div>
-
-              <div className={styles.panelHeader}>
-                <div className={styles.highlightPill}>新池</div>
-                <div className={styles.resultHeader}>
-                  <div>
-                    <p className={styles.resultLabel}>最近获取</p>
-                    <h2>{lastPull.name}</h2>
-                  </div>
-                  <span className={styles.resultBadge}>R{lastPull.rarity || '—'}</span>
-                </div>
-              </div>
-
-              <div className={styles.resultPreview}>
-                <div className={styles.resultAvatar}>
-                  {lastPull.name === '等待祈愿' ? '✦' : lastPull.name.slice(0, 1)}
-                </div>
-                <div className={styles.resultMeta}>
-                  <span className={styles.metaLabel}>当前祈愿</span>
-                  <strong>{lastPull.title}</strong>
-                  <small>{lastPull.name === '等待祈愿' ? '命运尚未揭晓' : '愿望已被听见'}</small>
+                  {featuredCharacter.tag ? <span className={styles.characterBadge}>{featuredCharacter.tag}</span> : null}
+                  {featuredCharacter.name ? <h3>{featuredCharacter.name}</h3> : null}
+                  {featuredCharacter.title ? <p>{featuredCharacter.title}</p> : null}
                 </div>
               </div>
 
@@ -324,34 +315,38 @@ function GachaPage() {
               <div className={styles.historyBox}>
                 <div className={styles.historyTitleRow}>
                   <h3>祈愿记录</h3>
-                  <span>最近12次</span>
+                  <span>最近10次</span>
                 </div>
 
                 <div className={styles.historyList}>
-                  {history.map((item, index) => (
-                    <div key={`${item.name}-${index}`} className={styles.historyItem}>
-                      <span className={`${styles.dot} ${styles[`rarityDot${item.rarity}`]}`} />
-                      <div>
-                        <strong>{item.name}</strong>
-                        <small>{item.title}</small>
+                  {history.length === 0 ? (
+                    <div className={styles.emptyHistory}>暂无记录</div>
+                  ) : (
+                    history.map((item, index) => (
+                      <div key={`${item.name}-${index}`} className={styles.historyItem}>
+                        <span className={`${styles.dot} ${styles[`rarityDot${item.rarity}`]}`} />
+                        <div>
+                          <strong>{item.name}</strong>
+                          <small>{item.title}</small>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               </div>
 
               <div className={styles.statusBox}>
                 <div className={styles.statusRow}>
                   <span>角色池</span>
-                  <strong>琪亚娜</strong>
+                  <strong></strong>
                 </div>
                 <div className={styles.statusRow}>
                   <span>概率</span>
-                  <strong>0.1% / 5.0%</strong>
+                  <strong></strong>
                 </div>
                 <div className={styles.statusRow}>
                   <span>状态</span>
-                  <strong>可祈愿</strong>
+                  <strong></strong>
                 </div>
               </div>
             </aside>
