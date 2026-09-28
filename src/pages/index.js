@@ -60,6 +60,12 @@ function HomepageHeader() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
+          <a className={styles.gachaButton} href="/gacha">
+            <svg className={styles.gachaIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 1.5l2.5 5.8 6.1.8-4.4 4.3 1 6.1-5.2-2.7-5.2 2.7 1-6.1L3.4 8.1l6.1-.8L12 1.5zm0 5.1l-1.3 3.1-3.3.4 2.4 2.3-.7 3.3 2.9-1.5 2.9 1.5-.7-3.3 2.4-2.3-3.3-.4L12 6.6zm0 3.1c-.8 0-1.5.7-1.5 1.5S11.2 12.7 12 12.7 13.5 12 13.5 11.2 12.8 9.7 12 9.7z"/>
+            </svg>
+            <span>祈愿抽卡</span>
+          </a>
           <a className={styles.secondaryButton} href="#features">
             <span>了解更多</span>
           </a>
