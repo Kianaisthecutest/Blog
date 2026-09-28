@@ -23,7 +23,19 @@ const placeholderItem = {
 };
 
 const pool = {
-  5: [],
+  5: [
+    {
+      id: 'bronya-law-of-reason',
+      name: '布洛妮娅·理之律者',
+      title: '还没有驾照',
+      rarity: 5,
+      type: '角色',
+      element: '风',
+      tagline: '还没有驾照',
+      color: '#facc15',
+      image: '/img/Thelawofreason.png',
+    },
+  ],
   4: [
     {
       id: 'korari-heavy-machine',
