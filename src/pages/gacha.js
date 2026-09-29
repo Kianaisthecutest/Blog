@@ -165,16 +165,17 @@ function GachaPage() {
   const [pulling, setPulling] = useState(false);
   const [results, setResults] = useState(Array.from({ length: 10 }, () => null));
   const [history, setHistory] = useState(starterHistory);
+  const [totalPulls, setTotalPulls] = useState(0);
   const [pity, setPity] = useState({ four: 0, five: 0 });
   const [lastPull, setLastPull] = useState({ name: '等待祈愿', title: '命运尚未揭晓', rarity: 0, color: '#dbeafe' });
   const [lastBurst, setLastBurst] = useState(false);
   const [showFiveStarBanner, setShowFiveStarBanner] = useState(false);
 
   const summary = useMemo(() => {
-    const total = history.length;
+    const total = totalPulls;
     const fiveStarCount = history.filter((item) => item.rarity === 5).length;
     return { total, fiveStarCount };
-  }, [history]);
+  }, [history, totalPulls]);
 
   const featuredCharacter = useMemo(() => {
     if (!history.length) {
@@ -187,7 +188,7 @@ function GachaPage() {
       title: rarest.title,
       rarity: rarest.rarity,
       tag: rarest.rarity >= 5 ? '五星' : rarest.rarity === 4 ? '四星' : '三星',
-      text: `累计抽数 ${summary.total}`,
+      text: `累计抽数 ${totalPulls}`,
       image: rarest.image || '',
     };
   }, [history, summary.total]);
@@ -203,6 +204,7 @@ function GachaPage() {
 
     const generated = [];
     let newPity = { ...pity };
+    setTotalPulls((prev) => prev + count);
 
     for (let i = 0; i < count; i += 1) {
       const item = getPullResult(newPity);

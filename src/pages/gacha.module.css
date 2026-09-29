@@ -368,16 +368,16 @@
 
 .characterStage {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(200px, 1fr) minmax(120px, 170px);
+  align-items: center;
+  gap: 18px;
   min-height: 240px;
   margin-bottom: 20px;
   padding: 18px 18px 10px;
   border-radius: 22px;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.78));
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.78), rgba(30, 41, 59, 0.78));
   border: 1px solid rgba(148, 163, 184, 0.18);
 }
 
@@ -389,11 +389,11 @@
 }
 
 .portraitGlow {
-  width: 220px;
-  height: 220px;
-  right: 50px;
-  top: -50px;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.38), rgba(244, 114, 182, 0.12), transparent 68%);
+  width: 240px;
+  height: 240px;
+  right: 18%;
+  top: -60px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.36), rgba(244, 114, 182, 0.12), transparent 68%);
   filter: blur(18px);
 }
 
@@ -409,12 +409,12 @@
 .portraitFrame {
   position: relative;
   z-index: 1;
-  width: 180px;
-  height: 180px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, rgba(8, 15, 30, 0.6), rgba(15, 23, 42, 0.8));
+  width: 200px;
+  height: 200px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, rgba(8, 15, 30, 0.64), rgba(15, 23, 42, 0.8));
   border: 1px solid rgba(251, 191, 36, 0.28);
-  box-shadow: inset 0 0 22px rgba(251, 191, 36, 0.1), 0 0 28px rgba(251, 191, 36, 0.12);
+  box-shadow: inset 0 0 22px rgba(251, 191, 36, 0.12), 0 0 28px rgba(251, 191, 36, 0.13);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -432,8 +432,8 @@
 .previewRing {
   position: relative;
   z-index: 1;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   border: 1px solid rgba(251, 191, 36, 0.46);
   background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0.04) 38%, rgba(15, 23, 42, 0.08) 70%, transparent 100%);
@@ -442,6 +442,7 @@
   justify-content: center;
   overflow: hidden;
   box-shadow: inset 0 0 18px rgba(251, 191, 36, 0.12), 0 0 24px rgba(251, 191, 36, 0.08);
+  justify-self: end;
 }
 
 .previewImage {
@@ -515,23 +516,25 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
   min-width: 180px;
+  padding: 10px 0;
 }
 
 .totalPullCounter {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.5);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  color: rgba(226, 232, 240, 0.8);
-  font-size: 0.76rem;
+  background: rgba(15, 23, 42, 0.56);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  color: rgba(226, 232, 240, 0.88);
+  font-size: 0.72rem;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
+  box-shadow: inset 0 0 12px rgba(255,255,255,0.04);
 }
 
 .characterBadge {
