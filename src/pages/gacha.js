@@ -57,6 +57,17 @@ const pool = {
       color: '#f472b6',
       image: '/img/Love.png',
     },
+    {
+      id: 'lucky-star',
+      name: '咚！炽愿吉星',
+      title: '宝宝你怎么胖了',
+      rarity: 5,
+      type: '角色',
+      element: '光',
+      tagline: '宝宝你怎么胖了',
+      color: '#fbbf24',
+      image: '/img/Lucky.png',
+    },
   ],
   4: [
     {
@@ -99,12 +110,13 @@ const pool = {
 
 const starterHistory = [];
 
-const featuredCharacter = {
-  name: '',
-  title: '',
-  rarity: 5,
-  tag: '',
-  text: '',
+const featuredCharacterDefault = {
+  name: '等待祈愿',
+  title: '命运尚未揭晓',
+  rarity: 0,
+  tag: '待定',
+  text: '累计抽数 0',
+  image: '',
 };
 
 function pickByRarity(rarity) {
@@ -163,6 +175,22 @@ function GachaPage() {
     const fiveStarCount = history.filter((item) => item.rarity === 5).length;
     return { total, fiveStarCount };
   }, [history]);
+
+  const featuredCharacter = useMemo(() => {
+    if (!history.length) {
+      return featuredCharacterDefault;
+    }
+
+    const rarest = history.reduce((best, item) => (best === null || item.rarity > best.rarity ? item : best), null);
+    return {
+      name: rarest.name,
+      title: rarest.title,
+      rarity: rarest.rarity,
+      tag: rarest.rarity >= 5 ? '五星' : rarest.rarity === 4 ? '四星' : '三星',
+      text: `累计抽数 ${summary.total}`,
+      image: rarest.image || '',
+    };
+  }, [history, summary.total]);
 
   const runPull = (count) => {
     if (pulling) {
@@ -328,17 +356,29 @@ function GachaPage() {
                 <div className={styles.portraitGlow} />
                 <div className={styles.portraitHalo} />
                 <div className={styles.portraitFrame}>
-                  <div className={styles.portraitFigure}>
-                    <div className={styles.hair} />
-                    <div className={styles.face} />
-                    <div className={styles.body} />
-                    <div className={styles.weapon} />
-                  </div>
+                  {featuredCharacter.image ? (
+                    <img src={featuredCharacter.image} alt={featuredCharacter.name} className={styles.portraitImage} />
+                  ) : (
+                    <div className={styles.portraitFigure}>
+                      <div className={styles.hair} />
+                      <div className={styles.face} />
+                      <div className={styles.body} />
+                      <div className={styles.weapon} />
+                    </div>
+                  )}
                 </div>
                 <div className={styles.characterMeta}>
                   {featuredCharacter.tag ? <span className={styles.characterBadge}>{featuredCharacter.tag}</span> : null}
                   {featuredCharacter.name ? <h3>{featuredCharacter.name}</h3> : null}
                   {featuredCharacter.title ? <p>{featuredCharacter.title}</p> : null}
+                  <span className={styles.totalPullCounter}>{featuredCharacter.text}</span>
+                </div>
+                <div className={styles.previewRing}>
+                  {featuredCharacter.image ? (
+                    <img src={featuredCharacter.image} alt={`${featuredCharacter.name} 立绘`} className={styles.previewImage} />
+                  ) : (
+                    <div className={styles.previewPlaceholder} />
+                  )}
                 </div>
               </div>
 
