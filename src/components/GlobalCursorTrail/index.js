@@ -70,18 +70,42 @@ export default function GlobalCursorTrail() {
     };
 
     const handlePointerDown = (event) => {
-      const pulse = {
-        id: `${Date.now()}-${Math.random()}`,
-        x: event.clientX,
-        y: event.clientY,
-        size: 18 + Math.random() * 18,
-        duration: 0.45 + Math.random() * 0.3,
-      };
+      const baseX = event.clientX;
+      const baseY = event.clientY;
+      const ringColors = [
+        'rgba(255,255,255,0.72)',
+        'rgba(216,180,254,0.68)',
+        'rgba(196,181,253,0.6)',
+        'rgba(192,132,252,0.52)',
+        'rgba(168,85,247,0.38)',
+      ];
 
-      setClickPulse((prev) => [...prev, pulse].slice(-12));
-      window.setTimeout(() => {
-        setClickPulse((prev) => prev.filter((item) => item.id !== pulse.id));
-      }, (pulse.duration + 0.2) * 1000);
+      const rippleSet = Array.from({ length: 5 }, (_, index) => {
+        const size = 22 + index * 24 + Math.random() * 8;
+        const duration = 0.52 + index * 0.1 + Math.random() * 0.08;
+        const delay = index * 0.09;
+
+        return {
+          id: `${Date.now()}-${Math.random()}-${index}`,
+          x: baseX,
+          y: baseY,
+          size,
+          duration,
+          delay,
+          opacity: 0.76 - index * 0.08,
+          borderColor: ringColors[index % ringColors.length],
+          borderWidth: 1.5 + index * 0.8,
+          background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, rgba(216,180,254,0.08) 30%, rgba(168,85,247,0.04) 58%, rgba(15,23,42,0) 75%)',
+        };
+      });
+
+      setClickPulse((prev) => [...prev, ...rippleSet].slice(-30));
+
+      rippleSet.forEach((pulse) => {
+        window.setTimeout(() => {
+          setClickPulse((prev) => prev.filter((item) => item.id !== pulse.id));
+        }, (pulse.duration + pulse.delay + 0.25) * 1000);
+      });
     };
 
     const handlePointerLeave = () => {
@@ -147,6 +171,11 @@ export default function GlobalCursorTrail() {
             top: `${point.y}px`,
             width: `${point.size}px`,
             height: `${point.size}px`,
+            opacity: point.opacity,
+            background: point.background,
+            borderColor: point.borderColor,
+            borderWidth: `${point.borderWidth}px`,
+            animationDelay: `${point.delay}s`,
             animationDuration: `${point.duration}s`,
           }}
         />
