@@ -58,7 +58,7 @@ const config = {
           blogDescription: '记录学习、思考与实践。',
 
           remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          rehypePlugins: [[rehypeKatex, { strict: false }]],
 
           showReadingTime: true,
           showLastUpdateTime: true,
