@@ -120,8 +120,8 @@ const config = {
             position: 'left',
           },
           {
-            to: '/jokes',
-            label: '❄️ 冷笑话仓库',
+            to: '/gacha',
+            label: '🎴 祈愿抽卡',
             position: 'left',
           },
           {
@@ -143,8 +143,8 @@ const config = {
                 to: '/blog',
               },
               {
-                label: '❄️ 冷笑话仓库',
-                to: '/jokes',
+                label: '🎴 祈愿抽卡',
+                to: '/gacha',
               },
             ],
           },

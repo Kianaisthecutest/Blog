@@ -342,6 +342,13 @@
   }
 }
 
+.bannerInfo {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
 .bannerInfo > div {
   display: flex;
   flex-direction: column;
@@ -370,10 +377,11 @@
   display: grid;
   grid-template-columns: 1.8fr 0.8fr;
   gap: 26px;
+  align-items: start;
 }
 
 .leftPanel,
-.rightPanel {
+.rightRail {
   border: 1px solid var(--panel-border);
   border-radius: 24px;
   background: rgba(15, 23, 42, 0.72);
@@ -382,6 +390,14 @@
 
 .leftPanel {
   padding: 22px 20px 20px;
+}
+
+.rightRail {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 14px;
+  min-height: 100%;
 }
 
 .characterStage {
@@ -1253,6 +1269,18 @@
   border: 1px solid rgba(148, 163, 184, 0.14);
 }
 
+.jokesSection {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 260px;
+  padding: 14px 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.52);
+}
+
 .statusRow {
   display: flex;
   align-items: center;
@@ -1264,6 +1292,97 @@
 
 .statusRow strong {
   color: var(--text);
+}
+
+.jokesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.jokesBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.18);
+  border: 1px solid rgba(196, 181, 253, 0.26);
+  color: #e9d5ff;
+  font-size: 0.72rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+
+.jokesHeader h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgba(248, 250, 252, 0.94);
+}
+
+.jokeCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.7));
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.jokeCardFlipping {
+  transform: scale(0.96) rotate(-1deg);
+  opacity: 0.72;
+}
+
+.quoteMark {
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-size: 2.5rem;
+  color: rgba(196, 181, 253, 0.42);
+  line-height: 1;
+}
+
+.quoteMarkEnd {
+  top: auto;
+  left: auto;
+  right: 18px;
+  bottom: 10px;
+}
+
+.jokeText {
+  margin: 0;
+  max-width: 760px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(248, 250, 252, 0.92);
+  white-space: pre-line;
+}
+
+.jokeButton {
+  margin-top: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.18), rgba(168, 85, 247, 0.18));
+  border: 1px solid rgba(251, 191, 36, 0.28);
+  color: var(--text);
+  font-size: 0.96rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.jokeButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(168, 85, 247, 0.15);
 }
 
 @media (max-width: 960px) {

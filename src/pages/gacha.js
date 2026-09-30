@@ -1,6 +1,64 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Layout from '@theme/Layout';
 import styles from './gacha.module.css';
+
+const jokes = [
+  '你问我永远是多远，我说你有多远滚多远',
+  '为什么讲冷笑话会导致世界毁灭\n因为赤道大变了',
+  '为什么小孩害怕孔子\n因为孔子见两小儿便日',
+  '为什么冬天的电脑很冷\n因为它开了Windows',
+  '湖南的鬼叫什么\n湘飘飘',
+  'maybe的反义词是什么\n是有机',
+  '为什么唯独秦始皇的陵墓里有那么的兵马俑\n因为守嬴政的很爽',
+  '为什么黑人适合田径运动\n因为起跑时有枪声',
+  '为什么“朋”字要写很久\n因为要写两个月',
+  '知道用脑机接口玩赛车游戏叫什么吗\n脑筋急转弯',
+  '你知道吗，有些笑话好氧的生物想不出来，厌氧的生物也想不出\n只有我这种闭氧的生物能想出来',
+  '理解玛雅人了，如果我预言到现在这些东西也会以为世界末日了',
+  '如果你把自己的肠子摊开，并且放在地面上\n那么你就会死',
+  '小明在海边讲笑话，为什么他死了\n因为海笑了',
+  '你知道马丁路德金的反义词吗\n是芭比扣的水',
+  'pdd怀孕了，你们这些cpdd的一个都跑不了',
+  '你知道田忌赛马的反义词是什么\n吉普赛人',
+  '红温的反义词是什么\n蓝凉',
+  '你知道种族歧视用文言文怎么说吗\n以色列人',
+  '加拿大人的反义词是什么\n是你好小孩',
+  '这种笑话对植物是最折磨的\n听了太阴不能光合作用，不听又没有屎长不了',
+  '商鞅看完这些冷笑话连夜加了两匹马，因为想和你比比谁更裂七',
+  '科比得的最后一个奖是什么\n螺旋桨',
+  '都说人死后会变成星星，那么植物人死后是不是会变成杨桃',
+  '人死后会变成骨灰，霍金是不是会变成冰沙',
+  '为什么苏轼一直被贬\n因为皇帝追求移轼感',
+  '四个周杰伦等于什么\n一个周杰车',
+  '一个板凳的英文是什么\nabandon',
+  '小恐龙在看电影，为什么恐龙妈妈看到了很生气\n因为看的是成龙电影',
+  '你知道吗每个成功的人背后都有一根脊椎',
+  '喜欢临时抱佛脚算恋足吗',
+  '风雪压我两三年，加在一起是五年',
+  '没人发现我其实是异瞳吗\n左边小心眼，右边势利眼，没有人感惹我\n如果谁敢惹到我，我就在他面前做眼保健操',
+  '恭喜你的才华已经赶上曹植了\n他七步成诗，你就不是人',
+  '没人觉得2020年和2025年很好磕吗\n一个全阳了，一个阴到没边',
+  '本来想夸你达芬奇的，但是因为猎奇，所以只剩下达芬了',
+  '不行了可以到人行道上\n因为这样可以成为一个行人',
+  '我就说上帝肯定会撸，不然哪来的这么多神经',
+  '感觉我就像项羽，四面全是楚声',
+  '这个笑话既有洋风又有古典风\n好像叫什么洋典风',
+  '去黑头神器是什么\n是农场主',
+  '其实摇滚最早起源于18世纪的法国\n因为路易十六是最早的披头士',
+  '蜂蜜其实是花生酱',
+  '油炸蘑菇其实是高温杀菌',
+  '为什么和吸血鬼一起吃火锅要点鸳鸯锅\n因为吸血鬼喜欢blood',
+  '你知道吗，氧化还原反应其实是一场电子竞技',
+  '不瞒你们说，我很喜欢躺在女朋友的腿上\n因为转头有彼此，抬头有奈何',
+  '其实成都是top1城市，因为成都有T有PL有1有0',
+  '我上个月花了3000学拉丁舞，结果丁丁一点没长，我是不是被骗了',
+  '突然发现女人其实是藻类植物，因为没有根和茎叶',
+  '女人就像没有香火的庙，香炉却没有祭拜',
+  '你知道为什么日本的鸡蛋要单独卖吗？因为他们不喜欢盒蛋',
+  '如果一个人没有双手了，他是不是最想要新手大礼包',
+  '这笑话很简单，就是你没救了',
+  '我想要的日子，不是天天开心，而是低头还能看见自己',
+];
 
 const starfield = Array.from({ length: 24 }, (_, index) => ({
   id: index,
@@ -174,12 +232,52 @@ function GachaPage() {
   const [lastPull, setLastPull] = useState({ name: '等待祈愿', title: '命运尚未揭晓', rarity: 0, color: '#dbeafe' });
   const [lastBurst, setLastBurst] = useState(false);
   const [showFiveStarBanner, setShowFiveStarBanner] = useState(false);
+  const [currentJoke, setCurrentJoke] = useState('');
+  const [isJokeFlipping, setIsJokeFlipping] = useState(false);
 
   const summary = useMemo(() => {
     const total = totalPulls;
     const fiveStarCount = history.filter((item) => item.rarity === 5).length;
     return { total, fiveStarCount };
   }, [history, totalPulls]);
+
+  const statusInfo = useMemo(() => {
+    if (lastPull.rarity >= 5) {
+      return {
+        pool: '命运之环 · 琪亚娜',
+        probability: '4★ 5.0% / 5★ 0.1%',
+        state: '五星已记录',
+      };
+    }
+
+    if (lastPull.rarity === 4) {
+      return {
+        pool: '命运之环 · 琪亚娜',
+        probability: '4★ 5.0% / 5★ 0.1%',
+        state: '四星已记录',
+      };
+    }
+
+    return {
+      pool: '命运之环 · 琪亚娜',
+      probability: '4★ 5.0% / 5★ 0.1%',
+      state: '常规祈愿',
+    };
+  }, [lastPull.rarity]);
+
+  useEffect(() => {
+    setCurrentJoke(jokes[Math.floor(Math.random() * jokes.length)]);
+  }, []);
+
+  const getRandomJoke = () => jokes[Math.floor(Math.random() * jokes.length)];
+
+  const refreshJoke = () => {
+    setIsJokeFlipping(true);
+    setTimeout(() => {
+      setCurrentJoke(getRandomJoke());
+      setIsJokeFlipping(false);
+    }, 220);
+  };
 
   const featuredCharacter = useMemo(() => {
     if (featuredResult && featuredResult.rarity >= 4) {
@@ -242,13 +340,13 @@ function GachaPage() {
 
     window.setTimeout(() => {
       const reward = generated[generated.length - 1];
-      const revealIndexes = generated
-        .map((item, index) => (item.rarity >= 4 ? index : -1))
-        .filter((index) => index >= 0);
+      const featuredFromThisPull = generated
+        .filter((item) => item.rarity >= 4)
+        .sort((a, b) => b.rarity - a.rarity)[0] || null;
 
       setResults(generated);
       setRevealedCards({});
-      setFeaturedResult(reward.rarity >= 4 ? reward : null);
+      setFeaturedResult(featuredFromThisPull);
       setFeaturedRevealed(false);
       setFeaturedAnimating(false);
       setHistory((prev) => [...generated, ...prev].slice(0, 10));
@@ -258,23 +356,6 @@ function GachaPage() {
       setShowFiveStarBanner(reward.rarity === 5);
       setPulling(false);
 
-      if (revealIndexes.length > 0) {
-        window.setTimeout(() => {
-          setRevealedCards((prev) => {
-            const next = { ...prev };
-            revealIndexes.forEach((index) => {
-              next[index] = true;
-            });
-            return next;
-          });
-          setFeaturedAnimating(true);
-          setFeaturedRevealed(true);
-          window.setTimeout(() => {
-            setFeaturedAnimating(false);
-          }, 260);
-        }, 180);
-      }
-
       window.setTimeout(() => {
         setLastBurst(false);
         setShowFiveStarBanner(false);
@@ -283,8 +364,14 @@ function GachaPage() {
   };
 
   const revealCard = (index) => {
+    const item = results[index];
+    if (!item) {
+      return;
+    }
+
     setRevealedCards((prev) => ({ ...prev, [index]: true }));
-    if (lastPull.rarity >= 4 && !featuredRevealed) {
+
+    if (item.rarity >= 4 && featuredResult && item.id === featuredResult.id && !featuredRevealed) {
       setFeaturedAnimating(true);
       setFeaturedRevealed(true);
       window.setTimeout(() => {
@@ -441,10 +528,6 @@ function GachaPage() {
                 <strong>{summary.total}</strong>
               </div>
               <div>
-                <span>5星</span>
-                <strong>{summary.fiveStarCount}</strong>
-              </div>
-              <div>
                 <span>4星保底</span>
                 <strong>{pity.four}/10</strong>
               </div>
@@ -529,45 +612,39 @@ function GachaPage() {
               </div>
             </div>
 
-            <aside className={styles.rightPanel}>
-              <div className={styles.historyBox}>
-                <div className={styles.historyTitleRow}>
-                  <h3>祈愿记录</h3>
-                  <span>最近10次</span>
-                </div>
-
-                <div className={styles.historyList}>
-                  {history.length === 0 ? (
-                    <div className={styles.emptyHistory}>暂无记录</div>
-                  ) : (
-                    history.map((item, index) => (
-                      <div key={`${item.name}-${index}`} className={styles.historyItem}>
-                        <span className={`${styles.dot} ${styles[`rarityDot${item.rarity}`]}`} />
-                        <div>
-                          <strong>{item.name}</strong>
-                          <small>{item.title}</small>
-                        </div>
-                      </div>
-                    ))
-                  )}
-                </div>
-              </div>
-
+            <div className={styles.rightRail}>
               <div className={styles.statusBox}>
                 <div className={styles.statusRow}>
                   <span>角色池</span>
-                  <strong></strong>
+                  <strong>{statusInfo.pool}</strong>
                 </div>
                 <div className={styles.statusRow}>
                   <span>概率</span>
-                  <strong></strong>
+                  <strong>{statusInfo.probability}</strong>
                 </div>
                 <div className={styles.statusRow}>
                   <span>状态</span>
-                  <strong></strong>
+                  <strong>{statusInfo.state}</strong>
                 </div>
               </div>
-            </aside>
+
+              <section className={styles.jokesSection}>
+                <div className={styles.jokesHeader}>
+                  <span className={styles.jokesBadge}>冷笑话</span>
+                  <h2>咕咕嘎嘎</h2>
+                </div>
+
+                <div className={`${styles.jokeCard} ${isJokeFlipping ? styles.jokeCardFlipping : ''}`}>
+                  <span className={styles.quoteMark}>「</span>
+                  <p className={styles.jokeText}>{currentJoke}</p>
+                  <span className={`${styles.quoteMark} ${styles.quoteMarkEnd}`}>」</span>
+                </div>
+
+                <button type="button" className={styles.jokeButton} onClick={refreshJoke}>
+                  换一个
+                </button>
+              </section>
+            </div>
           </main>
         </div>
       </div>
