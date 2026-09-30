@@ -69,6 +69,16 @@ const starfield = Array.from({ length: 24 }, (_, index) => ({
   duration: `${6 + (index % 7)}s`,
 }));
 
+const ambientParticles = Array.from({ length: 30 }, (_, index) => ({
+  id: index,
+  left: `${(index * 13 + 7) % 100}%`,
+  top: `${(index * 17 + 11) % 100}%`,
+  size: `${2 + (index % 5)}px`,
+  duration: `${5 + (index % 8)}s`,
+  delay: `${(index % 10) * 0.5}s`,
+  opacity: 0.2 + (index % 6) * 0.12,
+}));
+
 const placeholderItem = {
   id: 'placeholder',
   name: '',
@@ -237,8 +247,9 @@ function GachaPage() {
 
   const summary = useMemo(() => {
     const total = totalPulls;
-    const fiveStarCount = history.filter((item) => item.rarity === 5).length;
-    return { total, fiveStarCount };
+    const fourStarCount = history.filter((item) => item && item.rarity === 4).length;
+    const fiveStarCount = history.filter((item) => item && item.rarity === 5).length;
+    return { total, fourStarCount, fiveStarCount };
   }, [history, totalPulls]);
 
   const statusInfo = useMemo(() => {
@@ -501,6 +512,24 @@ function GachaPage() {
           ))}
         </div>
 
+        <div className={styles.particleField} aria-hidden="true">
+          {ambientParticles.map((particle) => (
+            <span
+              key={particle.id}
+              className={styles.ambientParticle}
+              style={{
+                left: particle.left,
+                top: particle.top,
+                width: particle.size,
+                height: particle.size,
+                opacity: particle.opacity,
+                animationDelay: particle.delay,
+                animationDuration: particle.duration,
+              }}
+            />
+          ))}
+        </div>
+
         <div className={styles.pageInner}>
           <header className={styles.topBar}>
             <div className={styles.brandWrap}>
@@ -621,6 +650,10 @@ function GachaPage() {
                 <div className={styles.statusRow}>
                   <span>概率</span>
                   <strong>{statusInfo.probability}</strong>
+                </div>
+                <div className={styles.statusRow}>
+                  <span>本轮稀有度</span>
+                  <strong>{summary.fourStarCount} 4★ / {summary.fiveStarCount} 5★</strong>
                 </div>
                 <div className={styles.statusRow}>
                   <span>状态</span>
