@@ -324,6 +324,24 @@
   100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
 }
 
+@keyframes featuredRevealIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+    filter: blur(5px);
+  }
+  55% {
+    opacity: 1;
+    transform: scale(1.04) translateY(-3px);
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
 .bannerInfo > div {
   display: flex;
   flex-direction: column;
@@ -379,6 +397,36 @@
   overflow: hidden;
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.78), rgba(30, 41, 59, 0.78));
   border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: inset 0 0 26px rgba(251, 191, 36, 0.04), 0 10px 24px rgba(15, 23, 42, 0.18);
+  cursor: default;
+}
+
+.characterStageHidden {
+  cursor: pointer;
+}
+
+.characterStage::before,
+.characterStage::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+  border: 1px solid rgba(251, 191, 36, 0.18);
+}
+
+.characterStage::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -190px;
+}
+
+.characterStage::after {
+  width: 280px;
+  height: 280px;
+  left: -110px;
+  bottom: -150px;
+  border-color: rgba(196, 181, 253, 0.14);
 }
 
 .portraitGlow,
@@ -414,11 +462,37 @@
   border-radius: 26px;
   background: linear-gradient(180deg, rgba(8, 15, 30, 0.64), rgba(15, 23, 42, 0.8));
   border: 1px solid rgba(251, 191, 36, 0.28);
-  box-shadow: inset 0 0 22px rgba(251, 191, 36, 0.12), 0 0 28px rgba(251, 191, 36, 0.13);
+  box-shadow: inset 0 0 22px rgba(251, 191, 36, 0.12), 0 0 28px rgba(251, 191, 36, 0.13), 0 12px 28px rgba(15, 23, 42, 0.26);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+}
+
+.portraitHiddenBack,
+.previewHiddenBack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.9), rgba(30, 41, 59, 0.98));
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.previewHiddenBack {
+  border-radius: 50%;
+}
+
+.portraitFrame::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  pointer-events: none;
 }
 
 .portraitImage {
@@ -427,6 +501,25 @@
   object-fit: cover;
   display: block;
   filter: saturate(1.08) contrast(1.04);
+  transition: transform 0.32s ease, opacity 0.32s ease;
+}
+
+.characterStageAnimating .portraitFrame,
+.characterStageAnimating .previewRing,
+.characterStageAnimating .characterMeta {
+  animation: featuredRevealIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.characterStageAnimating .portraitFrame {
+  animation-delay: 0.06s;
+}
+
+.characterStageAnimating .previewRing {
+  animation-delay: 0.12s;
+}
+
+.characterStageAnimating .characterMeta {
+  animation-delay: 0.18s;
 }
 
 .previewRing {
@@ -441,8 +534,16 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: inset 0 0 18px rgba(251, 191, 36, 0.12), 0 0 24px rgba(251, 191, 36, 0.08);
+  box-shadow: inset 0 0 18px rgba(251, 191, 36, 0.12), 0 0 24px rgba(251, 191, 36, 0.08), 0 0 30px rgba(250, 204, 21, 0.1);
   justify-self: end;
+}
+
+.previewRing::before {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .previewImage {
@@ -517,9 +618,16 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 8px;
+  gap: 9px;
   min-width: 180px;
   padding: 10px 0;
+}
+
+.metaHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .totalPullCounter {
@@ -537,22 +645,54 @@
   box-shadow: inset 0 0 12px rgba(255,255,255,0.04);
 }
 
-.characterBadge {
-  display: inline-block;
-  padding: 6px 10px;
+.characterBadge,
+.rarityChip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 4px 10px;
   border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+
+.characterBadge {
   background: rgba(251, 191, 36, 0.12);
   border: 1px solid rgba(251, 191, 36, 0.32);
   color: #fef3c7;
-  font-size: 0.7rem;
-  letter-spacing: 0.08rem;
-  text-transform: uppercase;
+}
+
+.rarityChip {
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(196, 181, 253, 0.28);
+  color: #e9d5ff;
+}
+
+.rarityMeter {
+  position: relative;
+  width: min(100%, 180px);
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.rarityMeter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #fbbf24 0%, #f9a8d4 42%, #c4b5fd 100%);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.28);
 }
 
 .characterMeta h3 {
   margin: 0;
   font-size: clamp(1.6rem, 2vw, 2.3rem);
   color: #fff7d1;
+  text-shadow: 0 0 16px rgba(251, 191, 36, 0.12);
 }
 
 .characterMeta p {
@@ -675,13 +815,109 @@
   flex-direction: column;
   justify-content: space-between;
   height: 228px;
-  padding: 12px 10px 10px;
+  padding: 0;
   border-radius: 18px;
   overflow: hidden;
   background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.96));
   border: 1px solid rgba(148, 163, 184, 0.2);
   box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.035);
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  perspective: 1200px;
+  cursor: default;
+}
+
+.cardHidden {
+  cursor: pointer;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.cardHidden .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFaceFront,
+.cardFaceBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.cardFaceFront {
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.cardHidden .cardFaceFront {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cardFaceBack {
+  z-index: 2;
+  transform: rotateY(180deg);
+  opacity: 1;
+  visibility: visible;
+  background: linear-gradient(180deg, rgba(12, 18, 32, 0.9), rgba(30, 41, 59, 0.98));
+  border: 1px solid rgba(196, 181, 253, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardHidden .cardFaceBack {
+  opacity: 1;
+  visibility: visible;
+}
+
+.cardBackGlow {
+  position: absolute;
+  inset: 12% 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 181, 253, 0.46), rgba(168, 85, 247, 0.14), transparent 70%);
+  filter: blur(18px);
+}
+
+.cardBackPattern {
+  position: absolute;
+  inset: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(196,181,253,0.08), rgba(15,23,42,0.08));
+}
+
+.cardBackContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #f8f5ff;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+}
+
+.cardBackLabel {
+  font-size: 0.66rem;
+  opacity: 0.82;
+}
+
+.cardBackContent strong {
+  font-size: 1.25rem;
+  color: #fef3c7;
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.22);
 }
 
 .card:hover {

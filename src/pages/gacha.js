@@ -167,6 +167,10 @@ function GachaPage() {
   const [history, setHistory] = useState(starterHistory);
   const [totalPulls, setTotalPulls] = useState(0);
   const [pity, setPity] = useState({ four: 0, five: 0 });
+  const [revealedCards, setRevealedCards] = useState({});
+  const [featuredRevealed, setFeaturedRevealed] = useState(false);
+  const [featuredAnimating, setFeaturedAnimating] = useState(false);
+  const [featuredResult, setFeaturedResult] = useState(null);
   const [lastPull, setLastPull] = useState({ name: '等待祈愿', title: '命运尚未揭晓', rarity: 0, color: '#dbeafe' });
   const [lastBurst, setLastBurst] = useState(false);
   const [showFiveStarBanner, setShowFiveStarBanner] = useState(false);
@@ -178,20 +182,44 @@ function GachaPage() {
   }, [history, totalPulls]);
 
   const featuredCharacter = useMemo(() => {
+    if (featuredResult && featuredResult.rarity >= 4) {
+      return {
+        name: featuredResult.name,
+        title: featuredResult.title,
+        rarity: featuredResult.rarity,
+        tag: featuredResult.rarity >= 5 ? '五星' : '四星',
+        rarityLabel: featuredResult.rarity >= 5 ? '传说' : '稀有',
+        text: `累计抽数 ${totalPulls}`,
+        image: featuredResult.image || '',
+      };
+    }
+
     if (!history.length) {
       return featuredCharacterDefault;
     }
 
-    const rarest = history.reduce((best, item) => (best === null || item.rarity > best.rarity ? item : best), null);
+    const latestById = new Map();
+    history.forEach((item) => {
+      latestById.set(item.id, item);
+    });
+
+    const rarest = Array.from(latestById.values()).reduce((best, item) => {
+      if (best === null || item.rarity > best.rarity) {
+        return item;
+      }
+      return best;
+    }, null);
+
     return {
       name: rarest.name,
       title: rarest.title,
       rarity: rarest.rarity,
       tag: rarest.rarity >= 5 ? '五星' : rarest.rarity === 4 ? '四星' : '三星',
+      rarityLabel: rarest.rarity >= 5 ? '传说' : rarest.rarity === 4 ? '稀有' : '常驻',
       text: `累计抽数 ${totalPulls}`,
       image: rarest.image || '',
     };
-  }, [history, summary.total]);
+  }, [featuredResult, history, totalPulls]);
 
   const runPull = (count) => {
     if (pulling) {
@@ -214,13 +242,38 @@ function GachaPage() {
 
     window.setTimeout(() => {
       const reward = generated[generated.length - 1];
+      const revealIndexes = generated
+        .map((item, index) => (item.rarity >= 4 ? index : -1))
+        .filter((index) => index >= 0);
+
       setResults(generated);
+      setRevealedCards({});
+      setFeaturedResult(reward.rarity >= 4 ? reward : null);
+      setFeaturedRevealed(false);
+      setFeaturedAnimating(false);
       setHistory((prev) => [...generated, ...prev].slice(0, 10));
       setLastPull(reward);
       setPity(newPity);
       setLastBurst(reward.rarity >= 5);
       setShowFiveStarBanner(reward.rarity === 5);
       setPulling(false);
+
+      if (revealIndexes.length > 0) {
+        window.setTimeout(() => {
+          setRevealedCards((prev) => {
+            const next = { ...prev };
+            revealIndexes.forEach((index) => {
+              next[index] = true;
+            });
+            return next;
+          });
+          setFeaturedAnimating(true);
+          setFeaturedRevealed(true);
+          window.setTimeout(() => {
+            setFeaturedAnimating(false);
+          }, 260);
+        }, 180);
+      }
 
       window.setTimeout(() => {
         setLastBurst(false);
@@ -229,34 +282,84 @@ function GachaPage() {
     }, 900);
   };
 
+  const revealCard = (index) => {
+    setRevealedCards((prev) => ({ ...prev, [index]: true }));
+    if (lastPull.rarity >= 4 && !featuredRevealed) {
+      setFeaturedAnimating(true);
+      setFeaturedRevealed(true);
+      window.setTimeout(() => {
+        setFeaturedAnimating(false);
+      }, 260);
+    }
+  };
+
+  const revealFeaturedPanel = () => {
+    if (lastPull.rarity >= 4 && !featuredRevealed) {
+      setFeaturedAnimating(true);
+      setFeaturedRevealed(true);
+      window.setTimeout(() => {
+        setFeaturedAnimating(false);
+      }, 260);
+    }
+  };
+
   const renderCard = (item, index) => {
-    const baseClass = item ? `${styles.card} ${styles[`rarity${item.rarity}`]}` : `${styles.card} ${styles.emptyCard}`;
+    const isHidden = !!item && item.rarity >= 4 && !revealedCards[index];
+    const baseClass = item ? `${styles.card} ${styles[`rarity${item.rarity}`]} ${isHidden ? styles.cardHidden : ''}` : `${styles.card} ${styles.emptyCard}`;
 
     return (
-      <div key={index} className={baseClass}>
+      <div
+        key={index}
+        className={baseClass}
+        onClick={() => {
+          if (isHidden) {
+            revealCard(index);
+          }
+        }}
+        role={isHidden ? 'button' : undefined}
+        tabIndex={isHidden ? 0 : undefined}
+        onKeyDown={(event) => {
+          if (isHidden && (event.key === 'Enter' || event.key === ' ')) {
+            event.preventDefault();
+            revealCard(index);
+          }
+        }}
+      >
         {item ? (
-          <>
-            <div className={styles.cardGlow} style={{ background: item.color }} />
-            <div className={styles.cardCorner} />
-            <div className={styles.sparkle} />
-            <div className={styles.cardHeader}>
-              <span className={styles.rarityLabel}>R{item.rarity}</span>
-              <span className={styles.typeLabel}>{item.type}</span>
-            </div>
-            {item.image ? (
-              <div className={styles.cardImageWrap}>
-                <img src={item.image} alt={item.name} className={styles.cardImage} />
+          <div className={styles.cardInner}>
+            <div className={styles.cardFaceFront}>
+              <div className={styles.cardGlow} style={{ background: item.color }} />
+              <div className={styles.cardCorner} />
+              <div className={styles.sparkle} />
+              <div className={styles.cardHeader}>
+                <span className={styles.rarityLabel}>R{item.rarity}</span>
+                <span className={styles.typeLabel}>{item.type}</span>
               </div>
-            ) : (
-              <div className={styles.avatar}>
-                <span>{item.name.slice(0, 1)}</span>
+              {item.image ? (
+                <div className={styles.cardImageWrap}>
+                  <img src={item.image} alt={item.name} className={styles.cardImage} />
+                </div>
+              ) : (
+                <div className={styles.avatar}>
+                  <span>{item.name.slice(0, 1)}</span>
+                </div>
+              )}
+              <div className={styles.cardInfo}>
+                <strong>{item.name}</strong>
+                <span className={styles.cardSubText}>{item.tagline || item.title}</span>
+              </div>
+            </div>
+            {isHidden && (
+              <div className={styles.cardFaceBack}>
+                <div className={styles.cardBackGlow} />
+                <div className={styles.cardBackPattern} />
+                <div className={styles.cardBackContent}>
+                  <span className={styles.cardBackLabel}>翻 牌</span>
+                  <strong>{item.rarity >= 5 ? '五星' : '四星'}</strong>
+                </div>
               </div>
             )}
-            <div className={styles.cardInfo}>
-              <strong>{item.name}</strong>
-              <span className={styles.cardSubText}>{item.tagline || item.title}</span>
-            </div>
-          </>
+          </div>
         ) : (
           <div className={styles.emptyText}>祈愿中</div>
         )}
@@ -354,32 +457,60 @@ function GachaPage() {
 
           <main className={styles.mainPanel}>
             <div className={styles.leftPanel}>
-              <div className={styles.characterStage}>
+              <div
+                className={`${styles.characterStage} ${lastPull.rarity >= 4 && !featuredRevealed ? styles.characterStageHidden : ''} ${featuredAnimating ? styles.characterStageAnimating : ''}`}
+                onClick={revealFeaturedPanel}
+                role={lastPull.rarity >= 4 && !featuredRevealed ? 'button' : undefined}
+                tabIndex={lastPull.rarity >= 4 && !featuredRevealed ? 0 : undefined}
+                onKeyDown={(event) => {
+                  if (lastPull.rarity >= 4 && !featuredRevealed && (event.key === 'Enter' || event.key === ' ')) {
+                    event.preventDefault();
+                    revealFeaturedPanel();
+                  }
+                }}
+              >
                 <div className={styles.portraitGlow} />
                 <div className={styles.portraitHalo} />
-                <div className={styles.portraitFrame}>
-                  {featuredCharacter.image ? (
+                <div className={`${styles.portraitFrame} ${featuredAnimating ? styles.portraitFrameAnimating : ''}`}>
+                  {featuredCharacter.image && featuredRevealed ? (
                     <img src={featuredCharacter.image} alt={featuredCharacter.name} className={styles.portraitImage} />
                   ) : (
-                    <div className={styles.portraitFigure}>
-                      <div className={styles.hair} />
-                      <div className={styles.face} />
-                      <div className={styles.body} />
-                      <div className={styles.weapon} />
+                    <div className={styles.portraitHiddenBack}>
+                      <div className={styles.cardBackGlow} />
+                      <div className={styles.cardBackPattern} />
+                      <div className={styles.cardBackContent}>
+                        <span className={styles.cardBackLabel}>翻 牌</span>
+                        <strong>{lastPull.rarity >= 5 ? '五星' : '四星'}</strong>
+                      </div>
                     </div>
                   )}
                 </div>
                 <div className={styles.characterMeta}>
-                  {featuredCharacter.tag ? <span className={styles.characterBadge}>{featuredCharacter.tag}</span> : null}
-                  {featuredCharacter.name ? <h3>{featuredCharacter.name}</h3> : null}
-                  {featuredCharacter.title ? <p>{featuredCharacter.title}</p> : null}
+                  <div className={styles.metaHeader}>
+                    {featuredCharacter.tag ? <span className={styles.characterBadge}>{featuredCharacter.tag}</span> : null}
+                    <span className={styles.rarityChip}>R{featuredCharacter.rarity || 0}</span>
+                  </div>
+                  {featuredRevealed && featuredCharacter.name ? <h3>{featuredCharacter.name}</h3> : null}
+                  {featuredRevealed && featuredCharacter.title ? <p>{featuredCharacter.title}</p> : null}
+                  {featuredRevealed && (
+                    <div className={styles.rarityMeter} aria-hidden="true">
+                      <span style={{ width: `${Math.max(14, (featuredCharacter.rarity || 0) / 5 * 100)}%` }} />
+                    </div>
+                  )}
                   <span className={styles.totalPullCounter}>{featuredCharacter.text}</span>
                 </div>
-                <div className={styles.previewRing}>
-                  {featuredCharacter.image ? (
+                <div className={`${styles.previewRing} ${featuredAnimating ? styles.previewRingAnimating : ''}`}>
+                  {featuredCharacter.image && featuredRevealed ? (
                     <img src={featuredCharacter.image} alt={`${featuredCharacter.name} 立绘`} className={styles.previewImage} />
                   ) : (
-                    <div className={styles.previewPlaceholder} />
+                    <div className={styles.previewHiddenBack}>
+                      <div className={styles.cardBackGlow} />
+                      <div className={styles.cardBackPattern} />
+                      <div className={styles.cardBackContent}>
+                        <span className={styles.cardBackLabel}>翻 牌</span>
+                        <strong>{lastPull.rarity >= 5 ? '五星' : '四星'}</strong>
+                      </div>
+                    </div>
                   )}
                 </div>
               </div>
