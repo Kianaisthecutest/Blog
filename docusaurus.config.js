@@ -125,7 +125,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/你的用户名/你的仓库名',
+            href: 'https://github.com/Kianaisthecutest/Blog',
             label: '源代码',
             position: 'right',
           },
@@ -153,7 +153,7 @@ const config = {
             items: [
               {
                 label: 'GitHub 项目',
-                href: 'https://github.com/你的用户名/你的仓库名',
+                href: 'https://github.com/Kianaisthecutest/Blog',
               },
               {
                 label: '崩坏三官网',
