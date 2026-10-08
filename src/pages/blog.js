@@ -1,5 +1,5 @@
 // src/pages/blog.js
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import styles from './blog.module.css';
@@ -36,6 +36,7 @@ export default function BlogList() {
   const [selectedGroup, setSelectedGroup] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedGroups, setExpandedGroups] = useState(() => new Set());
+  const [collapsedYears, setCollapsedYears] = useState(() => new Set());
 
   const getGroupPathForPost = (post) => post.groupPath || getFolderPathFromPermalink(post.permalink || '');
 
@@ -211,12 +212,9 @@ export default function BlogList() {
 
     return Object.keys(groups)
       .sort((a, b) => {
-        const aMax = groups[a].reduce((max, post) => Math.max(max, getPostTimestamp(post)), 0);
-        const bMax = groups[b].reduce((max, post) => Math.max(max, getPostTimestamp(post)), 0);
-
         if (a === '未知' && b !== '未知') return 1;
         if (b === '未知' && a !== '未知') return -1;
-        return bMax - aMax;
+        return Number(b) - Number(a);
       })
       .reduce((acc, year) => {
         acc[year] = groups[year];
@@ -232,6 +230,34 @@ export default function BlogList() {
       { label: '已筛选', value: filteredPosts.length },
     ];
   }, [selectedGroup, filteredPosts]);
+
+  useEffect(() => {
+    const years = Object.keys(postsByYear);
+    if (years.length === 0) {
+      setCollapsedYears(new Set());
+      return;
+    }
+
+    setCollapsedYears((prev) => {
+      const next = new Set();
+      years.slice(1).forEach((year) => next.add(year));
+      if (prev.size === 0) return next;
+      const shouldKeep = (year) => prev.has(year) || years.slice(1).includes(year);
+      return new Set(Array.from(prev).filter(shouldKeep));
+    });
+  }, [postsByYear]);
+
+  const toggleYear = (year) => {
+    setCollapsedYears((prev) => {
+      const next = new Set(prev);
+      if (next.has(year)) {
+        next.delete(year);
+      } else {
+        next.add(year);
+      }
+      return next;
+    });
+  };
 
   return (
     <Layout title="文章列表" description="所有博客文章列表">
@@ -272,32 +298,50 @@ export default function BlogList() {
             <div className={styles.empty}><p>📭 没有找到文章</p></div>
           ) : (
             <div className={styles.postList}>
-              {Object.entries(postsByYear).map(([year, yearPosts]) => (
-                <div key={year} className={styles.yearGroup}>
-                  <h2 className={styles.yearTitle}>{year}</h2>
-                  <ul className={styles.postItems}>
-                    {yearPosts.map((post, index) => {
-                      const title = post.title || '未命名';
-                      const permalink = post.permalink || '/blog-posts';
-                      const tags = post.tags || [];
-                      return (
-                        <li key={`${year}-${index}`} className={styles.postItem}>
-                          <Link to={permalink} className={styles.postLink}>
-                            <span className={styles.postTitle}>{title}</span>
-                            {tags.length > 0 && (
-                              <span className={styles.postTags}>
-                                {tags.map((tag, i) => (
-                                  <span key={`${title}-tag-${i}`} className={styles.tag}>#{tag}</span>
-                                ))}
-                              </span>
-                            )}
-                          </Link>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ))}
+              {Object.entries(postsByYear).map(([year, yearPosts]) => {
+                const isYearCollapsed = collapsedYears.has(year);
+                return (
+                  <div key={year} className={styles.yearGroup}>
+                    <div className={styles.yearHeader}>
+                      <button
+                        type="button"
+                        className={styles.yearToggle}
+                        onClick={() => toggleYear(year)}
+                        aria-label={isYearCollapsed ? `展开${year}` : `折叠${year}`}
+                      >
+                        {isYearCollapsed ? '▸' : '▾'}
+                      </button>
+                      <h2 className={styles.yearTitle}>
+                        <span>{year}</span>
+                        <span className={styles.yearCount}>{yearPosts.length}</span>
+                      </h2>
+                    </div>
+                    {!isYearCollapsed && (
+                      <ul className={styles.postItems}>
+                        {yearPosts.map((post, index) => {
+                          const title = post.title || '未命名';
+                          const permalink = post.permalink || '/blog-posts';
+                          const tags = post.tags || [];
+                          return (
+                            <li key={`${year}-${index}`} className={styles.postItem}>
+                              <Link to={permalink} className={styles.postLink}>
+                                <span className={styles.postTitle}>{title}</span>
+                                {tags.length > 0 && (
+                                  <span className={styles.postTags}>
+                                    {tags.map((tag, i) => (
+                                      <span key={`${title}-tag-${i}`} className={styles.tag}>#{tag}</span>
+                                    ))}
+                                  </span>
+                                )}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           )}
         </main>

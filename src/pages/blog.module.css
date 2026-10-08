@@ -481,15 +481,65 @@
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
 }
 
+.yearHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.yearToggle {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.8);
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.yearToggle:hover {
+  background: linear-gradient(135deg, rgba(96, 84, 196, 0.22), rgba(168, 85, 247, 0.18));
+  border-color: rgba(166, 120, 255, 0.35);
+  color: #fff;
+}
+
 .yearTitle {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
   font-size: 1.1rem;
   font-weight: 700;
   color: rgba(196, 181, 253, 0.95);
-  margin: 0 0 0.9rem 0;
+  margin: 0;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-bottom: 0.55rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.yearCount {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .postItems {
