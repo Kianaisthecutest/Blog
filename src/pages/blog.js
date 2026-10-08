@@ -210,16 +210,16 @@ export default function BlogList() {
       groups[year].sort((a, b) => getPostTimestamp(b) - getPostTimestamp(a));
     });
 
-    return Object.keys(groups)
-      .sort((a, b) => {
-        if (a === '未知' && b !== '未知') return 1;
-        if (b === '未知' && a !== '未知') return -1;
-        return Number(b) - Number(a);
-      })
-      .reduce((acc, year) => {
-        acc[year] = groups[year];
-        return acc;
-      }, {});
+    const orderedYears = Object.keys(groups).sort((a, b) => {
+      if (a === '未知' && b !== '未知') return 1;
+      if (b === '未知' && a !== '未知') return -1;
+      return Number(b) - Number(a);
+    });
+
+    return orderedYears.reduce((acc, year) => {
+      acc[year] = groups[year];
+      return acc;
+    }, {});
   }, [filteredPosts]);
 
   const stats = useMemo(() => {
