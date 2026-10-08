@@ -170,8 +170,14 @@ export default function BlogList() {
 
   const groupList = useMemo(() => groupTree, [groupTree]);
 
+  const getPostTimestamp = (post) => {
+    const rawDate = post?.date;
+    const time = rawDate ? new Date(rawDate).getTime() : Number.NaN;
+    return Number.isFinite(time) ? time : 0;
+  };
+
   const filteredPosts = useMemo(() => {
-    let result = POSTS || [];
+    let result = [...(POSTS || [])];
 
     if (searchTerm) {
       result = result.filter((post) => {
@@ -188,7 +194,7 @@ export default function BlogList() {
       });
     }
 
-    return result;
+    return result.sort((a, b) => getPostTimestamp(b) - getPostTimestamp(a));
   }, [searchTerm, selectedGroup]);
 
   const postsByYear = useMemo(() => {
@@ -199,8 +205,19 @@ export default function BlogList() {
       groups[year].push(post);
     });
 
+    Object.keys(groups).forEach((year) => {
+      groups[year].sort((a, b) => getPostTimestamp(b) - getPostTimestamp(a));
+    });
+
     return Object.keys(groups)
-      .sort((a, b) => b - a)
+      .sort((a, b) => {
+        const aMax = groups[a].reduce((max, post) => Math.max(max, getPostTimestamp(post)), 0);
+        const bMax = groups[b].reduce((max, post) => Math.max(max, getPostTimestamp(post)), 0);
+
+        if (a === '未知' && b !== '未知') return 1;
+        if (b === '未知' && a !== '未知') return -1;
+        return bMax - aMax;
+      })
       .reduce((acc, year) => {
         acc[year] = groups[year];
         return acc;
