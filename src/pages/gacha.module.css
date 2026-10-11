@@ -428,6 +428,42 @@
   }
 }
 
+@keyframes featuredBurstGlow {
+  0% {
+    transform: scale(0.55);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  52% {
+    transform: scale(1.26);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1.75);
+    opacity: 0;
+  }
+}
+
+@keyframes featuredGoldSweep {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(-12deg);
+  }
+  22% {
+    opacity: 0.9;
+  }
+  62% {
+    opacity: 0.65;
+    transform: scale(1.06) rotate(4deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.13) rotate(10deg);
+  }
+}
+
 .bannerInfo {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -557,18 +593,23 @@
 }
 
 .characterStage::before {
-  width: 420px;
-  height: 420px;
-  right: -120px;
-  top: -190px;
+  width: 480px;
+  height: 480px;
+  right: -150px;
+  top: -220px;
+  border-color: rgba(251, 191, 36, 0.24);
+  box-shadow: 0 0 28px rgba(251, 191, 36, 0.12), 0 0 60px rgba(251, 191, 36, 0.08);
+  animation: featuredGoldSweep 1.6s ease-out both;
 }
 
 .characterStage::after {
-  width: 280px;
-  height: 280px;
-  left: -110px;
-  bottom: -150px;
-  border-color: rgba(196, 181, 253, 0.14);
+  width: 320px;
+  height: 320px;
+  left: -130px;
+  bottom: -170px;
+  border-color: rgba(196, 181, 253, 0.16);
+  box-shadow: 0 0 24px rgba(196, 181, 253, 0.08);
+  animation: featuredGoldSweep 1.8s ease-out both;
 }
 
 .portraitGlow,
@@ -579,21 +620,25 @@
 }
 
 .portraitGlow {
-  width: 240px;
-  height: 240px;
-  right: 18%;
-  top: -60px;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.36), rgba(244, 114, 182, 0.12), transparent 68%);
-  filter: blur(18px);
+  width: 420px;
+  height: 420px;
+  right: 6%;
+  top: -150px;
+  background: radial-gradient(circle, rgba(255, 249, 206, 0.82), rgba(251, 191, 36, 0.64), rgba(245, 158, 11, 0.28), rgba(244, 114, 182, 0.14), transparent 72%);
+  filter: blur(34px);
+  box-shadow: 0 0 58px rgba(251, 191, 36, 0.4), 0 0 100px rgba(251, 191, 36, 0.25), 0 0 140px rgba(251, 191, 36, 0.1);
+  animation: featuredBurstGlow 1.25s ease-out both;
 }
 
 .portraitHalo {
-  width: 200px;
-  height: 200px;
-  right: 60px;
-  top: 26px;
-  background: radial-gradient(circle, rgba(255,255,255,0.18), transparent 60%);
-  border: 1px solid rgba(251, 191, 36, 0.28);
+  width: 330px;
+  height: 330px;
+  right: 10px;
+  top: -26px;
+  background: radial-gradient(circle, rgba(255,255,255,0.32), rgba(251, 191, 36, 0.22), rgba(251, 191, 36, 0.08), transparent 66%);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: inset 0 0 34px rgba(251, 191, 36, 0.16), 0 0 46px rgba(251, 191, 36, 0.2), 0 0 62px rgba(251, 191, 36, 0.12);
+  animation: featuredBurstGlow 1.5s ease-out both;
 }
 
 .portraitFrame {
@@ -603,8 +648,8 @@
   height: 200px;
   border-radius: 26px;
   background: linear-gradient(180deg, rgba(8, 15, 30, 0.64), rgba(15, 23, 42, 0.8));
-  border: 1px solid rgba(251, 191, 36, 0.28);
-  box-shadow: inset 0 0 22px rgba(251, 191, 36, 0.12), 0 0 28px rgba(251, 191, 36, 0.13), 0 12px 28px rgba(15, 23, 42, 0.26);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  box-shadow: inset 0 0 24px rgba(251, 191, 36, 0.14), 0 0 30px rgba(251, 191, 36, 0.18), 0 12px 30px rgba(15, 23, 42, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -670,13 +715,13 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 1px solid rgba(251, 191, 36, 0.46);
-  background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0.04) 38%, rgba(15, 23, 42, 0.08) 70%, transparent 100%);
+  border: 1px solid rgba(251, 191, 36, 0.52);
+  background: radial-gradient(circle, rgba(255,255,255,0.22), rgba(255,255,255,0.06) 38%, rgba(15, 23, 42, 0.1) 70%, transparent 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: inset 0 0 18px rgba(251, 191, 36, 0.12), 0 0 24px rgba(251, 191, 36, 0.08), 0 0 30px rgba(250, 204, 21, 0.1);
+  box-shadow: inset 0 0 20px rgba(251, 191, 36, 0.16), 0 0 28px rgba(251, 191, 36, 0.12), 0 0 34px rgba(250, 204, 21, 0.12);
   justify-self: end;
 }
 
