@@ -193,10 +193,10 @@ function pickByRarity(rarity) {
 }
 
 function getFiveStarChance(fivePity) {
-  if (fivePity < 60) {
+  if (fivePity < 50) {
     return 0.001;
   }
-  return 0.001 + (fivePity - 59) * 0.001;
+  return 0.001 + (fivePity - 49) * 0.0007;
 }
 
 function getPullResult(pity) {
@@ -227,7 +227,7 @@ function advancePity(currentPity, item) {
 
   if (item.rarity === 5) {
     next.four = 0;
-    next.five = 0;
+    next.five += 1;
   } else if (item.rarity === 4) {
     next.four = 0;
     next.five += 1;
@@ -266,7 +266,7 @@ function GachaPage() {
     if (lastPull.rarity >= 5) {
       return {
         pool: '命运之环 · 琪亚娜',
-        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
+        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.07%（50抽后）',
         state: '五星已记录',
       };
     }
@@ -274,14 +274,14 @@ function GachaPage() {
     if (lastPull.rarity === 4) {
       return {
         pool: '命运之环 · 琪亚娜',
-        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
+        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.07%（50抽后）',
         state: '四星已记录',
       };
     }
 
     return {
       pool: '命运之环 · 琪亚娜',
-      probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
+      probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.07%（50抽后）',
       state: '常规祈愿',
     };
   }, [lastPull.rarity]);
@@ -350,14 +350,31 @@ function GachaPage() {
     setResults(nextResults);
 
     const generated = [];
-    let newPity = { ...pity };
+    const batchStartPity = { ...pity };
+    let batchPity = { ...pity };
     setTotalPulls((prev) => prev + count);
 
     for (let i = 0; i < count; i += 1) {
-      const item = getPullResult(newPity);
+      const item = getPullResult(batchPity);
       generated.push(item);
-      newPity = advancePity(newPity, item);
+      batchPity = advancePity(batchPity, item);
     }
+
+    const finalPity = { ...batchPity };
+    const finalPityForReset = {
+      four: 0,
+      five: 0,
+    };
+
+    for (let i = 0; i < count; i += 1) {
+      const item = generated[i];
+      if (item.rarity === 5) {
+        finalPityForReset.four = 0;
+        finalPityForReset.five = 0;
+      }
+    }
+
+    const effectivePity = generated.some((item) => item.rarity === 5) ? finalPityForReset : finalPity;
 
     window.setTimeout(() => {
       const reward = generated[generated.length - 1];
@@ -372,7 +389,7 @@ function GachaPage() {
       setFeaturedAnimating(false);
       setHistory((prev) => [...generated, ...prev].slice(0, 10));
       setLastPull(reward);
-      setPity(newPity);
+      setPity(effectivePity);
       setLastBurst(reward.rarity >= 5);
       setShowFiveStarBanner(reward.rarity === 5);
       setPulling(false);
