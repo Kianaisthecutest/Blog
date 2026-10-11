@@ -1219,18 +1219,56 @@
   background: linear-gradient(180deg, rgba(8, 15, 30, 0.86), rgba(15, 23, 42, 0.96));
 }
 
+.rarity4,
+.rarity5 {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.rarity4::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(196, 181, 253, 0.35), 0 0 18px rgba(167, 139, 250, 0.25);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.rarity5::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 22px;
+  border: 1px solid rgba(251, 191, 36, 0.78);
+  box-shadow: 0 0 0 1px rgba(251, 191, 36, 0.2), 0 0 18px rgba(251, 191, 36, 0.42), 0 0 28px rgba(251, 191, 36, 0.28);
+  pointer-events: none;
+  z-index: 2;
+  animation: rareHalo 2.6s ease-in-out infinite alternate;
+}
+
+.rarity4::after,
+.rarity5::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 35%, transparent 68%, rgba(255,255,255,0.08));
+  pointer-events: none;
+  z-index: 1;
+}
+
 .rarity4 {
   border-color: rgba(167, 139, 250, 0.98);
   box-shadow: inset 0 0 24px rgba(167, 139, 250, 0.2), 0 0 22px rgba(167, 139, 250, 0.2), 0 0 0 1px rgba(167, 139, 250, 0.22);
   background: linear-gradient(180deg, rgba(24, 16, 40, 0.85), rgba(15, 23, 42, 0.96));
-  animation: rareHalo 3.2s ease-in-out infinite alternate;
 }
 
 .rarity5 {
   border-color: rgba(251, 191, 36, 1);
   box-shadow: inset 0 0 26px rgba(251, 191, 36, 0.24), 0 0 26px rgba(251, 191, 36, 0.24), 0 0 0 1px rgba(251, 191, 36, 0.3);
   background: linear-gradient(180deg, rgba(38, 24, 10, 0.82), rgba(15, 23, 42, 0.96));
-  animation: rareHalo 2.6s ease-in-out infinite alternate;
 }
 
 .card::after {
