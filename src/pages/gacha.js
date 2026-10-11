@@ -192,6 +192,13 @@ function pickByRarity(rarity) {
   return options[Math.floor(Math.random() * options.length)];
 }
 
+function getFiveStarChance(fivePity) {
+  if (fivePity < 60) {
+    return 0.001;
+  }
+  return 0.001 + (fivePity - 59) * 0.001;
+}
+
 function getPullResult(pity) {
   const { four, five } = pity;
 
@@ -202,11 +209,14 @@ function getPullResult(pity) {
     return pickByRarity(4);
   }
 
+  const fiveStarChance = getFiveStarChance(five);
+  const fourStarChance = 0.05;
   const roll = Math.random();
-  if (roll < 0.001) {
+
+  if (roll < fiveStarChance) {
     return pickByRarity(5);
   }
-  if (roll < 0.051) {
+  if (roll < fiveStarChance + fourStarChance) {
     return pickByRarity(4);
   }
   return pickByRarity(3);
@@ -256,7 +266,7 @@ function GachaPage() {
     if (lastPull.rarity >= 5) {
       return {
         pool: '命运之环 · 琪亚娜',
-        probability: '4★ 5.0% / 5★ 0.1%',
+        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
         state: '五星已记录',
       };
     }
@@ -264,14 +274,14 @@ function GachaPage() {
     if (lastPull.rarity === 4) {
       return {
         pool: '命运之环 · 琪亚娜',
-        probability: '4★ 5.0% / 5★ 0.1%',
+        probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
         state: '四星已记录',
       };
     }
 
     return {
       pool: '命运之环 · 琪亚娜',
-      probability: '4★ 5.0% / 5★ 0.1%',
+      probability: '4★ 5.0% / 5★ 0.1% 起，每抽 +0.1%（60抽后）',
       state: '常规祈愿',
     };
   }, [lastPull.rarity]);
