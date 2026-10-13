@@ -66,6 +66,9 @@ function HomepageHeader() {
             </svg>
             <span>祈愿抽卡</span>
           </a>
+          <a className={styles.secondaryButton} href="/muse-dash">
+            <span>双轨节奏</span>
+          </a>
           <a className={styles.secondaryButton} href="#features">
             <span>了解更多</span>
           </a>

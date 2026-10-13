@@ -1,0 +1,417 @@
+:root {
+  --bg-1: #040917;
+  --bg-2: #0a1220;
+  --panel: rgba(10, 18, 32, 0.8);
+  --panel-border: rgba(148, 163, 184, 0.18);
+  --text: #edf7ff;
+  --muted: #a8b8d8;
+  --purple: #8b5cf6;
+  --pink: #f472b6;
+  --cyan: #67e8f9;
+  --green: #5eead4;
+  --gold: #fbbf24;
+  --red: #fda4af;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pageShell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text);
+}
+
+.bgOne,
+.bgTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.bgOne {
+  width: 520px;
+  height: 520px;
+  left: -180px;
+  top: 40px;
+  background: rgba(168, 85, 247, 0.22);
+}
+
+.bgTwo {
+  width: 640px;
+  height: 640px;
+  right: -220px;
+  bottom: 30px;
+  background: rgba(34, 211, 238, 0.17);
+}
+
+.stage {
+  position: relative;
+  z-index: 1;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 12px 14px 18px;
+}
+
+.topBar,
+.hudRow,
+.footerBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.topBar {
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: rgba(11, 17, 29, 0.68);
+  border: 1px solid var(--panel-border);
+  box-shadow: 0 8px 16px rgba(9, 13, 23, 0.2);
+}
+
+.kicker {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.5rem, 2.7vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  background: linear-gradient(90deg, #f5f3ff, #d8b4fe, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.playButton,
+.primaryButton {
+  border: none;
+  border-radius: 999px;
+  padding: 0.82rem 1.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  color: #f8fafc;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  box-shadow: 0 16px 28px rgba(168, 85, 247, 0.3);
+}
+
+.hudRow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(90px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.statCard {
+  min-height: 62px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  border-radius: 12px;
+  background: rgba(12, 18, 31, 0.68);
+  border: 1px solid var(--panel-border);
+}
+
+.statCard span {
+  color: var(--muted);
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+}
+
+.statCard strong {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  font-weight: 800;
+}
+
+.playfield {
+  position: relative;
+  height: 700px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(12, 20, 33, 0.96), rgba(7, 11, 20, 0.98));
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 26px 58px rgba(2, 6, 23, 0.5);
+  overflow: hidden;
+  transform: scale(1.03);
+  transform-origin: center top;
+}
+
+.playfield::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04), transparent 24%, transparent 74%, rgba(255,255,255,0.04)),
+    repeating-linear-gradient(
+      180deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 3px,
+      transparent 3px,
+      transparent 32px
+    );
+  pointer-events: none;
+}
+
+.playfield::after {
+  content: '';
+  position: absolute;
+  inset: 26px 90px 54px 150px;
+  border-radius: 28px;
+  border: 1px solid rgba(103, 232, 249, 0.12);
+  box-shadow: 0 0 28px rgba(103, 232, 249, 0.08), inset 0 0 18px rgba(103, 232, 249, 0.04);
+  pointer-events: none;
+}
+
+.laneLine,
+.laneLineBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255,255,255,0.14);
+  z-index: 1;
+}
+
+.laneLine {
+  top: 172px;
+}
+
+.laneLineBottom {
+  top: 332px;
+}
+
+.judgeLine {
+  position: absolute;
+  left: 224px;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, transparent, rgba(103, 232, 249, 0.98), transparent);
+  box-shadow: 0 0 18px rgba(103, 232, 249, 0.98), 0 0 42px rgba(103, 232, 249, 0.52);
+  z-index: 2;
+}
+
+.player {
+  position: absolute;
+  left: 30px;
+  bottom: 26px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  z-index: 3;
+}
+
+.playerBody {
+  width: 144px;
+  height: 42px;
+  border-radius: 18px 26px 20px 18px;
+  background: linear-gradient(90deg, #7dd3fc, #c4b5fd 58%, #ddd6fe);
+  box-shadow: 0 0 20px rgba(125, 211, 252, 0.5), inset 0 0 10px rgba(255,255,255,0.15);
+}
+
+.playerHead {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #eff6ff, #a5f3fc);
+  box-shadow: 0 0 18px rgba(147, 197, 253, 0.4);
+  margin-bottom: 18px;
+}
+
+.enemy {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.9);
+  z-index: 3;
+  box-shadow: 0 0 18px rgba(255,255,255,0.25);
+}
+
+.enemyTop {
+  background: linear-gradient(135deg, rgba(103, 232, 249, 0.9), rgba(125, 211, 252, 0.75));
+}
+
+.enemyBottom {
+  background: linear-gradient(135deg, rgba(196, 181, 253, 0.9), rgba(244, 114, 182, 0.78));
+}
+
+.judgeText {
+  position: absolute;
+  right: 54px;
+  top: 64px;
+  font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  z-index: 4;
+  animation: judge-pop 0.24s ease-out;
+}
+
+.judgePerfect {
+  color: rgba(255,255,255,0.98);
+  text-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 36px rgba(103, 232, 249, 0.45);
+}
+
+.judgeGreat {
+  color: rgba(214, 249, 255, 0.96);
+  text-shadow: 0 0 20px rgba(103, 232, 249, 0.65);
+}
+
+.judgeMiss {
+  color: rgba(255, 170, 190, 0.96);
+  text-shadow: 0 0 18px rgba(244, 114, 182, 0.75);
+}
+
+.judgeReady {
+  color: rgba(255,255,255,0.72);
+}
+
+@keyframes judge-pop {
+  0% {
+    transform: scale(0.82);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.progressWrap {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  z-index: 4;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--green), var(--cyan), var(--purple));
+  box-shadow: 0 0 18px rgba(103, 232, 249, 0.5);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(3, 7, 18, 0.48);
+  z-index: 10;
+}
+
+.overlayPanel {
+  width: min(420px, 82%);
+  padding: 28px 24px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: center;
+  box-shadow: 0 26px 50px rgba(2, 6, 23, 0.48);
+}
+
+.overlayTag {
+  margin: 0 0 10px;
+  color: var(--cyan);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+}
+
+.overlayPanel h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.overlayPanel p {
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.primaryButton {
+  width: 100%;
+}
+
+.footerBar {
+  margin-top: 10px;
+  padding: 0 6px;
+}
+
+.keyHint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+}
+
+.keyCapsule {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(148, 163, 184, 0.18), rgba(15, 23, 42, 0.82));
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.metaText {
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  font-size: 0.64rem;
+}
+
+@media (max-width: 720px) {
+  .hudRow {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+  }
+
+  .topBar,
+  .footerBar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .playfield {
+    height: 460px;
+  }
+
+  .judgeLine {
+    left: 280px;
+  }
+
+  .player {
+    left: 30px;
+  }
+}
