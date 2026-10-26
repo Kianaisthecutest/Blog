@@ -27,7 +27,7 @@ tags: [题解, 数学, 组合数学, 欧拉定理, Lucas定理, 中国剩余定�
 
 因为我们分解出来已经保证这个模数是质数了，我们就能想到利用 $Lucas$ 定理来减小计算的量级，我们就可以解决了。
 
-时间复杂度：$O(maxprime\log n+\sqrt{n}+\tau(n)\log^2 n)$。
+时间复杂度：$O(maxprime\times \log n+\sqrt{n}+\tau(n)\log^2 n)$。
 
 </h5>
 
