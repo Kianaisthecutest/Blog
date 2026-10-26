@@ -13,23 +13,23 @@ tags: [题解, 线段树, 树状数组, 树套树, 树链剖分, LCA, 离线处�
 
 首先我们看一下我们有那些操作：
 
-<span>&lt;1&gt;</span> 树上区间查询大于等于某个数的数量
+<span>&lt;1&gt;</span> 树上区间查询大于等于某个数的数量。
 
-<span>&lt;2&gt;</span> 树上单点修改
+<span>&lt;2&gt;</span> 树上单点修改。
 
-<span>&lt;3&gt;</span> 树上区间加
+<span>&lt;3&gt;</span> 树上区间加。
 
-那么<span>&lt;2&gt;</span>这个就是很明显的一个树上数据结构的单点修改
+那么<span>&lt;2&gt;</span>这个就是很明显的一个树上数据结构的单点修改。
 
-其次呢，<span>&lt;1&gt;</span>首先查询大于等于某个数的数量很明显的一个权值线段树或者树状数组
+其次呢，<span>&lt;1&gt;</span>首先查询大于等于某个数的数量很明显的一个权值线段树或者树状数组。
 
-因为要树上区间操作所以可以套一个树剖+树套树
+因为要树上区间操作所以可以套一个树剖+树套树。
 
-最后的<span>&lt;1&gt;</span>统计答案就是很简单的一个树上差分了
+最后的<span>&lt;1&gt;</span>统计答案就是很简单的一个树上差分了。
 
-时间复杂度：$O(qlog^3n)$
+时间复杂度：$O(qlog^3n)$。
 
-但是 $AI$ 写了一个 $O(\frac{n}{\sqrt n}logn+\sqrt nlogn)$的随机数据下更优分块做法，但是理论可以卡掉
+但是 $AI$ 写了一个 $O(\frac{n}{\sqrt n}logn+\sqrt nlogn)$的更优分块做法。
 
 </h5>
 
@@ -41,14 +41,14 @@ tags: [题解, 线段树, 树状数组, 树套树, 树链剖分, LCA, 离线处�
 其次发现区间查询大于等于某个数的个数，好的树套树
 最后计算贡献就是写一个树上点差分就行
 */
-#include<bits/stdc++.h>  
+#include<bits/stdc++.h>
 using namespace std;
 #define ll long long
-#define pii pair< int,int >  
+#define pii pair< int,int >
 #define QWQ return 0;
-#define QAQ return  
+#define QAQ return
 
-const int N=1e5+10; 
+const int N=1e5+10;
 
 int n, id;
 int sumw[N], nw[N];
@@ -187,18 +187,18 @@ inline void dfs3( int p,int Fa )
         dfs3( x,p ), del[p]+=del[x];
 }
 
-int main()  
-{  
-    // freopen( "big_sample2.in","r",stdin );  
-    // freopen( "big_sample2.out","w",stdout );  
-    ios::sync_with_stdio( false );  
+int main()
+{
+    // freopen( "big_sample2.in","r",stdin );
+    // freopen( "big_sample2.out","w",stdout );
+    ios::sync_with_stdio( false );
     cin.tie( nullptr ); cout.tie( nullptr );
     cin>>n;
     for( int i=1;i<=n;i++ )
         cin>>nw[i], w[i].push_back( nw[i] ),
-        sumw[i]+=nw[i]; 
+        sumw[i]+=nw[i];
     for( int i=1, u, v;i<n;i++ )
-        cin>>u>>v, 
+        cin>>u>>v,
         rode[u].push_back( v ), rode[v].push_back( u );
     dfs1( 1,0 ); dfs2( 1,1 );
     int q;
@@ -221,7 +221,7 @@ int main()
     {
         auto &[op,x,y,z]=ask[i];
         if( op==1 )
-        {            
+        {
             bit2.add( dfn[x],nw[x],-1 );
             nw[x]+=y;
             bit2.add( dfn[x],nw[x], 1 );
@@ -235,7 +235,7 @@ int main()
     }
     dfs3( 1,0 );
     for( int i=1;i<=n;i++ ) cout<<del[i]<<" ";
-	QWQ   
+	QWQ
 }
 ```
 
@@ -311,11 +311,11 @@ int main()
 {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-	
+
 	cin>>n;
 	for(int i=1;i<=n;i++)
 		cin>>w[i];
-	
+
 	for(int i=1;i<n;i++)
 	{
 		int u,v;
@@ -323,7 +323,7 @@ int main()
 		g[u].push_back(v);
 		g[v].push_back(u);
 	}
-	
+
 	vector<int> order;
 	order.reserve(n);
 	vector<int> st;
@@ -344,7 +344,7 @@ int main()
 			st.push_back(v);
 		}
 	}
-	
+
 	for(int i=n-1;i>=0;i--)
 	{
 		int u=order[i];
@@ -356,7 +356,7 @@ int main()
 				son[fa[u]]=u;
 		}
 	}
-	
+
 	st.clear();
 	st.push_back(1);
 	top[1]=1;
@@ -380,13 +380,13 @@ int main()
 			}
 		}
 	}
-	
+
 	int block_count=(n+S-1)/S;
 	for(int i=1;i<=n;i++)
 		block[(dfn[i]-1)/S].push_back(w[i]);
 	for(int i=0;i<block_count;i++)
 		sort(block[i].begin(),block[i].end());
-	
+
 	cin>>q;
 	int cnt=0;
 	while(q--)
@@ -406,10 +406,10 @@ int main()
 			int u,v,upper;
 			cin>>u>>v>>upper;
 			upper^=cnt;
-			
+
 			int lca;
 			cnt=query_path(u,v,upper,lca);
-			
+
 			add[u]+=cnt;
 			add[v]+=cnt;
 			add[lca]-=cnt;
@@ -417,10 +417,10 @@ int main()
 				add[fa[lca]]-=cnt;
 		}
 	}
-	
+
 	for(int i=n-1;i>0;i--)
 		add[fa[order[i]]]+=add[order[i]];
-	
+
 	for(int i=1;i<=n;i++)
 	{
 		if(i>1)
@@ -428,7 +428,7 @@ int main()
 		cout<<add[i];
 	}
 	cout<<"\n";
-	
+
 	return 0;
 }
 ```

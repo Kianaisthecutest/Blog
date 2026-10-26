@@ -19,7 +19,7 @@ $g_i=max_{j=1}^{i-1}( b_j\times a_i+g_j )$
 
 $f_i=min_{j=1}^{i-1}( f_j+(g_i-g_j)^2 )$
 
-所以容易得到一个$O(n^2)$代码得到$20pts$
+所以容易得到一个$O(n^2)$代码得到$20pts$。
 
 然后我们发现这两个都是可以斜优的，写下来：
 
@@ -33,9 +33,9 @@ $f_i=min_{j=1}^{i-1}( f[j]+g[i]^2-2\times g[i]\times g[j]+g[j]^2 )$
 
 $y=f_i,\ k=-2\times g[j],\ x=g[i],\ b=f[j]+g[j]^2$
 
-对于第一个式子，双单增可以直接单调队列维护
+对于第一个式子，双单增可以直接单调队列维护。
 
-而对于第二个式子，容易发现$g_i$也具有单调性，直接维护结束
+而对于第二个式子，容易发现$g_i$也具有单调性，直接维护结束。
 
 时间复杂度：$O(n)$
 
@@ -52,17 +52,17 @@ f[i]=f[j]+g[i]^2-2\times g[i]\times g[j]+g[j]^2
 k=-2\times g[j], x=g[i], b=f[j]+g[j]^2
 初线段：k=-2\times g[1], b=0+g[1]^2
 */
-#include<bits/stdc++.h>  
-using namespace std;  
-#define ll long long  
-#define pii pair< int,int >  
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define pii pair< int,int >
 #define QWQ return 0;
-#define QAQ return  
+#define QAQ return
 #define intt __int128
 #define ull unsigned long long
 #define uintt unsigned __int128
 
-const int N=2e5+10; 
+const int N=2e5+10;
 
 struct Fuction
 {
@@ -110,7 +110,7 @@ inline bool check( Fuction f1,Fuction f2,Fuction f3 )
 
 intt a[N], b[N], g[N], f[N];
 
-inline intt read() 
+inline intt read()
 {
     intt w=0;
     char ch=getchar();
@@ -128,11 +128,11 @@ inline void print( intt num )
     putchar( num%10+'0' );
 }
 
-int main()  
-{  
-    // freopen( "big_sample2.in","r",stdin );  
-    // freopen( "big_sample2.out","w",stdout );  
-    // ios::sync_with_stdio( false );  
+int main()
+{
+    // freopen( "big_sample2.in","r",stdin );
+    // freopen( "big_sample2.out","w",stdout );
+    // ios::sync_with_stdio( false );
     // cin.tie( nullptr ); cout.tie( nullptr );
     int n=read();
     for( int i=1;i<=n;i++ ) a[i]=read();
@@ -163,6 +163,6 @@ int main()
     print( g[n] );
     cout<<"\n";
     print( f[n] );
-	QWQ   
+	QWQ
 }
 ```

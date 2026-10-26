@@ -229,7 +229,7 @@ ST表:
 
 容斥定理:
   label: '容斥定理'
-  permalink: '/tag/InclusionExclusionPrinciple'  
+  permalink: '/tag/InclusionExclusionPrinciple'
 
 树的直径:
   label: '树的直径'
@@ -307,7 +307,7 @@ Dinic定理:
   label: '二维偏序'
   permalink: '/tag/2Dpartialorder'
 
-Dilworth定理: 
+Dilworth定理:
   label: 'Dilworth定理'
   permalink: '/tag/DilworthsTheorem'
 
@@ -362,3 +362,11 @@ Kruskal重构树:
 USACO:
   label: 'USACO'
   permalink: '/tag/USACO'
+
+Lucas定理:
+  label: 'Lucas定理'
+  permalink: '/tag/LucasTheorem'
+
+中国剩余定理CRT:
+  label: '中国剩余定理CRT'
+  permalink: '/tag/ChineseRemainTheorem'

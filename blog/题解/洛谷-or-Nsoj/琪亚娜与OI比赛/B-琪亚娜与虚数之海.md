@@ -9,23 +9,23 @@ tags: [题解, Tarjan, 强连通分量, 拓扑排序]
 
 <h4>
 
-我认为是比上一个题更简单的题目，我们容易想到每进入一个$SCC$我们可以选择完所有的点
+我认为是比上一个题更简单的题目，我们容易想到每进入一个$SCC$我们可以选择完所有的点。
 
-所以$Tarjan$缩点后保证$DAG$再拓扑跑一遍就行
+所以$Tarjan$缩点后保证$DAG$再拓扑跑一遍就行。
 
-时间复杂度：$O(n+m)$
+时间复杂度：$O(n+m)$。
 
 </h4>
 
 ```cpp
-#include<bits/stdc++.h>  
-using namespace std;  
-#define ll long long  
-#define pii pair< int,int >  
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define pii pair< int,int >
 #define QWQ return 0;
-#define QAQ return  
+#define QAQ return
 
-const int N=1e5+10; 
+const int N=1e5+10;
 
 int idx, num;
 int dfn[N], low[N];
@@ -46,7 +46,7 @@ inline void dfs( int p )
 		{
 			dfs( x );
 			low[p]=min( low[p],low[x] );
-		}	
+		}
 		else if( in[x] ) low[p]=min( low[p],dfn[x] );
 	}
 	if( dfn[p] == low[p] )
@@ -66,11 +66,11 @@ inline void dfs( int p )
 	}
 }
 
-int main()  
-{  
-    // freopen( "txt.in","r",stdin );  
-    // freopen( "txt.out","w",stdout );  
-    ios::sync_with_stdio( false );  
+int main()
+{
+    // freopen( "txt.in","r",stdin );
+    // freopen( "txt.out","w",stdout );
+    ios::sync_with_stdio( false );
     cin.tie( nullptr ); cout.tie( nullptr );
 	int n, m;
     cin>>n>>m;
@@ -98,6 +98,6 @@ int main()
         }
     }
     cout<<ans;
-	QWQ   
+	QWQ
 }
 ```

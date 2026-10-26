@@ -9,44 +9,44 @@ tags: [题解, 贪心]
 
 <h4>
 
-首先我们考虑如何才能同时选中一些赤鸢，那么需要满足这个条件
+首先我们考虑如何才能同时选中一些赤鸢，那么需要满足这个条件。
 
-记录值$c_i=a_i-b_i$，在放置中一直满足$\sum b_i +c_i \le V$
+记录值$c_i=a_i-b_i$，在放置中一直满足$\sum b_i +c_i \le V$。
 
-因为$b_i+c_i=a_i$，我们放置首要是看它能不能放进去，然后就等价于一个$b_i$的物品了
+因为$b_i+c_i=a_i$，我们放置首要是看它能不能放进去，然后就等价于一个$b_i$的物品了。
 
-那么我们就相当于选择一些$b_i$再选择一个$a_i$，那么一贪心我们把这个$c_i$最大的最后放就更优了，这样可以在前面的情况下尽可能留空间
+那么我们就相当于选择一些$b_i$再选择一个$a_i$，那么一贪心我们把这个$c_i$最大的最后放就更优了，这样可以在前面的情况下尽可能留空间。
 
-那我们不妨对$c_i$逆序排一遍，然后贪心放入就可以了
+那我们不妨对$c_i$逆序排一遍，然后贪心放入就可以了。
 
 具体证明如下：
 
-我们如果下个数放${b_i,c_i}$满足$c_i \le c_{i-1}$，记录放这个数和前一个数会产生的集合最大体积为$S$
+我们如果下个数放${b_i,c_i}$满足$c_i \le c_{i-1}$，记录放这个数和前一个数会产生的集合最大体积为$S$。
 
-考虑临项交换，则交换前后产生的最大集合体积为
+考虑临项交换，则交换前后产生的最大集合体积为。
 
 换前：$S+b_{i-1}+a_i=S+b_{i-1}+b_i+c_i$
 
 换后：$S+b_i+a_{i-1}=S+b_i+b_{i-1}+c_{i-1}$
 
-所以可以得到我们将$c_i$从大到小选肯定不会更劣，那么考虑换贡献的时候我们只需要将最大$b_i$删去就行
+所以可以得到我们将$c_i$从大到小选肯定不会更劣，那么考虑换贡献的时候我们只需要将最大$b_i$删去就行。
 
-因为我们还要输出一组答案，所以可以重复一遍上述操作模拟到最优答案点
+因为我们还要输出一组答案，所以可以重复一遍上述操作模拟到最优答案点。
 
-时间复杂度：$O(nlogn)$
+时间复杂度：$O(nlogn)$。
 
 </h4>
 
 ```cpp
-#include<bits/stdc++.h>  
-using namespace std;  
-#define ll long long  
-#define pii pair< int,int >  
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define pii pair< int,int >
 #define QWQ return 0;
-#define QAQ return  
-#define pli pair< ll,int > 
+#define QAQ return
+#define pli pair< ll,int >
 
-const int N=5e5+10; 
+const int N=5e5+10;
 
 struct RedKite
 {
@@ -60,11 +60,11 @@ struct RedKite
 
 bool chs[N];
 
-int main()  
-{  
-    // freopen( "1.in","r",stdin );  
-    // freopen( "1.out","w",stdout );  
-    ios::sync_with_stdio( false );  
+int main()
+{
+    // freopen( "1.in","r",stdin );
+    // freopen( "1.out","w",stdout );
+    ios::sync_with_stdio( false );
     cin.tie( nullptr ); cout.tie( nullptr );
 	int n;
 	ll V;
@@ -98,6 +98,6 @@ int main()
 	cout<<ans.size()<<"\n";
 	while( !ans.empty() ) chs[ans.top().second]=true, ans.pop();
 	for( int i=1;i<=n;i++ ) cout<<chs[i]<<" ";
-	QWQ   
+	QWQ
 }
 ```
