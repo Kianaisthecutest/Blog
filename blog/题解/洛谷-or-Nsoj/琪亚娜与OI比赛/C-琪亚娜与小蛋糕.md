@@ -1,168 +1,105 @@
 ---
 title: 琪亚娜与小蛋糕
-date: 2026-09-13
+date: 2026-10-27
 slug: 题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕
-tags: [题解, 动态规划, 斜率优化]
+tags: [题解, 博弈论]
 ---
 
 {/*truncate*/}
 
 <h5>
 
-感觉这题思维难度不算高，主要看~~阅读能力和~~斜优掌握。
+原本的题出锅了，只能改成更加恶心的了。
 
-首先先处理第一个吃蛋糕的问题，由题义：
+首先我们可以发现这个题纯粹暴力是不可能的，一定是有什么强优化点。
 
-$g_i=max_{j=1}^{i-1}( b_j\times a_i+g_j )$
+我们不妨先做一下部分分。
 
-再处理第二个爬山的问题，由题义：
+第一个部分分，这个很简单的每轮一个暴力求就可以了。
 
-$f_i=min_{j=1}^{i-1}( f_j+(g_i-g_j)^2 )$
+第二个部分分也简单，只需要在第一步的基础上做一下预处理就可以 $ O(n) $ 预处理 $ O(1) $ 回答了。
 
-所以容易得到一个$O(n^2)$代码得到$20pts$。
+接下来有两种解决方案：
 
-然后我们发现这两个都是可以斜优的，写下来：
+1 然后我们就可以瞪眼发现每 $382$ 为一个循环，预处理后取模输出即可。
 
-$g_i=max_{j=1}^{i-1}( b_j\times a_i+g_j )$
+***
 
-$y=g_i,\ k=b_j,\ x=a_i,\ b=g_j$
+2 我们发现我们只关注前 $7$ 个点的状态，不妨写成一个七位二进制数，一对应 $0$ ，二对应 $1$。
 
-$f_i=min_{j=1}^{i-1}( f_j+(g_i-g_j)^2 )$
+那么我们发现这个状态至多 $2^7-1$ 个，因为全部为 $0$ 的数列不会变化也不会由其他状态转移过来。
 
-$f_i=min_{j=1}^{i-1}( f[j]+g[i]^2-2\times g[i]\times g[j]+g[j]^2 )$
+根据数学经验，证不多于后就可以证等于了，我们发现这个变化的序列可以写成这个样子 $b_{n+7}=b{n+3}^b{n}$。
 
-$y=f_i,\ k=-2\times g[j],\ x=g[i],\ b=f[j]+g[j]^2$
+反复代入异或消元得到：
 
-对于第一个式子，双单增可以直接单调队列维护。
+$$
+\begin{aligned}
+b_{n+8} &= b_{n+4} \oplus b_{n+1}, \\
+b_{n+16} &= b_{n+4} \oplus b_{n+2} \oplus b_{n+1}, \\
+b_{n+32} &= b_{n+2} \oplus b_{n+1}, \\
+b_{n+64} &= b_{n+4} \oplus b_{n+2}, \\
+b_{n+128} &= b_{n+1}.
+\end{aligned}
+$$
 
-而对于第二个式子，容易发现$g_i$也具有单调性，直接维护结束。
+说明 $b_{n+127}=b_n$，又由于 $127$ 是一个质数，最小周期只能为 $1$ 或 $127$。
 
-时间复杂度：$O(n)$
+所以除了初始全 $0$ 序列，任意序列移动 $127$ 次后回到自身，即循环节为 $127$。
+
+那么在一个长度为 $127$ 完整周期中，我们就会吃 $63$ 次 $1$，$64$ 次 $2$，总共 $191$ 个蛋糕。
+
+也就是说：每行动 $127$ 轮后，吃蛋糕的规则回到原状态且总共吃掉 $191$ 个单位的蛋糕。
+
+因为一个周期的长度为 $127$ 是奇数，所以此时是胜者交换 $winner(n-191) \neq winner(n)$。
+
+所以在加上一轮变成 $254$ 轮时胜负延续就是 $winner(n-382) \neq winner(n)$。
+
+于是得到胜负的循环节为 $382$，预处理一下就可以了。
+
+时间复杂度：$O(500+Q)$
 
 </h5>
 
 ```cpp
-/*
-g[i]=b[j]*a[i]+g[j]
-k=b[j], x=a[i], b=g[j]
-初线段：k=1, b=0
-
-f[i]=f[j]+( g[i]​−g[j] ​)^2
-f[i]=f[j]+g[i]^2-2\times g[i]\times g[j]+g[j]^2
-k=-2\times g[j], x=g[i], b=f[j]+g[j]^2
-初线段：k=-2\times g[1], b=0+g[1]^2
-*/
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long
 #define pii pair< int,int >
 #define QWQ return 0;
 #define QAQ return
-#define intt __int128
-#define ull unsigned long long
-#define uintt unsigned __int128
 
-const int N=2e5+10;
+const int N=1e3;
+const int mod=382;
 
-struct Fuction
+int cake[N], f[N];
+
+inline void init( int n )
 {
-    intt k, b;
-
-    inline intt f( const intt &x )const
-    { QAQ k*x+b; }
-
-};
-
-inline void mul128( uintt a,uintt b,uintt &hi,uintt &lo )
-{
-    ull al=( ull )a, ah=( ull )( a>>64 );
-    ull bl=( ull )b, bh=( ull )( b>>64 );
-    uintt p00=( uintt )al*bl;
-    uintt p01=( uintt )al*bh;
-    uintt p10=( uintt )ah*bl;
-    uintt p11=( uintt )ah*bh;
-    uintt mid=( p00>>64 )+( ull )p01+( ull )p10;
-    lo=( p00&( ( ( uintt )1<<64 )-1 ) )|( mid<<64 );
-    hi=p11+( p01>>64 )+( p10>>64 )+( mid>>64 );
+    cake[2]=cake[5]=1;
+    cake[1]=cake[3]=cake[4]=cake[6]=cake[7]=2;
+    for( int i=8;i<=n;i++ ) cake[i]=( cake[i-4] == cake[i-7] ? 1 : 2 );
+    int siz=0;
+    for( int i=1;i<=n;i++ )
+    for( int j=1;j<=cake[i];j++ ) f[++siz]=i&1;
 }
 
-inline bool mul_leq( intt a,intt b,intt c,intt d )
+inline void sovel()
 {
-    int s1=( a<0 )^( b<0 );
-    int s2=( c<0 )^( d<0 );
-    if( s1 != s2 ) QAQ s1 > s2;
-    uintt ua=( a < 0 ? ( uintt )-( a+1 )+1 : ( uintt )a );
-    uintt ub=( b < 0 ? ( uintt )-( b+1 )+1 : ( uintt )b );
-    uintt uc=( c < 0 ? ( uintt )-( c+1 )+1 : ( uintt )c );
-    uintt ud=( d < 0 ? ( uintt )-( d+1 )+1 : ( uintt )d );
-    uintt hi1,lo1,hi2,lo2;
-    mul128( ua,ub,hi1,lo1 );
-    mul128( uc,ud,hi2,lo2 );
-    bool abs_leq=( hi1 != hi2 ? hi1 < hi2 : lo1 <= lo2 );
-    QAQ ( s1 ? !abs_leq : abs_leq );
-}
-
-inline bool check( Fuction f1,Fuction f2,Fuction f3 )
-{
-    QAQ mul_leq( f3.b-f2.b,f1.k-f2.k,
-                 f2.b-f1.b,f2.k-f3.k );
-}
-
-intt a[N], b[N], g[N], f[N];
-
-inline intt read()
-{
-    intt w=0;
-    char ch=getchar();
-    while( isdigit( ch ) )
-    {
-        w=w*10+ch-'0';
-        ch=getchar();
-    }
-    QAQ w;
-}
-
-inline void print( intt num )
-{
-    if( num > 9 ) print( num/10 );
-    putchar( num%10+'0' );
+    ll n;
+    cin>>n;
+    cout<<( f[( n-1 )%mod+1] ? "Kiana" : "Mei" )<<"\n";
 }
 
 int main()
 {
-    // freopen( "big_sample2.in","r",stdin );
-    // freopen( "big_sample2.out","w",stdout );
-    // ios::sync_with_stdio( false );
-    // cin.tie( nullptr ); cout.tie( nullptr );
-    int n=read();
-    for( int i=1;i<=n;i++ ) a[i]=read();
-    for( int i=1;i<=n;i++ ) b[i]=read();
-    deque< Fuction > dq1;
-    dq1.push_back( { 1,0 } );
-    for( int i=1;i<=n;i++ )
-    {
-        intt x=a[i];
-        while( dq1.size() >= 2 && dq1[0].f( x ) <= dq1[1].f( x ) ) dq1.pop_front();
-        g[i]=dq1.front().f( x );
-        Fuction nf={ b[i],g[i] };
-        while( dq1.size() >= 2 && check( dq1[dq1.size()-2],dq1[dq1.size()-1],nf ) ) dq1.pop_back();
-        dq1.push_back( nf );
-        assert( g[i] >= g[i-1] );
-    }
-    deque< Fuction > dq2;
-    dq2.push_back( { ( intt )-2*g[1],g[1]*g[1] } );
-    for( int i=1;i<=n;i++ )
-    {
-        intt x=g[i];
-        while( dq2.size() >= 2 && dq2[0].f( x ) >= dq2[1].f( x ) ) dq2.pop_front();
-        f[i]=dq2.front().f( x )+x*x;
-        Fuction nf={ ( intt )-2*g[i],f[i]+g[i]*g[i] };
-        while( dq2.size() >= 2 && check( dq2[dq2.size()-2],dq2[dq2.size()-1],nf ) ) dq2.pop_back();
-        dq2.push_back( nf );
-    }
-    print( g[n] );
-    cout<<"\n";
-    print( f[n] );
-	QWQ
+    // freopen( ".in","r",stdin );
+    // freopen( ".out","w",stdout );
+    ios::sync_with_stdio( false );
+    cin.tie( nullptr ); cout.tie( nullptr );
+    init( 500 );
+    int t;
+    for( cin>>t;t;t-- ) sovel();
+    QWQ
 }
 ```
