@@ -17,7 +17,11 @@ tags: [题解, 数学, 组合数学, 欧拉定理, Lucas定理, 中国剩余定�
 
 每张琪谱独立选择 $Q$ 中主题，那么我们要求的答案就是 $q^{\sum_{d\mid N}\binom{N}{d}}\mod M$。
 
-那么我们先使用一次欧拉定理，得到 $q^{\sum_{d\mid N}\binom{N}{d}}\equiv q^{\sum_{d\mid N}\binom{N}{d}\mod M-1} (\mod M)$
+那么我们先使用一次欧拉定理，另 $x=\sum_{d\mid N}\binom{N}{d}$，因为我们可以知道 $q^{M-1}\equiv 1(\mod M)$。
+
+那么分解得到 $q^x=(q^{M-1})^y\times 1^z$，因为 $q^{M-1}\mod M=1, x=(M-1)\times y+z$，所以 $q^x\equiv q^z=q^{x\mod (M-1)}(\mod M-1)$。
+
+最终得到 $q^{\sum_{d\mid N}\binom{N}{d}}\equiv q^{\sum_{d\mid N}\binom{N}{d}\mod M-1} (\mod M)$。
 
 将上面这一坨拉下来 $\sum_{d\mid N}\binom{N}{d}\mod M-1$，因为我们规定了 $|\mu M|=1$，我们就可以快乐的分解 $M-1$ 的质因数做 $CRT$ 了。
 
