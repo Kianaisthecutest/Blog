@@ -3,7 +3,19 @@
     "key": "题解",
     "label": "题解",
     "icon": "📁",
-    "count": 146
+    "count": 149
+  },
+  "题解/洛谷-or-Nsoj": {
+    "key": "题解/洛谷-or-Nsoj",
+    "label": "洛谷-or-Nsoj",
+    "icon": "📁",
+    "count": 45
+  },
+  "题解/洛谷-or-Nsoj/琪亚娜与OI比赛": {
+    "key": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "label": "琪亚娜与OI比赛",
+    "icon": "📁",
+    "count": 7
   },
   "题解/COCI": {
     "key": "题解/COCI",
@@ -16,12 +28,6 @@
     "label": "2019-2020-4",
     "icon": "📁",
     "count": 2
-  },
-  "题解/洛谷-or-Nsoj": {
-    "key": "题解/洛谷-or-Nsoj",
-    "label": "洛谷-or-Nsoj",
-    "icon": "📁",
-    "count": 42
   },
   "题解/USACO": {
     "key": "题解/USACO",
@@ -46,12 +52,6 @@
     "label": "2026-09-15测试",
     "icon": "📁",
     "count": 4
-  },
-  "题解/洛谷-or-Nsoj/琪亚娜与OI比赛": {
-    "key": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
-    "label": "琪亚娜与OI比赛",
-    "icon": "📁",
-    "count": 5
   },
   "杂文": {
     "key": "杂文",
@@ -315,6 +315,6 @@
     "key": "all",
     "label": "全部文章",
     "icon": "📖",
-    "count": 183
+    "count": 186
   }
 }

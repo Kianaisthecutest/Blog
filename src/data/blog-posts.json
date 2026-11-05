@@ -1,5 +1,76 @@
 [
   {
+    "title": "JOI-2024-2025-二次预选-Collision",
+    "date": "2026-11-05",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/JOI-2024-2025-二次预选-Collision",
+    "tags": [
+      "题解",
+      "数学",
+      "树套树",
+      "CDQ分治",
+      "分块"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/JOI-2024-2025-二次预选-Collision.md"
+  },
+  {
+    "title": "琪亚娜与小蛋糕",
+    "date": "2026-10-27",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕",
+    "tags": [
+      "题解",
+      "博弈论"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕.md"
+  },
+  {
+    "title": "琪亚娜与豆腐脑",
+    "date": "2026-10-26",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/E-琪亚娜与豆腐脑",
+    "tags": [
+      "题解",
+      "图论建模",
+      "网络流"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/E-琪亚娜与豆腐脑.md"
+  },
+  {
+    "title": "琪亚娜与OSU",
+    "date": "2026-10-26",
+    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/F-琪亚娜与OSU",
+    "tags": [
+      "题解",
+      "数学",
+      "组合数学",
+      "欧拉定理",
+      "Lucas定理",
+      "中国剩余定理CRT"
+    ],
+    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
+    "groupSegments": [
+      "题解",
+      "洛谷-or-Nsoj",
+      "琪亚娜与OI比赛"
+    ],
+    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/F-琪亚娜与OSU.md"
+  },
+  {
     "title": "Holding",
     "date": "2026-09-28",
     "permalink": "/blog-posts/题解/COCI/2019-2020-4/B-Holding",
@@ -251,23 +322,6 @@
       "琪亚娜与OI比赛"
     ],
     "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/D-琪亚娜与送货.md"
-  },
-  {
-    "title": "琪亚娜与小蛋糕",
-    "date": "2026-09-13",
-    "permalink": "/blog-posts/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕",
-    "tags": [
-      "题解",
-      "动态规划",
-      "斜率优化"
-    ],
-    "groupPath": "题解/洛谷-or-Nsoj/琪亚娜与OI比赛",
-    "groupSegments": [
-      "题解",
-      "洛谷-or-Nsoj",
-      "琪亚娜与OI比赛"
-    ],
-    "filePath": "blog/题解/洛谷-or-Nsoj/琪亚娜与OI比赛/C-琪亚娜与小蛋糕.md"
   },
   {
     "title": "琪亚娜与赤鸢",

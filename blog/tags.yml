@@ -370,3 +370,7 @@ Lucas定理:
 中国剩余定理CRT:
   label: '中国剩余定理CRT'
   permalink: '/tag/ChineseRemainTheorem'
+
+欧拉定理:
+  label: '欧拉定理'
+  permalink: '/tag/EulerTheorem'
