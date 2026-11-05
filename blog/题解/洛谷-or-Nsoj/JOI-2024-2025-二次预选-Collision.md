@@ -25,81 +25,57 @@ tags: [题解, 数学, 树套树, CDQ分治, 分块]
 
 移动时间为 $t\in [0,T]$，先写成普通的判断式子：
 
-$$
-\begin{array}{l}
-a_i+s_i\times t\equiv a_j+s_j\times t (\mod L)
-\end{array}
-$$
+$a_i+s_i\times t\equiv a_j+s_j\times t (\mod L)$
 
 我们可以人为钦定顺序，令 $s_i\gt s_j$，那么这个同余式子可以写成这个样子：
 
-$$
-\begin{array}{l}
-\exists k，(s_i​−s_j​)\times t=k\times L−(a_i​−a_j​)
-\end{array}
-$$
+$\exists k，(s_i​−s_j​)\times t=k\times L−(a_i​−a_j​)$
 
 那么我们是可以得到 $k$ 的取值范围的，我们慢慢推导过来：
 
-$$
-\begin{array}{l}
-0\le t=\frac{k\times L−(a_i​−a_j​)}{s_i​−s_j​}\le T\\
-0\le k\times L−(a_i​−a_j​)\le T\times (s_i​−s_j​)\\
-a_i​−a_j​\le k\times L\le T\times (s_i​−s_j​)+(a_i​−a_j)\\
-\frac{a_i-a_j}{L}\le k\le \frac{(a_i+s_i\times T)-(a_j+s_j\times T)}{L}
-\end{array}
-$$
+$0\le t=\frac{k\times L−(a_i​−a_j​)}{s_i​−s_j​}\le T$
+
+$0\le k\times L−(a_i​−a_j​)\le T\times (s_i​−s_j​)$
+
+$a_i​−a_j​\le k\times L\le T\times (s_i​−s_j​)+(a_i​−a_j)$
+
+$\frac{a_i-a_j}{L}\le k\le \frac{(a_i+s_i\times T)-(a_j+s_j\times T)}{L}$
 
 因为 $t$ 和 $k$ 一一对应，所以我们只需要求出 $k$ 的个数就等价于合法的 $t$ 的个数。
 
 那么我们继续做，做另一个同余式子转化我们的需要维护的值：
 
-$$
-\begin{array}{l}
-a_i+s_i\times T=q_i\times L+r_i\\
-q_i=\lfloor \frac{a_i+s_i\times T}{L}\rfloor，r_i=(a_i+s_i\times T)(\mod L)
-\end{array}
-$$
+$a_i+s_i\times T=q_i\times L+r_i$
+
+$q_i=\lfloor \frac{a_i+s_i\times T}{L}\rfloor，r_i=(a_i+s_i\times T)(\mod L)$
 
 这个就是一个简单带余除法，代入得到：
 
-$$
-\begin{array}{l}
-k\le \frac{(q_i\times L+r_i)-(q_j\times L+r_j)}{L}=q_i+q_j+\frac{r_i-r_j}{L}\\
-k_{max}=\lfloor q_i+q_j+\frac{r_i-r_j}{L}\rfloor
-\end{array}
-$$
+$k\le \frac{(q_i\times L+r_i)-(q_j\times L+r_j)}{L}=q_i+q_j+\frac{r_i-r_j}{L}$
+
+$k_{max}=\lfloor q_i+q_j+\frac{r_i-r_j}{L}\rfloor$
 
 因为 $0\le r_i,r_j\lt L$，得到 $-L\lt r_i-r_j\lt L$，那么 $-1\lt \frac{r_i-r_j}{L}\lt 1$，进行一些分讨：
 
-$$
-\begin{array}{l}
-若 r_i\ge r_j，则0\le \frac{r_i-r_j}{L}\lt 1，取整得到 k_{max}=q_i-q_j\\
-若 r_i\lt r_j，则-1\lt \frac{r_i-r_j}{L}\lt 0，取整得到 k_{max}=q_i-q_j-1
-\end{array}
-$$
+$若 r_i\ge r_j，则0\le \frac{r_i-r_j}{L}\lt 1，取整得到 k_{max}=q_i-q_j$
+
+$若 r_i\lt r_j，则-1\lt \frac{r_i-r_j}{L}\lt 0，取整得到 k_{max}=q_i-q_j-1$
 
 那么得到 $k_{max}=q_i-q_j-[r_i\lt r_j]$ 这个上界了，继续来求下界。
 
 因为 $0\le a_i,a_j\lt L$，那么 $-L\lt a_i-a_j\lt L$，得到 $-1\lt \frac{a_i-a_j}{L}\lt 1$，依旧进入分讨环节：
 
-$$
-\begin{array}{l}
-若 a_i\ge a_j，则0\le \frac{a_i-a_j}{L}\lt 1，取整得到 k_{min}=0\\
-若 a_i\lt a_j，则-1\lt \frac{a_i-a_j}{L}\lt 0，取整得到 k_{min}=1
-\end{array}
-$$
+$若 a_i\ge a_j，则0\le \frac{a_i-a_j}{L}\lt 1，取整得到 k_{min}=0$
+
+$若 a_i\lt a_j，则-1\lt \frac{a_i-a_j}{L}\lt 0，取整得到 k_{min}=1$
 
 那么 $k_{min}=[a_i\gt a_j]$，现在下界也得到了。
 
 总数 $k_{max}-k_{min}+1$，答案就是：
 
-$$
-\begin{array}{l}
-add=q_i-q_j-[r_i\lt r_j]-[a_i\gt a_j]+1\\
-add=q_i-q_j-[r_i\lt r_j]-[a_i\lt a_j]
-\end{array}
-$$
+$add=q_i-q_j-[r_i\lt r_j]-[a_i\gt a_j]+1$
+
+$add=q_i-q_j-[r_i\lt r_j]-[a_i\lt a_j]$
 
 那么我们就得到了这个美丽的式子，我们就只需要维护这些东西就可以了。
 
