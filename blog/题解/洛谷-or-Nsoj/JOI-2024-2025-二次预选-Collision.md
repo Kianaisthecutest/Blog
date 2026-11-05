@@ -27,7 +27,7 @@ tags: [题解, 数学, 树套树, CDQ分治, 分块]
 
 $$
 \begin{flalign*}
-&a_i+s_i\times t\equiv a_j+s_j\times t (\mod L)
+&a_i+s_i\times t\equiv a_j+s_j\times t (\mod L)&
 \end{flalign*}
 $$
 
