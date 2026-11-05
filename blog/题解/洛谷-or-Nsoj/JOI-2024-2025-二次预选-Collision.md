@@ -38,12 +38,12 @@ $$
 那么我们是可以得到 $k$ 的取值范围的，我们慢慢推导过来：
 
 $$
-\begin{aligned}
-&0\le t=\frac{k\times L−(a_i​−a_j​)}{s_i​−s_j​}\le T\\
-&0\le k\times L−(a_i​−a_j​)\le T\times (s_i​−s_j​)\\
-&a_i​−a_j​\le k\times L\le T\times (s_i​−s_j​)+(a_i​−a_j)\\
-&\frac{a_i-a_j}{L}\le k\le \frac{(a_i+s_i\times T)-(a_j+s_j\times T)}{L}
-\end{aligned}
+\begin{flalign*}
+&0\le t=\frac{k\times L−(a_i​−a_j​)}{s_i​−s_j​}\le T&\\
+&0\le k\times L−(a_i​−a_j​)\le T\times (s_i​−s_j​)&\\
+&a_i​−a_j​\le k\times L\le T\times (s_i​−s_j​)+(a_i​−a_j)&\\
+&\frac{a_i-a_j}{L}\le k\le \frac{(a_i+s_i\times T)-(a_j+s_j\times T)}{L}&
+\end{flalign*}
 $$
 
 因为 $t$ 和 $k$ 一一对应，所以我们只需要求出 $k$ 的个数就等价于合法的 $t$ 的个数。
@@ -51,28 +51,28 @@ $$
 那么我们继续做，做另一个同余式子转化我们的需要维护的值：
 
 $$
-\begin{aligned}
-&a_i+s_i\times T=q_i\times L+r_i\\
-&q_i=\lfloor \frac{a_i+s_i\times T}{L}\rfloor，r_i=(a_i+s_i\times T)(\mod L)
-\end{aligned}
+\begin{flalign*}
+&a_i+s_i\times T=q_i\times L+r_i&\\
+&q_i=\lfloor \frac{a_i+s_i\times T}{L}\rfloor，r_i=(a_i+s_i\times T)(\mod L)&
+\end{flalign*}
 $$
 
 这个就是一个简单带余除法，代入得到：
 
 $$
-\begin{aligned}
-&k\le \frac{(q_i\times L+r_i)-(q_j\times L+r_j)}{L}=q_i+q_j+\frac{r_i-r_j}{L}\\
-&k_{max}=\lfloor q_i+q_j+\frac{r_i-r_j}{L}\rfloor
-\end{aligned}
+\begin{flalign*}
+&k\le \frac{(q_i\times L+r_i)-(q_j\times L+r_j)}{L}=q_i+q_j+\frac{r_i-r_j}{L}&\\
+&k_{max}=\lfloor q_i+q_j+\frac{r_i-r_j}{L}\rfloor&
+\end{flalign*}
 $$
 
 因为 $0\le r_i,r_j\lt L$，得到 $-L\lt r_i-r_j\lt L$，那么 $-1\lt \frac{r_i-r_j}{L}\lt 1$，进行一些分讨：
 
 $$
-\begin{aligned}
-&若 r_i\ge r_j，则0\le \frac{r_i-r_j}{L}\lt 1，取整得到 k_{max}=q_i-q_j\\
-&若 r_i\lt r_j，则-1\lt \frac{r_i-r_j}{L}\lt 0，取整得到 k_{max}=q_i-q_j-1
-\end{aligned}
+\begin{flalign*}
+&若 r_i\ge r_j，则0\le \frac{r_i-r_j}{L}\lt 1，取整得到 k_{max}=q_i-q_j&\\
+&若 r_i\lt r_j，则-1\lt \frac{r_i-r_j}{L}\lt 0，取整得到 k_{max}=q_i-q_j-1&
+\end{flalign*}
 $$
 
 那么得到 $k_{max}=q_i-q_j-[r_i\lt r_j]$ 这个上界了，继续来求下界。
@@ -80,10 +80,10 @@ $$
 因为 $0\le a_i,a_j\lt L$，那么 $-L\lt a_i-a_j\lt L$，得到 $-1\lt \frac{a_i-a_j}{L}\lt 1$，依旧进入分讨环节：
 
 $$
-\begin{aligned}
-&若 a_i\ge a_j，则0\le \frac{a_i-a_j}{L}\lt 1，取整得到 k_{min}=0\\
-&若 a_i\lt a_j，则-1\lt \frac{a_i-a_j}{L}\lt 0，取整得到 k_{min}=1
-\end{aligned}
+\begin{flalign*}
+&若 a_i\ge a_j，则0\le \frac{a_i-a_j}{L}\lt 1，取整得到 k_{min}=0&\\
+&若 a_i\lt a_j，则-1\lt \frac{a_i-a_j}{L}\lt 0，取整得到 k_{min}=1&
+\end{flalign*}
 $$
 
 那么 $k_{min}=[a_i\gt a_j]$，现在下界也得到了。
@@ -91,10 +91,10 @@ $$
 总数 $k_{max}-k_{min}+1$，答案就是：
 
 $$
-\begin{aligned}
-&add=q_i-q_j-[r_i\lt r_j]-[a_i\gt a_j]+1\\
-&add=q_i-q_j-[r_i\lt r_j]-[a_i\lt a_j]
-\end{aligned}
+\begin{flalign*}
+&add=q_i-q_j-[r_i\lt r_j]-[a_i\gt a_j]+1&\\
+&add=q_i-q_j-[r_i\lt r_j]-[a_i\lt a_j]&
+\end{flalign*}
 $$
 
 那么我们就得到了这个美丽的式子，我们就只需要维护这些东西就可以了。
