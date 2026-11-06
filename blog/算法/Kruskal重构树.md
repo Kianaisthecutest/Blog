@@ -1,5 +1,5 @@
 ---
-title: 01分数规划
+title: Kruskal重构树
 date: 2026-11-06
 slug: 算法/Kruskal重构树
 tags: [算法, 最小生成树, 并查集, Kruskal重构树]
