@@ -1,5 +1,21 @@
 [
   {
+    "title": "Kruskal重构树",
+    "date": "2026-11-06",
+    "permalink": "/blog-posts/算法/Kruskal重构树",
+    "tags": [
+      "算法",
+      "最小生成树",
+      "并查集",
+      "Kruskal重构树"
+    ],
+    "groupPath": "算法",
+    "groupSegments": [
+      "算法"
+    ],
+    "filePath": "blog/算法/Kruskal重构树.md"
+  },
+  {
     "title": "JOI-2024-2025-二次预选-Collision",
     "date": "2026-11-05",
     "permalink": "/blog-posts/题解/洛谷-or-Nsoj/JOI-2024-2025-二次预选-Collision",

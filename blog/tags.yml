@@ -374,7 +374,3 @@ Lucas定理:
 欧拉定理:
   label: '欧拉定理'
   permalink: '/tag/EulerTheorem'
-
-Kruskal重构树:
-  label: 'Kruskal重构树'
-  permalink: '/tag/Kruskalrebuildtree'
